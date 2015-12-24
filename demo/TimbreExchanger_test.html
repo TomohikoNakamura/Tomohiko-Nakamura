@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=UTF-8>
+<title>Exchanging drum timbre and frequency characteristics.</title>
+<link href="http://hil.t.u-tokyo.ac.jp/~nakamura/style2.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="bevel.js" mce_src="bevel.js"></script>
+<!--[if lt IE 9]>
+2
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+3
+<![endif]-->
+<!-- for yahoo audio player -->
+<script type="text/javascript" src="http://mediaplayer.yahoo.com/js"></script>
+</head>
+<body>
+<div id="page">
+<header>
+<!--<h2><a href="../index.html">home</a></h2>
+<img src="../images/bg_banner_grey.gif" width="900" height="5" alt="logo_banner" />-->
+</header>
+    <p>
+	 <h1><font color="#006400" size="6pt">Exchanging <em>drum
+timbre</em> and <em>frequency characteristics</em> between different
+music pieces</font></h1><br>
+<br>
+<table border="1">
+<tr><th>Experiment Number</th>
+<th>Target piece</th><th>Reference piece</th>
+<th>Synthesized piece 1</th>
+<th>Synthesized piece 2</th>
+</tr>
+<!--
+<tr>
+<td>
+RWC-MDB-P-2001 No. 7 "Prologue"<br>
+<a href="tca/RWC-P01-07_RWC-P04-16_input.wav">Full</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_input_H.wav">Harmonic component</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_input_P.wav">Percussive component</a>
+</td>
+<td>
+RWC-MDB-P-2001 No. 64 "So Long"<br>
+<a href="tca/RWC-P01-07_RWC-P04-16_target.wav">Full</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_target_H.wav">Harmonic component</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_target_P.wav">Percussive component</a>
+</td>
+<td>
+<a href="tca/RWC-P01-07_RWC-P04-16_copy_algo4.wav">Full</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_copy_H_algo4.wav">Harmonic component</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_copy_P_algo4.wav">Percussive component</a>
+</td>
+<td>
+<a href="tca/RWC-P01-07_RWC-P04-16_copy_algo11.wav">Full</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_copy_H_algo11.wav">Harmonic component</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_copy_P_algo11.wav">Percussive component</a>
+</td>
+</tr>
+-->
+
+<tr><td>a</td><td>RWC-MDB-P-2001 No. 7 "Prologue"<br>
+<a href="tca/RWC-P01-07_RWC-P04-16_input.wav">Full</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_input_H.wav">Harmonic component</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_input_P.wav">Percussive component</a>
+</td>
+<td>RWC-MDB-P-2001 No. 64 "So Long"<br>
+<a href="tca/RWC-P01-07_RWC-P04-16_target.wav">Full</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_target_H.wav">Harmonic component</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_target_P.wav">Percussive component</a>
+</td>
+<td>
+<a href="tca/RWC-P01-07_RWC-P04-16_copy_algo11.wav">Full</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_copy_H_algo11.wav">Harmonic component</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_copy_P_algo11.wav">Percussive component</a>
+</td>
+<td>
+<a href="tca/RWC-P01-07_RWC-P04-16_copy_algo4.wav">Full</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_copy_H_algo4.wav">Harmonic component</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_copy_P_algo4.wav">Percussive component</a>
+</td>
+</tr>
+<tr><td>b</td><td>RWC-MDB-P-2001 No. 7 "Prologue"<br>
+<a href="tca/RWC-P01-07_RWC-G02-02_input.wav">Full</a><br>
+<a href="tca/RWC-P01-07_RWC-G02-02_input_H.wav">Harmonic component</a><br>
+<a href="tca/RWC-P01-07_RWC-G02-02_input_P.wav">Percussive component</a>
+</td>
+<td>RWC-MDB-G-2001 No. 14 "Tuesday Morning"<br>
+<a href="tca/RWC-P01-07_RWC-G02-02_target.wav">Full</a><br>
+<a href="tca/RWC-P01-07_RWC-G02-02_target_H.wav">Harmonic component</a><br>
+<a href="tca/RWC-P01-07_RWC-G02-02_target_P.wav">Percussive component</a>
+</td>
+<td>
+<a href="tca/RWC-P01-07_RWC-G02-02_copy_algo11.wav">Full</a><br>
+<a href="tca/RWC-P01-07_RWC-G02-02_copy_H_algo11.wav">Harmonic component</a><br>
+<a href="tca/RWC-P01-07_RWC-G02-02_copy_P_algo11.wav">Percussive component</a>
+</td>
+<td>
+<a href="tca/RWC-P01-07_RWC-G02-02_copy_algo4.wav">Full</a><br>
+<a href="tca/RWC-P01-07_RWC-G02-02_copy_H_algo4.wav">Harmonic component</a><br>
+<a href="tca/RWC-P01-07_RWC-G02-02_copy_P_algo4.wav">Percussive component</a>
+</td>
+</tr>
+<tr><td>c</td><td>RWC-MDB-P-2001 No. 64 "So Long"<br>
+<a href="tca/RWC-P04-16_RWC-P01-07_input.wav">Full</a><br>
+<a href="tca/RWC-P04-16_RWC-P01-07_input_H.wav">Harmonic component</a><br>
+<a href="tca/RWC-P04-16_RWC-P01-07_input_P.wav">Percussive component</a>
+</td>
+<td>RWC-MDB-P-2001 No. 7 "Prologue"<br>
+<a href="tca/RWC-P04-16_RWC-P01-07_target.wav">Full</a><br>
+<a href="tca/RWC-P04-16_RWC-P01-07_target_H.wav">Harmonic component</a><br>
+<a href="tca/RWC-P04-16_RWC-P01-07_target_P.wav">Percussive component</a>
+</td>
+<td>
+<a href="tca/RWC-P04-16_RWC-P01-07_copy_algo4.wav">Full</a><br>
+<a href="tca/RWC-P04-16_RWC-P01-07_copy_H_algo4.wav">Harmonic component</a><br>
+<a href="tca/RWC-P04-16_RWC-P01-07_copy_P_algo4.wav">Percussive component</a>
+</td>
+<td>
+<a href="tca/RWC-P04-16_RWC-P01-07_copy_algo11.wav">Full</a><br>
+<a href="tca/RWC-P04-16_RWC-P01-07_copy_H_algo11.wav">Harmonic component</a><br>
+<a href="tca/RWC-P04-16_RWC-P01-07_copy_P_algo11.wav">Percussive component</a>
+</td>
+</tr>
+<tr><td>d</td><td>RWC-MDB-P-2001 No. 64 "So Long"<br>
+<a href="tca/RWC-P04-16_RWC-G02-02_input.wav">Full</a><br>
+<a href="tca/RWC-P04-16_RWC-G02-02_input_H.wav">Harmonic component</a><br>
+<a href="tca/RWC-P04-16_RWC-G02-02_input_P.wav">Percussive component</a>
+</td>
+<td>RWC-MDB-G-2001 No. 14 "Tuesday Morning"<br>
+<a href="tca/RWC-P04-16_RWC-G02-02_target.wav">Full</a><br>
+<a href="tca/RWC-P04-16_RWC-G02-02_target_H.wav">Harmonic component</a><br>
+<a href="tca/RWC-P04-16_RWC-G02-02_target_P.wav">Percussive component</a>
+</td>
+<td>
+<a href="tca/RWC-P04-16_RWC-G02-02_copy_algo11.wav">Full</a><br>
+<a href="tca/RWC-P04-16_RWC-G02-02_copy_H_algo11.wav">Harmonic component</a><br>
+<a href="tca/RWC-P04-16_RWC-G02-02_copy_P_algo11.wav">Percussive component</a>
+</td>
+<td>
+<a href="tca/RWC-P04-16_RWC-G02-02_copy_algo4.wav">Full</a><br>
+<a href="tca/RWC-P04-16_RWC-G02-02_copy_H_algo4.wav">Harmonic component</a><br>
+<a href="tca/RWC-P04-16_RWC-G02-02_copy_P_algo4.wav">Percussive component</a>
+</td>
+</tr>
+<tr><td>e</td><td>RWC-MDB-G-2001 No. 14 "Tuesday Morning"<br>
+<a href="tca/RWC-G02-02_RWC-P01-07_input.wav">Full</a><br>
+<a href="tca/RWC-G02-02_RWC-P01-07_input_H.wav">Harmonic component</a><br>
+<a href="tca/RWC-G02-02_RWC-P01-07_input_P.wav">Percussive component</a>
+</td>
+<td>RWC-MDB-P-2001 No. 7 "Prologue"<br>
+<a href="tca/RWC-G02-02_RWC-P01-07_target.wav">Full</a><br>
+<a href="tca/RWC-G02-02_RWC-P01-07_target_H.wav">Harmonic component</a><br>
+<a href="tca/RWC-G02-02_RWC-P01-07_target_P.wav">Percussive component</a>
+</td>
+<td>
+<a href="tca/RWC-G02-02_RWC-P01-07_copy_algo4.wav">Full</a><br>
+<a href="tca/RWC-G02-02_RWC-P01-07_copy_H_algo4.wav">Harmonic component</a><br>
+<a href="tca/RWC-G02-02_RWC-P01-07_copy_P_algo4.wav">Percussive component</a>
+</td>
+<td>
+<a href="tca/RWC-G02-02_RWC-P01-07_copy_algo11.wav">Full</a><br>
+<a href="tca/RWC-G02-02_RWC-P01-07_copy_H_algo11.wav">Harmonic component</a><br>
+<a href="tca/RWC-G02-02_RWC-P01-07_copy_P_algo11.wav">Percussive component</a>
+</td>
+</tr>
+<tr><td>f</td><td>RWC-MDB-G-2001 No. 14 "Tuesday Morning"<br>
+<a href="tca/RWC-G02-02_RWC-P04-16_input.wav">Full</a><br>
+<a href="tca/RWC-G02-02_RWC-P04-16_input_H.wav">Harmonic component</a><br>
+<a href="tca/RWC-G02-02_RWC-P04-16_input_P.wav">Percussive component</a>
+</td>
+<td>RWC-MDB-P-2001 No. 64 "So Long"<br>
+<a href="tca/RWC-G02-02_RWC-P04-16_target.wav">Full</a><br>
+<a href="tca/RWC-G02-02_RWC-P04-16_target_H.wav">Harmonic component</a><br>
+<a href="tca/RWC-G02-02_RWC-P04-16_target_P.wav">Percussive component</a>
+</td>
+<td>
+<a href="tca/RWC-G02-02_RWC-P04-16_copy_algo4.wav">Full</a><br>
+<a href="tca/RWC-G02-02_RWC-P04-16_copy_H_algo4.wav">Harmonic component</a><br>
+<a href="tca/RWC-G02-02_RWC-P04-16_copy_P_algo4.wav">Percussive component</a>
+</td>
+<td>
+<a href="tca/RWC-G02-02_RWC-P04-16_copy_algo11.wav">Full</a><br>
+<a href="tca/RWC-G02-02_RWC-P04-16_copy_H_algo11.wav">Harmonic component</a><br>
+<a href="tca/RWC-G02-02_RWC-P04-16_copy_P_algo11.wav">Percussive component</a>
+</td>
+</tr>
+
+<!-- hereafter overtuned -->
+<tr><td>g</td><td>RWC-MDB-P-2001 No. 1 "Prologue"<br>
+<a href="tca/RWC-P01-07_RWC-P04-16_allbass_input.wav">Full</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_allbass_input_H.wav">Harmonic component</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_allbass_input_P.wav">Percussive component</a>
+</td>
+<td>RWC-MDB-P-2001 No. 64 "So Long"<br>
+<a href="tca/RWC-P01-07_RWC-P04-16_allbass_target.wav">Full</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_allbass_target_H.wav">Harmonic component</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_allbass_target_P.wav">Percussive component</a>
+</td>
+<td>
+<a href="tca/RWC-P01-07_RWC-P04-16_allbass_copy_algo4.wav">Full</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_allbass_copy_H_algo4.wav">Harmonic component</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_allbass_copy_P_algo4.wav">Percussive component</a>
+</td>
+<td>
+<a href="tca/RWC-P01-07_RWC-P04-16_allbass_copy_algo11.wav">Full</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_allbass_copy_H_algo11.wav">Harmonic component</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_allbass_copy_P_algo11.wav">Percussive component</a>
+</td>
+</tr>
+
+<tr><td>h</td><td>RWC-MDB-P-2001 No. 1 "Prologue"<br>
+<a href="tca/RWC-P01-07_RWC-P04-16_allsnare_input.wav">Full</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_allsnare_input_H.wav">Harmonic component</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_allsnare_input_P.wav">Percussive component</a>
+</td>
+<td>RWC-MDB-P-2001 No. 64 "So Long"<br>
+<a href="tca/RWC-P01-07_RWC-P04-16_allsnare_target.wav">Full</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_allsnare_target_H.wav">Harmonic component</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_allsnare_target_P.wav">Percussive component</a>
+</td>
+<td>
+<a href="tca/RWC-P01-07_RWC-P04-16_allsnare_copy_algo11.wav">Full</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_allsnare_copy_H_algo11.wav">Harmonic component</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_allsnare_copy_P_algo11.wav">Percussive component</a>
+</td>
+<td>
+<a href="tca/RWC-P01-07_RWC-P04-16_allsnare_copy_algo4.wav">Full</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_allsnare_copy_H_algo4.wav">Harmonic component</a><br>
+<a href="tca/RWC-P01-07_RWC-P04-16_allsnare_copy_P_algo4.wav">Percussive component</a>
+</td>
+</tr>
+
+
+</table>
+<div style="clear: both;">&nbsp;</div>
+<footer>
+<img src="../images/bg_banner_grey.gif" width="900" height="5" alt="logo_banner"/>
+Tomohiko Nakamura's HP (c) 2013 | Design by <a href="http://www.html5-templates.co.uk" target="_blank">HTML5 Templates</a>
+</footer>
+</div>
+</body>
+</html>
