@@ -1,0 +1,297 @@
+
+    <!DOCTYPE html>
+    <html lang=en>
+    <head>
+    <meta charset=UTF-8>
+    <title>yifen_2_11</title>
+    <!--<link href="../../style2.css"
+    rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="bevel.js"
+    mce_src="bevel.js"></script>-->
+    <!--[if lt IE 9]>
+    2
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    3
+    <![endif]-->
+    </head>
+    <body>
+    <div id="page">
+    <table border="1">
+            <tr>
+            <th>Original</th>
+            <th>Estimate with 5 bases</th>
+            <th>Estimate with 10 bases</th>
+            <th>Estimate with 20 bases</th>
+            <th>Estimate with KL-divergence NMF</th>
+            <th>Estimate with Itakura-Saito-divergence NMF</th>
+            </tr>
+            <tr><td><b>amy_13_02</b><br>Mixed<br>
+            <audio controls preload="metadata">
+            <source src="orig/0dB/amy_13_02_mixed_0dB.wav"></src>
+            </audio>
+            <br>
+            Singing Voice<br>
+            <audio controls preload="metadata">
+            <source src="orig/vocal/amy_13_02_vocal.wav"></src>
+            </audio>
+            <br>
+            Accompaniment<br>
+            <audio controls preload="metadata">
+            <source src="orig/accomp/amy_13_02_accomp.wav"></src>
+            </audio>
+            <br>
+            </td>
+            <td>Singing Voice<br><b><em>p=0.100</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS005/amy_13_02_mixed_0dB_res_p0.100.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.200</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS005/amy_13_02_mixed_0dB_res_p0.200.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.300</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS005/amy_13_02_mixed_0dB_res_p0.300.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.400</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS005/amy_13_02_mixed_0dB_res_p0.400.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.500</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS005/amy_13_02_mixed_0dB_res_p0.500.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.600</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS005/amy_13_02_mixed_0dB_res_p0.600.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.700</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS005/amy_13_02_mixed_0dB_res_p0.700.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.800</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS005/amy_13_02_mixed_0dB_res_p0.800.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.900</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS005/amy_13_02_mixed_0dB_res_p0.900.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.000</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS005/amy_13_02_mixed_0dB_res_p1.000.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.100</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS005/amy_13_02_mixed_0dB_res_p1.100.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.200</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS005/amy_13_02_mixed_0dB_res_p1.200.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.300</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS005/amy_13_02_mixed_0dB_res_p1.300.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.400</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS005/amy_13_02_mixed_0dB_res_p1.400.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.500</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS005/amy_13_02_mixed_0dB_res_p1.500.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.600</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS005/amy_13_02_mixed_0dB_res_p1.600.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.700</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS005/amy_13_02_mixed_0dB_res_p1.700.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.800</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS005/amy_13_02_mixed_0dB_res_p1.800.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.900</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS005/amy_13_02_mixed_0dB_res_p1.900.wav"></src>
+                    </audio><hr>
+                    <b><em>p=2.000</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS005/amy_13_02_mixed_0dB_res_p2.000.wav"></src>
+                    </audio><hr>
+                    </td><td>Singing Voice<br><b><em>p=0.100</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS010/amy_13_02_mixed_0dB_res_p0.100.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.200</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS010/amy_13_02_mixed_0dB_res_p0.200.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.300</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS010/amy_13_02_mixed_0dB_res_p0.300.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.400</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS010/amy_13_02_mixed_0dB_res_p0.400.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.500</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS010/amy_13_02_mixed_0dB_res_p0.500.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.600</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS010/amy_13_02_mixed_0dB_res_p0.600.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.700</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS010/amy_13_02_mixed_0dB_res_p0.700.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.800</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS010/amy_13_02_mixed_0dB_res_p0.800.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.900</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS010/amy_13_02_mixed_0dB_res_p0.900.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.000</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS010/amy_13_02_mixed_0dB_res_p1.000.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.100</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS010/amy_13_02_mixed_0dB_res_p1.100.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.200</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS010/amy_13_02_mixed_0dB_res_p1.200.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.300</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS010/amy_13_02_mixed_0dB_res_p1.300.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.400</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS010/amy_13_02_mixed_0dB_res_p1.400.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.500</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS010/amy_13_02_mixed_0dB_res_p1.500.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.600</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS010/amy_13_02_mixed_0dB_res_p1.600.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.700</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS010/amy_13_02_mixed_0dB_res_p1.700.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.800</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS010/amy_13_02_mixed_0dB_res_p1.800.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.900</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS010/amy_13_02_mixed_0dB_res_p1.900.wav"></src>
+                    </audio><hr>
+                    <b><em>p=2.000</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS010/amy_13_02_mixed_0dB_res_p2.000.wav"></src>
+                    </audio><hr>
+                    </td><td>Singing Voice<br><b><em>p=0.100</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS020/amy_13_02_mixed_0dB_res_p0.100.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.200</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS020/amy_13_02_mixed_0dB_res_p0.200.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.300</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS020/amy_13_02_mixed_0dB_res_p0.300.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.400</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS020/amy_13_02_mixed_0dB_res_p0.400.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.500</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS020/amy_13_02_mixed_0dB_res_p0.500.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.600</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS020/amy_13_02_mixed_0dB_res_p0.600.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.700</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS020/amy_13_02_mixed_0dB_res_p0.700.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.800</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS020/amy_13_02_mixed_0dB_res_p0.800.wav"></src>
+                    </audio><hr>
+                    <b><em>p=0.900</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS020/amy_13_02_mixed_0dB_res_p0.900.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.000</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS020/amy_13_02_mixed_0dB_res_p1.000.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.100</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS020/amy_13_02_mixed_0dB_res_p1.100.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.200</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS020/amy_13_02_mixed_0dB_res_p1.200.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.300</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS020/amy_13_02_mixed_0dB_res_p1.300.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.400</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS020/amy_13_02_mixed_0dB_res_p1.400.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.500</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS020/amy_13_02_mixed_0dB_res_p1.500.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.600</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS020/amy_13_02_mixed_0dB_res_p1.600.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.700</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS020/amy_13_02_mixed_0dB_res_p1.700.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.800</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS020/amy_13_02_mixed_0dB_res_p1.800.wav"></src>
+                    </audio><hr>
+                    <b><em>p=1.900</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS020/amy_13_02_mixed_0dB_res_p1.900.wav"></src>
+                    </audio><hr>
+                    <b><em>p=2.000</em></b>,<br>
+                    <audio controls preload="metadata">
+                    <source src="0dB/BS020/amy_13_02_mixed_0dB_res_p2.000.wav"></src>
+                    </audio><hr>
+                    </td><td>
+            <audio controls preload="metadata">
+            <source src="0dB/BS020/amy_13_02_mixed_0dB_res_Id.wav"></src>
+            </audio>
+            <br>
+            </td><td>
+            <audio controls preload="metadata">
+            <source src="0dB/BS020/amy_13_02_mixed_0dB_res_IS.wav"></src>
+            </audio>
+            <br>
+            </td></tr></table>
+    <footer><hr></footer>
+    </body>
+    </html>
