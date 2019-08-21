@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<!--[if IE]>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<![endif]-->
+	<title>Tomohiko Nakamura</title>
+	<!-- BOOTSTRAP CORE STYLE  -->
+	<link href="assets/css/bootstrap.css" rel="stylesheet" />
+	<!-- FONT AWESOME ICON STYLE  -->
+	<link href="assets/css/font-awesome.css" rel="stylesheet" />
+	<!-- CUSTOM STYLE CSS -->
+	<link href="assets/css/style.css" rel="stylesheet" />
+	<!-- CUSTOM THEME COLOR -- YOU CAN USE LIGHT & DARK THEMES  -->
+	<link href="assets/css/themes/dark.css" rel="stylesheet" />
+	<!-- GOOGLE FONT -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top scrollclass">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">TOP</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#home-sec">Home</a></li>
+					<li><a href="#interests">Research Interests</a></li>
+					<li><a href="#demo">Demo</a></li>
+					<li><a href="#biography">Biography</a></li>
+					<li><a href="#publications">Publications & Awards</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--END NAB BAR SECTION-->
+	<div id="home-sec">
+		<div class="overlay">
+			<div class="container">
+				<div class="row pad-top scrollclass">
+					<div class="col-md-2">
+						<img src="images/nakamura100x100.jpg" width="120"></img>
+					</div>
+					<div class="col-md-10">
+						<h1>Tomohiko Nakamura</h1>
+						<p class="home-p">
+							I received B.E., M.S. and Ph.D degrees from the University of Tokyo, Japan, in 2011, 2013
+							and 2016.
+							<br>
+							I am currently with Intelligent Systems Laboratory, SECOM.
+							<br>
+							<mark>E-mail: Tomohiko.Nakamura.JP[at]ieee.org (replace [at] with "@")</mark>
+							<br>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!--END HOME SECTION-->
+	<section id="features-sec">
+		<div class="container">
+			<div class="row text-left min-set">
+				<div class="col-md-12" id="interests">
+					<h2>Research Interests</h2>
+					<ul>
+						<li> Audio Signal Synthesis/Construction
+							<ul>
+								<li>
+									Fast Signal Reconstruction from Magnitude Spectrogram of Constant-Q transform (or
+									Continuous Wavelet
+									Transform) based on Spectrogram Consistency
+									<br>
+									<img src="./images/8beat.png" height="18px"></img>
+									<a href="demo/fastCWT.html">[Demo Page]</a>
+								</li>
+							</ul>
+						</li>
+						<li> Music Audio Signal Processing
+							<ul>
+								<li> Harmonic-Temporal Factor Decomposition for Monural Source Separation
+									<br>
+									<img src="./images/8beat.png" height="18px"></img>
+									<a href="demo/HTFD.html">[Demo Page]</a>
+								<li>
+									Timbre Replacement of Harmonic and Drum Components for Music Audio Signals
+									<br>
+									<img src="./images/8beat.png" height="18px"></img>
+									<a href="demo/TimbreReplacer.html">[Demo Page]</a>
+								</li>
+								<li>Acoustic score following and acousitc automatic accompaniment for musical
+									performance in practice
+									<br>
+									<img src="./images/8beat.png" height="18px"></img>
+									<a href="demo/automatic_accompaniment.html">[Demo Page]</a>
+								<li>MIDI score following and automatic accompaniment system for polyphonic MIDI
+									input/output
+									<br>
+									<img src="./images/8beat.png" height="18px"></img>
+									<a href="http://hil.t.u-tokyo.ac.jp/software/Eurydice">[Project Page]</a>
+								<li> Multipitch estimation of acoustic signals of music.
+									<br>
+									<a href="pdf/paper/MNakano2011WASPAA10.pdf">[.pdf]</a>
+							</ul>
+						<li> Machine Learning, Pattern Recognition
+							<ul>
+								<li> Nonparametric Bayesian inference for signal processing
+							</ul>
+						<li> System Biology
+							<ul>
+								<li> Local stability/instability analysis of quorum-sensing networks in a multi-cell
+									environment
+									<br>
+									<a
+										href="https://www.jstage.jst.go.jp/article/jcmsi/7/3/7_133/_article">[J-Stage]</a>
+							</ul>
+					</ul>
+				</div>
+				<div class="col-md-12" id="demo">
+					<h2>Demo</h2>
+					<ul>
+						<li> <a href="demo/HTFD.html">Automatic Key Transposition Using Harmonic-Temporal Factor
+								Decomposition</a>
+						</li>
+						<li> <a href="demo/fastCWT.html">Fast Signal Reconstruction/Phase Recovery</a></li>
+						<li><a href="demo/TimbreReplacer.html">Timbre Replacement</a></li>
+						<li>Automatic Accompaniment for musical performnace during practice
+							<a href="demo/automatic_accompaniment.html">[Audio input]</a>,
+							<a href="http://hil.t.u-tokyo.ac.jp/software/Eurydice/index-e.html">[MIDI input]</a>.
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-12" id="biography">
+					<h2>Biography</h2>
+					<ul>
+						<li><em>Apr. 2007 - Mar. 2009:</em>
+							<ul>Natural Science Course I, College of Arts and Sciences, the University of Tokyo.</ul>
+						</li>
+						<li> <em>Apr. 2009 - Mar. 2011:</em>
+							<ul>Department of Mathematical Engineering and Information Physics, Faculty of Engineering,
+								the University
+								of Tokyo.</ul>
+						</li>
+						<li> <em>Apr. 2011 - Mar. 2013:</em>
+							<ul>Master Course, Graduate School of Information Science and Technology, the University of
+								Tokyo.
+								<br>(Supervised by <a href="http://hil.t.u-tokyo.ac.jp/~sagayama/index-e.html">Prof.
+									Shigeki
+									Sagayama</a>)
+							</ul>
+						</li>
+						<li>
+							<em>Jul. 2011 - Aug.:</em>
+							<ul>Summer internship at <a href="http://www.kecl.ntt.co.jp/rps/index.html">NTT
+									Communication Science
+									Lab</a>.
+								<br>
+								(Supervised by <a href="http://www.kecl.ntt.co.jp/as/members/iwata/">Dr. Tomoharu
+									Iwata</a>)
+							</ul>
+						</li>
+						<li><em>Apr. 2013 - Mar. 2016:</em>
+							<ul>Ph.D. Course, Graduate School of Information Science and Technology, the University of
+								Tokyo.<br>(Supervised by <a
+									href="http://www.cyb.ipc.i.u-tokyo.ac.jp/members/hara/index.html">Prof.
+									Shinji Hara</a> and <a
+									href="http://hil.t.u-tokyo.ac.jp/~kameoka/index-e.html">Visiting Associate
+									Prof. Hirokazu Kameoka</a>)</ul>
+						</li>
+						<li>
+							<em>Aug. 2013 - Sep. 2013:</em>
+							<ul>
+								Internship at <a href="http://staff.aist.go.jp/m.goto/MIG/index-j.html">Media
+									Interaction Group</a>,<a href="http://itri.aist-go.jp/en/index.html">Information
+									Technology Research Insitutute</a>,<a
+									href="http://www.aist.go.jp/index_en.html">National Institute of Advanced Industrial
+									Science and
+									Technology</a>.
+								<br>
+								(Supervised by <a href="https://staff.aist.go.jp/m.goto/index.html">Dr. Masataka
+									Goto</a> and <a href="http://winnie.kuis.kyoto-u.ac.jp/members/yoshii">Dr. Kazuyoshi
+									Yoshii</a>)
+							</ul>
+						</li>
+						<li>
+							<em>Apr. 2015 - Mar. 2016:</em>
+							<ul>
+								Research Fellow of Japan Society for the Promotion of Science (JSPS)
+							</ul>
+						</li>
+						<li>
+							<em>Apr. 2016 - present:</em>
+							<ul>
+								Intelligent Systems Laboratory, SECOM
+							</ul>
+						</li>
+					</ul>
+					<br>
+					<h2>Member</h2>
+					<ul>
+						<li>IEEE Signal Processing Society (SPS)</li>
+						<li>Information Processing Society of Japan (IPSJ)</li>
+						<li>Acoustic Society of Japan (ASJ)</li>
+					</ul>
+				</div>
+				<div class="col-md-12" id="publications">
+					<h2>Publications</h2>
+					<div id="journals">
+						<h3>Journals</h3>
+						<ol>
+							<li><U>Tomohiko Nakamura</U>, Eita Nakamura, Shigeki Sagayama, <b>"Real-Time Audio-to-Score
+									Alignment of
+									Music Performances Containing Errors and Arbitrary Repeats and Skips,"</b> IEEE/ACM
+								Transactions on
+								Audio, Speech and Language Processing (IEEE/ACM TASLP), vol. 24, issue 2, pp. 329--339,
+								Feb. 2016.
+								<br>
+								<a href="http://arxiv.org/abs/1512.07748">[arXiv:1512.07748]</a>,
+								<a href="http://dx.doi.org/10.1109/TASLP.2015.2507862">[IEEE Xplore]</a>,
+								<a href="pdf/bib/TNakamura201602IEEEACMTASLP.bib">[.bib]</a>.
+							</li>
+							<li><U>Tomohiko Nakamura</U>, Yutaka Hori and Shinji Hara, <b>"Hierarchical Modeling and
+									Local Stability
+									Analysis for Repressilators Coupled by Quorum Sensing,"</b> <em>SICE Journal of
+									Control, Measurement,
+									and System Integration (JCMSI)</em>, vol. 7, no. 3, pp. 133-140, May, 2014.
+								<br>
+								<a href="https://www.jstage.jst.go.jp/article/jcmsi/7/3/7_133/_article">[J-Stage]</a>,
+								<a href="pdf/bib/TNakamura201605JCMSI.bib">[.bib]</a>.
+								<br>
+								<font color="#0000CD">[2015年計測自動制御学会 論文賞 (武田賞) ]</font>
+							</li>
+							<li>Eita Nakamura, <U>Tomohiko Nakamura</U>, Yasuyuki Saito, Nobutaka Ono and Shigeki
+								Sagayama,
+								<b>"Outer-Product Type Hidden Markov Model and Polyphonic MIDI Score Following,"</b>
+								<em>Journal of New
+									Music Research (JNMR)</em>, vol. 43, issue 2, pp. 183--201, Apr. 2014.
+								<br>
+								<a href="http://arxiv.org/abs/1404.2313">[arXiv:1404.2313]</a>,
+								<a href="http://www.tandfonline.com/doi/full/10.1080/09298215.2014.884145">[Journal
+									Site]</a>,
+								<a href="pdf/bib/ENakamura201404JNMR.bib">[.bib]</a>.
+							</li>
+						</ol>
+					</div>
+					<div id="internationals">
+						<h3>Peer-Reviewed International Conferences and Workshops</h3>
+						<ol>
+							<li><U>Tomohiko Nakamura</U> and Hirokazu Kameoka, <b>"Shifted and Convolutive Source-Filter
+									Non-Negative
+									Matrix Factorization for Monaural Audio Source Separation,"</b> <em> Proc. 41st IEEE
+									International
+									Conference on Acoustics, Speech and Signal Processing (ICASSP)</em>, pp. 489--493,
+								Mar. 2016.
+								<br>
+								<a href="pdf/paper/Nakamura2016ICASSP03.pdf">[.pdf]</a>,
+								<a href="pdf/bib/TNakamura201603ICASSP.bib">[.bib]</a>.
+							</li>
+							<li><U>Tomohiko Nakamura</U> and Hirokazu Kameoka, <b>"L_p-Norm Non-Negative Matrix
+									Factorization and Its
+									Application to Singing Voice Enhancement,"</b> <em>Proc. 40th IEEE International
+									Conference on
+									Acoustics, Speech and Signal Processing (ICASSP)</em>, pp. 2115--2119, MLSP-P4.1,
+								Apr. 2015.
+								<br>
+								<a href="pdf/paper/Nakamura2015ICASSP04.pdf">[.pdf]</a>,
+								<a href="pdf/bib/TNakamura201504ICASSP.bib">[.bib]</a>.
+							</li>
+							<li><U>Tomohiko Nakamura</U>, Kotaro Shikata, Norihiro Takamune and Hirokazu Kameoka,
+								<b>"Harmonic-Temporal Factor Decomposition Incorporating Music Prior Information for
+									Informed Monaural
+									Source Separation,"</b> <em>Proc. 15th International Society for Music Information
+									Retrieval
+									Conference (ISMIR2014),</em> pp. 623--628, Oct. 2014.
+								<br>
+								<a href="pdf/paper/Nakamura2014ISMIR10.pdf">[.pdf]</a>,
+								<a href="pdf/bib/TNakamura201410ISMIR.bib">[.bib]</a>.
+								&nbsp;
+								<img src="./images/8beat.png" height="18px"></img>
+								<a href="demo/HTFD.html">[Demo Page]</a>,
+								<br>
+								<font color="#0000CD">[Supported by the Tateishi Science and Technology Foundation]
+								</font>.
+							</li>
+							<li>Takuya Higuchi, Hirofumi Takeda, <U>Tomohiko Nakamura</U>, Hirokazu Kameoka, <b>"A
+									Unified Approach
+									for Underdetermined Blind Signal Separation and Source Activity Detection by
+									Multichannel Factorial
+									Hidden Markov Models,"</b> <em>Proc. 15th Annual Conference of the International
+									Speech Communication
+									Association (Interspeech2014)</em>, pp. 850--854, Sep. 2014.
+								<br>
+								<a href="pdf/paper/Higuchi2014Interspeech09.pdf">[.pdf]</a>,
+								<a href="pdf/bib/THiguchi201409INTERSPEECH.bib">[.bib]</a>.
+							</li>
+							<li><U>Tomohiko Nakamura</U> and Hirokazu Kameoka, <b>"Fast Signal Reconstruction from
+									Magnitude
+									Spectrogram of Continuous Wavelet Transform based on Spectrogram Consistency,"</b>
+								<em>Proc. 17th
+									International Conference on Digital Audio Effects (DAFx-14)</em>, pp. 129--135, Sep.
+								2014.
+								<br>
+								<a href="pdf/paper/Nakamura2014DAFx09.pdf">[.pdf]</a>,
+								<a href="pdf/bib/TNakamura201409DAFx.bib">[.bib]</a>,
+								&nbsp;
+								<img src="./images/8beat.png" height="18px"></img>
+								<a href="demo/fastCWT.html">[Demo Page]</a>,
+								<br>
+								<font color="#0000CD">[Supported by the Hara Research Foundation]</font>.
+							</li>
+							<li><U>Tomohiko Nakamura</U>, Hirokazu Kameoka, Kazuyoshi Yoshii and Masataka Goto,
+								<b>"Timbre Replacement
+									of Harmonic and Drum Components for Music Audio Signals,"</b> <em>Proc. 2014 IEEE
+									International
+									Conference on Acoustics, Speech and Signal Processing (ICASSP2014)</em>, pp.
+								7520--7524, May, 2014.
+								<br>
+								<a href="pdf/paper/Nakamura2014ICASSP05.pdf">[.pdf]</a>,
+								<a href="pdf/bib/TNakamura201405ICASSP.bib">[.bib]</a>,
+								&nbsp;
+								<img src="./images/8beat.png" height="18px"></img>
+								<a href="demo/TimbreReplacer.html">[Demo Page]</a>.
+							</li>
+							<li>Takuya Higuchi, Norihiro Takamune, <U>Tomohiko Nakamura</U> and Hirokazu Kameoka,
+								<b>"Underdetermined
+									Blind Separation and Tracking of Moving Sources based on DOA-HMM,"</b> <em>Proc.
+									2014 IEEE
+									International Conference on Acoustics, Speech and Signal Processing
+									(ICASSP2014)</em>, pp. 3215--3219,
+								May, 2014.
+								<br>
+								<a href="pdf/paper/Higuchi2014ICASSP05.pdf">[.pdf]</a>,
+								<a href="pdf/bib/THiguchi201405ICASSP.bib">[.bib]</a>.
+							</li>
+							<li>Shigeki Sagayama, <U>Tomohiko Nakamura</U>, Eita Nakamura, Yasuyuki Saito, Hirokazu
+								Kameoka and
+								Nobutaka Ono, <b>"Automatic Music Accompaniment Allowing Errors and Arbitrary Repeats
+									and Jumps,"</b>
+								<em>Proc. Meetings on Acoustics (POMA)</em>, vol. 21, 035003, 2014.
+								<br>
+								<a
+									href="http://scitation.aip.org/content/asa/journal/poma/21/1/10.1121/1.4904932">[Proceeding]</a>,
+								<a href="pdf/bib/SSagayama201405ASA.bib">[.bib]</a>,
+								<font color="#cc0099">(Invited Talk)</font>.
+							</li>
+							<li><U>Tomohiko Nakamura</U>, Eita Nakamura and Shigeki Sagayama, <b>"Acoustic Score
+									Following to Musical
+									Performance with Errors and Arbitrary Repeats and Skips for Automatic
+									Accompaniment,"</b> <em>Proc.
+									Sound and Music Computing Conference (SMC2013)</em>, pp. 299--304, Aug. 2013.
+								<br>
+								<a href="pdf/paper/Nakamura2013SMC08.pdf">[.pdf]</a>,
+								<a href="http://smcnetwork.org/node/1754">[Proceeding]</a>,
+								<a href="pdf/bib/TNakamura201308SMC.bib">[.bib]</a>,
+								<img src="./images/8beat.png" height="18px"></img>
+								<a href="demo/automatic_accompaniment.html">[Demo Page]</a>,
+								<br>
+								<font color="#0000CD">[Supported by the Telecommunications Advancement Foundation]
+								</font>.
+							</li>
+							<li>
+								Masahiro Nakano, Jonathan Le Roux, Hirokazu Kameoka, <U>Tomohiko Nakamura</U>, Nobutaka
+								Ono and Shigeki
+								Sagayama, <b>"Bayesian Nonparametric Spectrogram Modeling Based on Infinite Factorial
+									Infinite Hidden
+									Markov Model,"</b> <em>Proc. IEEE Workshop on Applications of Signal Processing to
+									Audio and Acoustics
+									(WASPAA)</em>, pp. 325-328, Oct. 2011.
+								<br>
+								<a href="pdf/paper/MNakano2011WASPAA10.pdf">[.pdf]</a>,
+								<a href="pdf/bib/MNakano201110WASPAA.bib">[.bib]</a>.
+							</li>
+							<li><U>Tomohiko Nakamura</U>, Shinji Hara and Yutaka Hori, <b>"Local Stability Analysis for
+									a class of
+									Quorum-Sensing Networks with Cyclic Gene Regulatory Networks,"</b> <em>Proc. SICE
+									Annual
+									Conference</em>, pp. 2111--2116, Sep. 2011.
+								<br>
+								<a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6060320">[IEEE
+									Xplore]</a>,
+								<a href="pdf/bib/TNakamura201109SICEAC.bib">[.bib]</a>.
+								<br>
+								<font color="#0000CD">[T.N. received SICE Annual Conference 2011 International Award and
+									Finalist of
+									Young Author's Award]</font>
+						</ol>
+					</div>
+					<div id="nonreviwed-intconf">
+						<h3>Non-Reviewed International Conferences and Workshops</h3>
+						<ol>
+							<li>
+								<U>Tomohiko Nakamura</U>, Daisuke Saito, Hirokazu Kameoka and Shigeki Sagayama,
+								<b>"Structure analysis
+									based on music modeling with repeated segments,"</b> <em>VERSAMUS 2012 Workshop on
+									Advances in Music
+									Signal and Information Processing</em>, Mar. 2012.
+								<br>
+								<a href="http://versamus.inria.fr/workshops/2012-workshop">[VERSAMUS2012 Page]</a>.
+							</li>
+						</ol>
+					</div>
+					<div id="review">
+						<h3>Review Papers</h3>
+						<ol>
+							<li>Hirokazu Kameoka, <U>Tomohiko Nakamura</U> and , <b>"Recent advances in music signal
+									processing
+									techniques,"</b>　The Journal of Institute of Electronics, Information and
+								Communication Engineers,
+								vol. 98, no. 6, pp. 467--474, Jun. 2015 (in Japanese).
+								<br>
+								<a href="pdf/paper/Kameoka2015IEICE06review.pdf">[.pdf]</a>,
+								<a href="pdf/bib/HKameoka201506JIEICE.bib">[.bib]</a>.
+							</li>
+						</ol>
+					</div>
+					<div id="domestics">
+						<h3>Domestic Conferences</h3>
+						<ol>
+							<li>竹川 佳成, 植村 あい子, 奥村 健太, 高道 慎之介, <U>中村 友彦</U>, 平井 辰典, 森尻 有貴, 矢澤 櫻子, <b>"新博士によるパネルディスカッションV
+									「新博士さんいらっしゃい!」,"</b> <em>情報処理学会研究報告</em>, 2016-MUS-112 (10), pp. 1--6, Aug. 2016.
+								<br>
+								<a href="pdf/paper/Nakamura2016MUS08.pdf">[.pdf]</a>,
+							</li>
+							<li><U>中村 友彦</U>, 亀岡 弘和, <b>"高速近似連続ウェーブレット変換による振幅スペクトログラムからの逐次位相推定法,"</b>
+								<em>情報処理学会研究報告</em>,
+								2016-MUS-111 (47), pp. 1--5, May 2016.
+								<br>
+								<a href="pdf/paper/Nakamura2016MUS05.pdf">[.pdf]</a>.
+							</li>
+							<li><U>中村 友彦</U>, 亀岡 弘和, <b>"非負値行列因子分解に基づく欠損データ補間による超解像声道スペクトル推定法,"</b>
+								<em>電子情報通信学会技術研究報告</em>, vol. 115,
+								523, SP2015-111, pp. 99--104, Mar. 2016.
+								<br>
+
+								<a href="pdf/paper/Nakamura2016IEICESP03.pdf">[.pdf]</a>.
+							</li>
+							<li><U>中村 友彦</U>, 亀岡 弘和, <b>"高速近似連続ウェーブレット変換による振幅スペクトログラムに対する実時間位相推定法,"</b>
+								<em>日本音響学会2016年春季研究発表会</em>,
+								pp. 933--936, Mar. 2016.
+								<br>
+
+								<a href="pdf/paper/Nakamura2016ASJ03A.pdf">[.pdf]</a>.
+							</li>
+							<li><U>中村 友彦</U>, 亀岡 弘和, <b>"非負値行列因子分解に基づく欠損データ補間による声道スペクトル推定法の検討,"</b>
+								<em>日本音響学会2016年春季研究発表会</em>, pp.
+								393--396, Mar. 2016.
+								<br>
+
+								<a href="pdf/paper/Nakamura2016ASJ03B.pdf">[.pdf]</a>.
+							</li>
+							<li><U>中村 友彦</U>, 亀岡 弘和, <b>"全極スペクトルモデルと擬似周期信号モデルのウェーブレット変換表現を用いた多重音スペクトログラムの調波時間因子分解,"</b>
+								<em>情報処理学会研究報告</em>, 2015-MUS-107 (50), May. 2015.
+								<br>
+
+								<a href="pdf/paper/Nakamura2015MUS05.pdf">[.pdf]</a>,
+								<br>
+								<font color="#0000CD">[音学シンポジウム2015年ポスター賞]</font>.
+							</li>
+							<li><U>中村 友彦</U>, 亀岡 弘和, <b>"全極スペクトルモデルを用いた調波時間因子分解による多重音解析,"</b> <em>情報処理学会研究報告</em>,
+								2015-MUS-106 (26),
+								Mar. 2015.
+								<br>
+
+								<a href="pdf/paper/Nakamura2015MUS03.pdf">[.pdf]</a>.
+							</li>
+							<li><U>中村 友彦</U>, 吉井 和佳, 後藤 真孝, 亀岡 弘和, <b>"音楽音響信号中の調波音の周波数特性およびドラムの音色の置換システム,"</b>
+								<em>情報処理学会研究報告</em>,
+								2014-MUS-104 (11), Aug. 2014.
+								<br>
+
+								<a href="pdf/paper/Nakamura2014MUS08.pdf">[.pdf]</a>.
+							</li>
+							<li><U>中村 友彦</U>, 亀岡 弘和, <b>"無矛盾性規準に基づく連続ウェーブレット変換スペクトログラムへの位相推定法と高速化,"</b>
+								<em>情報処理学会研究報告</em>,
+								2014-MUS-103 (41), May, 2014.
+								<br>
+
+								<a href="pdf/paper/Nakamura2014MUS05.pdf">[.pdf]</a>,
+								<br>
+								<font color="#0000CD">[2015年度山下記念研究賞]</font>.
+							</li>
+							<li>樋口 卓也, 高宗 典玄, <U>中村 友彦</U>, 亀岡 弘和, <b>"確率的モデル化に基づく移動音源の劣決定ブラインド音源分離,"</b>
+								<em>電子情報通信学会技術研究報告</em>,
+								vol. 114, no. 52, pp. 211--216, May, 2014.
+								<br>
+
+								<a href="pdf/paper/Higuchi2014SP05.pdf">[.pdf]</a>.
+							</li>
+							<li>四方 紘太郎, 高宗 典玄, <U>中村 友彦</U>, 亀岡 弘和, <b>"調波時間因子分解法に基づく事前情報付き多重音解析,"</b>
+								<em>情報処理学会研究報告</em>,
+								2014-MUS-103 (18), May, 2014.
+								<br>
+
+								<a href="pdf/paper/Shikata2014MUS05.pdf">[.pdf]</a>.
+							</li>
+							<li><U>中村 友彦</U>, 亀岡 弘和, <b>"連続ウェーブレット変換の高速近似アルゴリズムに基づく振幅スケーログラムへの無矛盾位相付加法の検討,"</b>
+								<em>日本音響学会2014年春季研究発表会講演集</em>, 3-2-15, Mar. 2014.
+								<br>
+
+								<a href="pdf/paper/Nakamura2014ASJ03a.pdf">[.pdf]</a>.
+							</li>
+							<li><U>中村 友彦</U>, 吉井 和佳, 後藤 真孝, 亀岡 弘和, <b>"音楽音響信号に含まれる調波音の周波数特性とドラムの音色の転写システム,"</b>
+								<em>日本音響学会2014年春季研究発表会講演集</em>, 3-5-5, Mar. 2014.
+								<br>
+
+								<a href="pdf/paper/Nakamura2014ASJ03.pdf">[.pdf]</a>,
+								<br>
+								<font color="#0000CD">[学生優秀発表賞]</font>.
+							</li>
+							<li>四方紘太郎, 高宗 典玄, <U>中村 友彦</U>, 亀岡 弘和, <b>"調波時間因子分解に基づく音楽事前情報付き多重音解析,"</b>
+								<em>日本音響学会2014年春季研究発表会講演集</em>,
+								3-5-7, Mar. 2014.
+								<br>
+
+								<a href="pdf/paper/Shikata2014ASJ03.pdf">[.pdf]</a>.
+							</li>
+							<li>樋口 卓哉, 高宗 典玄, <U>中村 友彦</U>, 亀岡 弘和, <b>"DOA-HMMに基づく劣決定ブラインド音源分離,"</b>
+								<em>日本音響学会2013年秋季研究発表会講演集</em>,
+								1-8-7, Sep. 2013.
+								<br>
+
+								<a href="pdf/paper/Higuchi2013ASJ10.pdf">[.pdf]</a>.
+							</li>
+							<li><U>中村 友彦</U>, 中村 栄太, 嵯峨山 茂樹, <b>"誤り・任意の弾き直し・弾き飛ばしを含む演奏音響信号への高速な楽譜追跡,"</b>
+								<em>情報処理学会研究報告</em>,
+								2013-MUS-99 (40), May, 2013.
+								<br>
+
+								<a href="pdf/paper/Nakamura2013MUS05.pdf">[.pdf]</a>
+							</li>
+							<li><U>中村 友彦</U>, 中村 栄太, 嵯峨山 茂樹, <b>"弾き直し・弾き飛ばしを含む音楽演奏への高速な音響入力楽譜追跡,"</b> <em>情報処理学会
+									第75回全国大会</em>, Mar,
+								2013.
+								<br>
+
+								<a href="pdf/paper/Nakamura2013IPSJ03.pdf">[.pdf]</a>
+								<br>
+								<font color="#0000CD">[学生奨励賞]</font>
+							</li>
+							<li>
+								<U>中村 友彦</U>, 水野 優, 鈴木 孝輔, 中村 栄太, 樋口 祐介, 深山 覚, 嵯峨山 茂樹, <b>"音楽演奏の誤りや反復に頑健な音響入力自動伴奏,"</b>
+								<em>日本音響学会2012年秋季研究発表会講演集</em>, 2-10-6, 20, pp. 931-934, Sep. 2012.
+								<br>
+
+								<a href="pdf/paper/Nakamura2012ASJ09.pdf">[.pdf]</a>
+							</li>
+							<li>中野 允裕, ルルー ジョナトン, 亀岡 弘和, <u>中村 友彦</u>, 小野 順貴, 嵯峨山 茂樹,
+								<b>"スペクトログラムのベイジアンノンパラメトリックモデリングに基づく音楽信号の解析,"</b> <em>情報処理学会研究報告</em>, 2011-MUS-91 (6),
+								Jul. 2011.
+								<br>
+
+								<a href="pdf/paper/MNakano2011MUS07.pdf">[.pdf]</a>
+							</li>
+						</ol>
+					</div>
+					<div id="symposium">
+						<h3>Symposium</h3>
+						<ol>
+							<li><U>中村 友彦</U>, 吉井 和佳, 後藤 真孝, 亀岡 弘和, <b>"音楽音響信号中の調波音の周波数特性およびドラムの音色の置換システム,"</b>
+								<em>OngaCRESTシンポジウム2014
+									-音楽情報処理研究が切り拓く未来を探る-,</em> Aug. 23, 2014.
+								<br>
+								<ul>
+									<li><a href="http://ongacrest.jp/">OngaCREST Homepage</a></li>
+									<li><a href="http://av.watch.impress.co.jp/docs/series/dal/20140825_663420.html">「人型ロボットのダンス」や「声の年齢制御」など、音楽情報処理の最先端をレポート
+											- 藤本健のDigital Audio Laboratory</a></li>
+									<li><a href="http://pc.watch.impress.co.jp/docs/column/kyokai/20140827_663740.html">コピー不可能な体験を価値の中核に～音楽情報処理の「OngaCRESTシンポジウム」レポート
+											- 森山和道の「ヒトと機械の境界面」</a></li>
+								</ul>
+							</li>
+						</ol>
+					</div>
+					<div id="theses">
+						<h3>Theses</h3>
+						<ol>
+							<li>Ph.D Thesis:
+								<br>
+								<U>Tomohiko Nakamura</U>, <b>"Source-Filter
+									Representation and Phase Estimation in Continuous
+									Wavelet Transform Domain for Monaural Music Audio
+									Editing,"</b>, the University of Tokyo, Mar. 2016.
+								<br>
+								<font color="#0000CD">[東京大学大学院情報理工学系研究科　研究科長賞]</font>.
+							</li>
+							<li>Master's Thesis:
+								<br>
+								<U>Tomohiko Nakamura</U>, <b>"Fast Score Following
+									to Acoustic Signal of Musical Performance with
+									Errors, Repeats and Skips,"</b>, the University of
+								Tokyo, Mar, 2013, in Japanese.
+							</li>
+							<li>Bachelor's Thesis: <br>
+								<U>Tomohiko Nakamkura</U>, <b>"Local Stability Analysis
+									of Cell-to-Cell Networks with Cyclic Gene
+									Regulatory Networks,"</b> the University of Tokyo,
+								Mar, 2011, in Japanese.
+							</li>
+						</ol>
+					</div>
+					<div id="patent">
+						<h3>Patents</h3>
+						<ol>
+							<li>伊藤 忠彦, <U>中村 友彦</U>, 島岡 政基, "証明書管理装置," 特開2019-57755.
+							<li>亀岡 弘和, <U>中村 友彦</U>, "声道スペクトル推定装置、声道スペクトル推定方法、及びプログラム," 特願2017-151188, 特許第6420781号.
+						</ol>
+					</div>
+					<div id="awards">
+						<h3>Awards</h3>
+						<ol>
+							<li>情報処理学会 2015年度研究会推薦博士論文</li>
+							<li>2015年度 東京大学 大学院情報理工学系研究科 研究科長賞
+							<li>2015年計測自動制御学会 論文賞 (武田賞)
+							<li>情報処理学会 2015年度山下記念研究賞
+							<li>音学シンポジウム2015年ポスター賞
+							<li>日本音響学会2014年春季研究発表会 学生優秀発表賞
+							<li>情報処理学会第75回全国大会 学生奨励賞
+							<li>情報処理学会第75回全国大会 情報処理学会推奨 修士論文認定
+							<li>SICE Annual Conference 2011 International Award
+							<li>SICE Annual Conference 2011 Finalist of Young Author Award
+						</ol>
+					</div>
+					<div id="funds">
+						<h3>Funds</h3>
+						<ol>
+							<li>Grant-in-Aid for JSPS Fellows (DC2), "人間の聴覚システムの模倣に基づく自律的音響信号処理の研究," Grant No. 15J09992,
+								(Apr. 2015 to Mar. 2016).</li>
+							<li>Research Fellowship for Young Scientists DC2 (Apr. 2015 to Mar. 2016)</li>
+							<li>立石科学技術振興財団 後期国際交流助成 (Oct. 2014.)
+							<li>原総合知的通信システム基金 第46回国際論文発表者助成 (Sept. 2014.)
+							<li>電気通信普及財団による海外渡航旅費援助 (Aug. 2013.)
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--END FEATURES SECTION-->
+
+	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+	<!-- CORE JQUERY  -->
+	<script src="assets/js/jquery-1.11.1.js"></script>
+	<!-- BOOTSTRAP SCRIPTS  -->
+	<script src="assets/js/bootstrap.js"></script>
+	<!-- NICE SCROLL SCRIPTS   -->
+	<script src="assets/js/jquery.nicescroll.min.js"></script>
+	<!-- EASING SCROLL SCRIPTS   -->
+	<script src="assets/js/jquery.easing.min.js"></script>
+	<!-- CUSTOM SCRIPTS  -->
+	<script src="assets/js/custom.js"></script>
+</body>
+
+</html>
