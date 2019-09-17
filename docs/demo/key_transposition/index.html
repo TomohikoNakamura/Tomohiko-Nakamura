@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Automatic Key Transposition Using Harmonic-Temporal Factor Decomposition</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <!-- <script src="https://unpkg.com/wavesurfer.js"></script> -->
+        <!-- plugins -->
+        <!-- <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.timeline.js"></script>
+		<script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.minimap.js"></script>
+		<script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.cursor.js"></script>
+		<script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.elan.js"></script>
+        <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.regions.js"></script>
+        <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.spectrogram.js"></script> -->
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Demonstration on Automatic Key Transposition Using Harmonic-Temporal Factor
+                Decomposition</h1>
+            <p class="lead">
+                Tomohiko Nakamura, (The University of Tokyo) and Hirokazu Kameoka
+                (Nippon Telegraph and Telephone Corporation)
+            </p>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row">
+            <p class="lead text-left">
+                Here we demonstrate automatic key transposition results obtained by the proposed method (Harmonic-Temporal Factor
+                Decomposition; HTFD) and a conventional method (Harmonic Non-Negative Matrix Factorization; Harmonic
+                NMF).
+                To do this, we
+                <ol class="lead text-left">
+                    <li class="text-left">separated the continuous wavelet transform (CWT) spectrogram of a music audio
+                        signal into the components associated with individual pitches using HTFD,</li>
+                    <li class="text-left">transposed the pitches of a particular set of the separated components,</li>
+                    <li class="text-left">added all the together to obtain the modified spectrogram,</li>
+                    <li class="text-left">and converted the modified spectrogram into a time-domain signal by using a
+                        fast signal reconstruction algorithm for CWT spectrograms.</li>
+                </ol>
+            </p>
+        </div>
+    </div>
+
+    <div class="album">
+        <div class="container">
+            <div class="row">
+                <table class="table light" style="table-layout: fixed; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Original</th>
+                            <th>Converted by the conventional method (Harmonic NMF)</th>
+                            <th>Converted by the proposed method (HTFD)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>
+                                01-AchGottundHerr from Bach10 dataset, C Major
+                                <br>
+                                <audio id="original" controls preload="metadata">
+                                    <source src="samples/01-AchGottundHerr.wav"></source>
+                                </audio>
+                            </th>
+                            <th>
+                                C Natural Minor Scale
+                                <br>
+                                <audio id="HNMF" controls preload="metadata">
+                                    <source src="samples/01-AchGottundHerr_transposed_HNMF2_44100.wav"></source>
+                                </audio>
+                            </th>
+                            <th>
+                                C Natural Minor Scale
+                                <br>
+                                <audio id="HTFD" controls preload="metadata">
+                                    <source src="samples/01-AchGottundHerr_transposed_HTFD3_44100.wav"></source>
+                                </audio>
+                            </th>
+                        </tr>
+                        
+                        <tr>
+                            <th>
+                                09-Jesus from Bach10 dataset, D Minor
+                                <br>
+                                <audio id="original" controls preload="metadata">
+                                    <source src="samples/09-Jesus.wav"></source>
+                                </audio>
+                            </th>
+                            <th>
+                                D Major Scale
+                                <br>
+                                <audio id="HNMF" controls preload="metadata">
+                                    <source src="samples/09-Jesus_transposed_HNMF2_44100.wav"></source>
+                                </audio>
+                            </th>
+                            <th>
+                                D Major Scale
+                                <br>
+                                <audio id="HTFD" controls preload="metadata">
+                                    <source src="samples/09-Jesus_transposed_HTFD3_44100.wav"></source>
+                                </audio>
+                            </th>
+                        </tr>
+                        
+                        <tr>
+                            <th>
+                                10-NunBitten from Bach10 dataset, A Major
+                                <br>
+                                <audio id="original" controls preload="metadata">
+                                    <source src="samples/10-NunBitten.wav"></source>
+                                </audio>
+                            </th>
+                            <th>
+                                A Natural Minor Scale
+                                <br>
+                                <audio id="HNMF" controls preload="metadata">
+                                    <source src="samples/10-NunBitten_transposed_HNMF2_44100.wav"></source>
+                                </audio>
+                            </th>
+                            <th>
+                                A Natural Minor Scale
+                                <br>
+                                <audio id="HTFD" controls preload="metadata">
+                                    <source src="samples/10-NunBitten_transposed_HTFD3_44100.wav"></source>
+                                </audio>
+                            </th>
+                        </tr>
+                        
+                        <tr>
+                            <th>
+                                AuMix_08_Spring_fl_vn from URMP dataset, C Major
+                                <br>
+                                <audio id="original" controls preload="metadata">
+                                    <source src="samples/AuMix_08_Spring_fl_vn.wav"></source>
+                                </audio>
+                            </th>
+                            <th>
+                                C Natural Minor Scale
+                                <br>
+                                <audio id="HNMF" controls preload="metadata">
+                                    <source src="samples/AuMix_08_Spring_fl_vn_transposed_HNMF2_44100.wav"></source>
+                                </audio>
+                            </th>
+                            <th>
+                                C Natural Minor Scale
+                                <br>
+                                <audio id="HTFD" controls preload="metadata">
+                                    <source src="samples/AuMix_08_Spring_fl_vn_transposed_HTFD3_44100.wav"></source>
+                                </audio>
+                            </th>
+                        </tr>
+                        
+                        <tr>
+                            <th>
+                                AuMix_13_Hark_vn_vn_va from URMP dataset, G Major
+                                <br>
+                                <audio id="original" controls preload="metadata">
+                                    <source src="samples/AuMix_13_Hark_vn_vn_va.wav"></source>
+                                </audio>
+                            </th>
+                            <th>
+                                G Natural Minor Scale
+                                <br>
+                                <audio id="HNMF" controls preload="metadata">
+                                    <source src="samples/AuMix_13_Hark_vn_vn_va_transposed_HNMF2_44100.wav"></source>
+                                </audio>
+                            </th>
+                            <th>
+                                G Natural Minor Scale
+                                <br>
+                                <audio id="HTFD" controls preload="metadata">
+                                    <source src="samples/AuMix_13_Hark_vn_vn_va_transposed_HTFD3_44100.wav"></source>
+                                </audio>
+                            </th>
+                        </tr>
+                        
+                        <tr>
+                            <th>
+                                RM-C021 (the first 30sec) from RWC Music Database, D Major
+                                <br>
+                                <audio id="original" controls preload="metadata">
+                                    <source src="samples/RM-C021_30sec.wav"></source>
+                                </audio>
+                            </th>
+                            <th>
+                                D Natural Minor Scale
+                                <br>
+                                <audio id="HNMF" controls preload="metadata">
+                                    <source src="samples/RM-C021_30sec_transposed_HNMF2_44100.wav"></source>
+                                </audio>
+                            </th>
+                            <th>
+                                D Natural Minor Scale
+                                <br>
+                                <audio id="HTFD" controls preload="metadata">
+                                    <source src="samples/RM-C021_30sec_transposed_HTFD3_44100.wav"></source>
+                                </audio>
+                            </th>
+                        </tr>
+                        
+                        <tr>
+                            <th>
+                                RM-C043 (the first 30sec) from RWC Music Database, G Minor
+                                <br>
+                                <audio id="original" controls preload="metadata">
+                                    <source src="samples/RM-C043_30sec.wav"></source>
+                                </audio>
+                            </th>
+                            <th>
+                                G Major Scale
+                                <br>
+                                <audio id="HNMF" controls preload="metadata">
+                                    <source src="samples/RM-C043_30sec_transposed_HNMF2_44100.wav"></source>
+                                </audio>
+                            </th>
+                            <th>
+                                G Major Scale
+                                <br>
+                                <audio id="HTFD" controls preload="metadata">
+                                    <source src="samples/RM-C043_30sec_transposed_HTFD3_44100.wav"></source>
+                                </audio>
+                            </th>
+                        </tr>
+                        
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script type="text/javascript">
+        const tagList=["original", "HNMF", "HTFD"];
+
+        let wavesurferList = [
+            WaveSurfer.create({
+                container: '#'+tagList[0],
+                waveColor: 'violet',
+                progressColor: 'purple',
+            }),
+            WaveSurfer.create({
+                container: '#'+tagList[1],
+                waveColor: 'violet',
+                progressColor: 'purple'
+            }),
+            WaveSurfer.create({
+                container: '#'+tagList[2],
+                waveColor: 'violet',
+                progressColor: 'purple'
+            })
+        ];
+
+        for(let i=0; i<3; i++){
+            wavesurferList[i].addPlugin(
+                WaveSurfer.timeline.create({
+                    container: "#"+tagList[i]+"Timeline",
+                })
+            ).initPlugin('timeline');
+            wavesurferList[i].addPlugin(
+                WaveSurfer.spectrogram.create({
+                    wavesurfer: wavesurferList[i],
+                    container: "#"+tagList[i]+"Spec",
+                    labels: true
+                })
+            ).initPlugin('timeline');
+        }
+
+        wavesurferList[0].load("decay1.0/AuMix_02_Sonata_vn_vn.wav");
+        wavesurferList[1].load("decay1.0/AuMix_02_Sonata_vn_vn_transposed_HNMF2_44100.wav");
+        wavesurferList[2].load("decay1.0/AuMix_02_Sonata_vn_vn_transposed_HTFD3_44100.wav");
+    </script> -->
+</body>
+
+</html>
