@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Automatic Key Transposition Using Harmonic-Temporal Factor Decomposition</title>
+    <title>Demonstration on Automatic Musical Key Transposition Using Harmonic-Temporal Factor Decomposition</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -30,29 +30,21 @@
 
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">Demonstration on Automatic Key Transposition Using Harmonic-Temporal Factor
+            <h1 class="jumbotron-heading">Demonstration on Automatic Musical Key Transposition Using Harmonic-Temporal Factor
                 Decomposition</h1>
             <p class="lead">
-                Tomohiko Nakamura, (The University of Tokyo) and Hirokazu Kameoka
-                (Nippon Telegraph and Telephone Corporation)
+                Tomohiko Nakamura (The University of Tokyo) and Hirokazu Kameoka
+                (The University of Tokyo/Nippon Telegraph and Telephone Corporation)
             </p>
         </div>
     </section>
     <div class="container">
         <div class="row">
             <p class="lead text-left">
-                Here we demonstrate automatic key transposition results obtained by the proposed method (Harmonic-Temporal Factor
-                Decomposition; HTFD) and a conventional method (Harmonic Non-Negative Matrix Factorization; Harmonic
-                NMF).
-                To do this, we
-                <ol class="lead text-left">
-                    <li class="text-left">separated the continuous wavelet transform (CWT) spectrogram of a music audio
-                        signal into the components associated with individual pitches using HTFD,</li>
-                    <li class="text-left">transposed the pitches of a particular set of the separated components,</li>
-                    <li class="text-left">added all the together to obtain the modified spectrogram,</li>
-                    <li class="text-left">and converted the modified spectrogram into a time-domain signal by using a
-                        fast signal reconstruction algorithm for CWT spectrograms.</li>
-                </ol>
+                We show the effectiveness of the proposed methods [1] for an automatic musical key transposition task.
+                Here the proposed methods are Harmonic-Temporal Factor Decomposition (HTFD) and its source-filter extension (SF-HTFD).
+                As a counterpart, Harmonic Non-Negative Matrix Factorization (HNMF) is used.
+                Several samples obtained with the methods are shown below.
             </p>
         </div>
     </div>
@@ -64,183 +56,211 @@
                     <thead>
                         <tr>
                             <th>Original</th>
-                            <th>Converted by the conventional method (Harmonic NMF)</th>
-                            <th>Converted by the proposed method (HTFD)</th>
+                            <th>Conventional method (Harmonic NMF)</th>
+                            <th>Proposed method (HTFD)</th>
+                            <th>Proposed method with source-filter model (SF-HTFD)</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th>
-                                01-AchGottundHerr from Bach10 dataset, C Major
-                                <br>
-                                <audio id="original" controls preload="metadata">
-                                    <source src="samples/01-AchGottundHerr.wav"></source>
-                                </audio>
-                            </th>
-                            <th>
-                                C Natural Minor Scale
-                                <br>
-                                <audio id="HNMF" controls preload="metadata">
-                                    <source src="samples/01-AchGottundHerr_transposed_HNMF2_44100.wav"></source>
-                                </audio>
-                            </th>
-                            <th>
-                                C Natural Minor Scale
-                                <br>
-                                <audio id="HTFD" controls preload="metadata">
-                                    <source src="samples/01-AchGottundHerr_transposed_HTFD3_44100.wav"></source>
-                                </audio>
-                            </th>
-                        </tr>
-                        
-                        <tr>
-                            <th>
-                                09-Jesus from Bach10 dataset, D Minor
-                                <br>
-                                <audio id="original" controls preload="metadata">
-                                    <source src="samples/09-Jesus.wav"></source>
-                                </audio>
-                            </th>
-                            <th>
-                                D Major Scale
-                                <br>
-                                <audio id="HNMF" controls preload="metadata">
-                                    <source src="samples/09-Jesus_transposed_HNMF2_44100.wav"></source>
-                                </audio>
-                            </th>
-                            <th>
-                                D Major Scale
-                                <br>
-                                <audio id="HTFD" controls preload="metadata">
-                                    <source src="samples/09-Jesus_transposed_HTFD3_44100.wav"></source>
-                                </audio>
-                            </th>
-                        </tr>
-                        
-                        <tr>
-                            <th>
-                                10-NunBitten from Bach10 dataset, A Major
-                                <br>
-                                <audio id="original" controls preload="metadata">
-                                    <source src="samples/10-NunBitten.wav"></source>
-                                </audio>
-                            </th>
-                            <th>
-                                A Natural Minor Scale
-                                <br>
-                                <audio id="HNMF" controls preload="metadata">
-                                    <source src="samples/10-NunBitten_transposed_HNMF2_44100.wav"></source>
-                                </audio>
-                            </th>
-                            <th>
-                                A Natural Minor Scale
-                                <br>
-                                <audio id="HTFD" controls preload="metadata">
-                                    <source src="samples/10-NunBitten_transposed_HTFD3_44100.wav"></source>
-                                </audio>
-                            </th>
-                        </tr>
-                        
-                        <tr>
-                            <th>
-                                AuMix_08_Spring_fl_vn from URMP dataset, C Major
-                                <br>
-                                <audio id="original" controls preload="metadata">
-                                    <source src="samples/AuMix_08_Spring_fl_vn.wav"></source>
-                                </audio>
-                            </th>
-                            <th>
-                                C Natural Minor Scale
-                                <br>
-                                <audio id="HNMF" controls preload="metadata">
-                                    <source src="samples/AuMix_08_Spring_fl_vn_transposed_HNMF2_44100.wav"></source>
-                                </audio>
-                            </th>
-                            <th>
-                                C Natural Minor Scale
-                                <br>
-                                <audio id="HTFD" controls preload="metadata">
-                                    <source src="samples/AuMix_08_Spring_fl_vn_transposed_HTFD3_44100.wav"></source>
-                                </audio>
-                            </th>
-                        </tr>
-                        
-                        <tr>
-                            <th>
-                                AuMix_13_Hark_vn_vn_va from URMP dataset, G Major
-                                <br>
-                                <audio id="original" controls preload="metadata">
-                                    <source src="samples/AuMix_13_Hark_vn_vn_va.wav"></source>
-                                </audio>
-                            </th>
-                            <th>
-                                G Natural Minor Scale
-                                <br>
-                                <audio id="HNMF" controls preload="metadata">
-                                    <source src="samples/AuMix_13_Hark_vn_vn_va_transposed_HNMF2_44100.wav"></source>
-                                </audio>
-                            </th>
-                            <th>
-                                G Natural Minor Scale
-                                <br>
-                                <audio id="HTFD" controls preload="metadata">
-                                    <source src="samples/AuMix_13_Hark_vn_vn_va_transposed_HTFD3_44100.wav"></source>
-                                </audio>
-                            </th>
-                        </tr>
-                        
-                        <tr>
-                            <th>
-                                RM-C021 (the first 30sec) from RWC Music Database, D Major
-                                <br>
-                                <audio id="original" controls preload="metadata">
-                                    <source src="samples/RM-C021_30sec.wav"></source>
-                                </audio>
-                            </th>
-                            <th>
-                                D Natural Minor Scale
-                                <br>
-                                <audio id="HNMF" controls preload="metadata">
-                                    <source src="samples/RM-C021_30sec_transposed_HNMF2_44100.wav"></source>
-                                </audio>
-                            </th>
-                            <th>
-                                D Natural Minor Scale
-                                <br>
-                                <audio id="HTFD" controls preload="metadata">
-                                    <source src="samples/RM-C021_30sec_transposed_HTFD3_44100.wav"></source>
-                                </audio>
-                            </th>
-                        </tr>
-                        
-                        <tr>
-                            <th>
-                                RM-C043 (the first 30sec) from RWC Music Database, G Minor
-                                <br>
-                                <audio id="original" controls preload="metadata">
-                                    <source src="samples/RM-C043_30sec.wav"></source>
-                                </audio>
-                            </th>
-                            <th>
-                                G Major Scale
-                                <br>
-                                <audio id="HNMF" controls preload="metadata">
-                                    <source src="samples/RM-C043_30sec_transposed_HNMF2_44100.wav"></source>
-                                </audio>
-                            </th>
-                            <th>
-                                G Major Scale
-                                <br>
-                                <audio id="HTFD" controls preload="metadata">
-                                    <source src="samples/RM-C043_30sec_transposed_HTFD3_44100.wav"></source>
-                                </audio>
-                            </th>
-                        </tr>
-                        
-                        
+<tr>
+    <th>
+        01-AchGottundHerr from Bach10 dataset [2], C Major
+        <br>
+        <audio id="original" controls preload="metadata">
+            <source src="data/01-AchGottundHerr.wav"></source>
+        </audio>
+    </th>
+    <th>
+        C Natural Minor 
+        <br>
+        <audio id="HNMF" controls preload="metadata">
+            <source src="data/01-AchGottundHerr_transposed_HNMF_2.wav"></source>
+        </audio>
+    </th>
+    <th>
+        C Natural Minor 
+        <br>
+        <audio id="HTFD" controls preload="metadata">
+            <source src="data/01-AchGottundHerr_transposed_HTFD5_2.wav"></source>
+        </audio>
+    </th>
+    <th>
+        C Natural Minor 
+        <br>
+        <audio id="SF-HTFD" controls preload="metadata">
+            <source src="data/01-AchGottundHerr_transposed_FullSFHTFDspecified.wav"></source>
+        </audio>
+    </th>
+</tr>
+
+<tr>
+    <th>
+        02-AchLiebenChristen from Bach10 dataset [2], A Minor
+        <br>
+        <audio id="original" controls preload="metadata">
+            <source src="data/02-AchLiebenChristen.wav"></source>
+        </audio>
+    </th>
+    <th>
+        A Major 
+        <br>
+        <audio id="HNMF" controls preload="metadata">
+            <source src="data/02-AchLiebenChristen_transposed_HNMF_2.wav"></source>
+        </audio>
+    </th>
+    <th>
+        A Major 
+        <br>
+        <audio id="HTFD" controls preload="metadata">
+            <source src="data/02-AchLiebenChristen_transposed_HTFD5_2.wav"></source>
+        </audio>
+    </th>
+    <th>
+        A Major 
+        <br>
+        <audio id="SF-HTFD" controls preload="metadata">
+            <source src="data/02-AchLiebenChristen_transposed_FullSFHTFDspecified.wav"></source>
+        </audio>
+    </th>
+</tr>
+
+<tr>
+    <th>
+        03-ChristederdubistTagundLicht from Bach10 dataset [2], Bb Major
+        <br>
+        <audio id="original" controls preload="metadata">
+            <source src="data/03-ChristederdubistTagundLicht.wav"></source>
+        </audio>
+    </th>
+    <th>
+        Bb Natural Minor 
+        <br>
+        <audio id="HNMF" controls preload="metadata">
+            <source src="data/03-ChristederdubistTagundLicht_transposed_HNMF_2.wav"></source>
+        </audio>
+    </th>
+    <th>
+        Bb Natural Minor 
+        <br>
+        <audio id="HTFD" controls preload="metadata">
+            <source src="data/03-ChristederdubistTagundLicht_transposed_HTFD5_2.wav"></source>
+        </audio>
+    </th>
+    <th>
+        Bb Natural Minor 
+        <br>
+        <audio id="SF-HTFD" controls preload="metadata">
+            <source src="data/03-ChristederdubistTagundLicht_transposed_FullSFHTFDspecified.wav"></source>
+        </audio>
+    </th>
+</tr>
+
+<tr>
+    <th>
+        04-ChristeDuBeistand from Bach10 dataset [2], C Major
+        <br>
+        <audio id="original" controls preload="metadata">
+            <source src="data/04-ChristeDuBeistand.wav"></source>
+        </audio>
+    </th>
+    <th>
+        C Natural Minor 
+        <br>
+        <audio id="HNMF" controls preload="metadata">
+            <source src="data/04-ChristeDuBeistand_transposed_HNMF_2.wav"></source>
+        </audio>
+    </th>
+    <th>
+        C Natural Minor 
+        <br>
+        <audio id="HTFD" controls preload="metadata">
+            <source src="data/04-ChristeDuBeistand_transposed_HTFD5_2.wav"></source>
+        </audio>
+    </th>
+    <th>
+        C Natural Minor 
+        <br>
+        <audio id="SF-HTFD" controls preload="metadata">
+            <source src="data/04-ChristeDuBeistand_transposed_FullSFHTFDspecified.wav"></source>
+        </audio>
+    </th>
+</tr>
+
+<tr>
+    <th>
+        09-Jesus from Bach10 dataset [2], D Minor
+        <br>
+        <audio id="original" controls preload="metadata">
+            <source src="data/09-Jesus.wav"></source>
+        </audio>
+    </th>
+    <th>
+        D Major 
+        <br>
+        <audio id="HNMF" controls preload="metadata">
+            <source src="data/09-Jesus_transposed_HNMF_2.wav"></source>
+        </audio>
+    </th>
+    <th>
+        D Major 
+        <br>
+        <audio id="HTFD" controls preload="metadata">
+            <source src="data/09-Jesus_transposed_HTFD5_2.wav"></source>
+        </audio>
+    </th>
+    <th>
+        D Major 
+        <br>
+        <audio id="SF-HTFD" controls preload="metadata">
+            <source src="data/09-Jesus_transposed_FullSFHTFDspecified.wav"></source>
+        </audio>
+    </th>
+</tr>
+
+<tr>
+    <th>
+        10-NunBitten from Bach10 dataset [2], A Major
+        <br>
+        <audio id="original" controls preload="metadata">
+            <source src="data/10-NunBitten.wav"></source>
+        </audio>
+    </th>
+    <th>
+        A Natural Minor 
+        <br>
+        <audio id="HNMF" controls preload="metadata">
+            <source src="data/10-NunBitten_transposed_HNMF_2.wav"></source>
+        </audio>
+    </th>
+    <th>
+        A Natural Minor 
+        <br>
+        <audio id="HTFD" controls preload="metadata">
+            <source src="data/10-NunBitten_transposed_HTFD5_2.wav"></source>
+        </audio>
+    </th>
+    <th>
+        A Natural Minor 
+        <br>
+        <audio id="SF-HTFD" controls preload="metadata">
+            <source src="data/10-NunBitten_transposed_FullSFHTFDspecified.wav"></source>
+        </audio>
+    </th>
+</tr>
+
                     </tbody>
                 </table>
             </div>
+            <br>
+            <h1>References</h1>
+            <div>
+                [1] Tomohiko Nakamura and Hirokazu Kameoka, "Harmonic-Temporal Factor Decomposition for Monaural Music Source Separation," IEEE/ACM Transactions on Audio, Speech and Language Processing, submitted.
+                <br>
+                [2] Zhiyao Duan and Bryan Pardo, "Soundprism: an online system for score-informed source separation of music audio," IEEE Journal of Selected Topics in Signal Processing, vol. 5, no. 6,
+        pp. 1205-1215, 2011.
+            </div>
+            <br>
+            <br>
         </div>
     </div>
 
