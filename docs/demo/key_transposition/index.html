@@ -7,30 +7,18 @@
     <title>Demonstration on Automatic Musical Key Transposition Using Harmonic-Temporal Factor Decomposition</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link ref="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 
 <body>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-        <!-- <script src="https://unpkg.com/wavesurfer.js"></script> -->
-        <!-- plugins -->
-        <!-- <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.timeline.js"></script>
-		<script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.minimap.js"></script>
-		<script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.cursor.js"></script>
-		<script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.elan.js"></script>
-        <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.regions.js"></script>
-        <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.spectrogram.js"></script> -->
 
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">Demonstration on Automatic Musical Key Transposition Using Harmonic-Temporal Factor
+            <h2 class="jumbotron-heading">Demonstration on Automatic Musical Key Transposition Using Harmonic-Temporal Factor
                 Decomposition</h1>
             <p class="lead">
                 Tomohiko Nakamura (The University of Tokyo) and Hirokazu Kameoka
@@ -40,302 +28,299 @@
     </section>
     <div class="container">
         <div class="row">
-            <p class="lead text-left">
-                We show results by our automatic musical key transcription system using proposed methods [1], comparing the system using a conventional method.
-                Here the proposed methods are Harmonic-Temporal Factor Decomposition (HTFD) and its source-filter extension (SF-HTFD).
-                The conventional method is Harmonic Non-Negative Matrix Factorization (HNMF).
-                We used the keys of the input musical pieces indicated in each dataset.
-            </p>
+            <div class="text-left">
+                In this experiment, we show the effectiveness of the proposed methods [1] for an automatic musical key transposition task.
+                <ul>
+                    <li><b>Proposed methods:</b> Harmonic-Temporal Factor Decomposition (<b>HTFD</b>) and its source-filter extension (<b>SF-HTFD</b>)</li>
+                    <li><b>Conventional method:</b> Harmonic Non-Negative Matrix Factorization (<b>HNMF</b>)</li>
+                </ul>
+                Our procedure of the automatic musical key transposition is as follows:
+                <ol>
+                    <li>Given a music audio signal and its key, we separated the magnitude spectrogram of the music signal into those of individual semitones using the separation method (HTFD, SF-HTFD, or HNMF).</li>
+                    <li>We next transposed the separated components of specific semitones by shifting the corresponding separated spectrograms along the log-frequency axis.</li>
+                    <li>We added all the magnitude spectrograms together to obtain the pitch-transposed magnitude spectrograms.</li>
+                    <li>We finally converted the pitch-transposed magnitude spectrogram into a time-domain signal by a spectrogram inversion algorithm for fast approximate continuous wavelet transform presented in [2].</li>
+                </ol>
+                Several samples obtained with the methods are shown below.
+                The keys of the original musical pieces are from the corresponding datasets.
+            </div>
+            <br>
         </div>
     </div>
 
-    <div class="album">
-        <div class="container">
-            <div class="row">
-                <table class="table light" style="table-layout: fixed; width: 100%;">
-                    <thead>
-                        <tr>
-                            <th>Original</th>
-                            <th>Conventional method (HNMF)</th>
-                            <th>Proposed method (HTFD)</th>
-                            <th>Proposed method with source-filter model (SF-HTFD)</th>
-                        </tr>
-                    </thead>
+    <div class="container-fluid px-5 py-3">
+        <table class="table light px-5">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Original</th>
+                    <th>HNMF</th>
+                    <th><b>HTFD (Proposed)</b></th>
+                    <th><b>SF-HTFD (Proposed)</b></th>
+                </tr>
+            </thead>
                     <tbody>
 <tr>
+    <th class="font-weight-normal" style="min-width: 130px; max-width: 260px">
+        01-AchGottundHerr from Bach10 dataset [3]
+        <br>Key: C Major &rarr; C Natural Minor 
+    </th>
     <th>
-        01-AchGottundHerr from Bach10 dataset [2], C Major
-        <br>
-        <audio id="original" controls preload="metadata">
+        <audio id="original 01-AchGottundHerr" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/01-AchGottundHerr_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        C Natural Minor 
-        <br>
-        <audio id="HNMF" controls preload="metadata">
+        <audio id="HNMF 01-AchGottundHerr" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/01-AchGottundHerr_transposed_HNMF_2_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        C Natural Minor 
-        <br>
-        <audio id="HTFD" controls preload="metadata">
+        <audio id="HTFD 01-AchGottundHerr" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/01-AchGottundHerr_transposed_HTFD5_2_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        C Natural Minor 
-        <br>
-        <audio id="SF-HTFD" controls preload="metadata">
+        <audio id="SF-HTFD 01-AchGottundHerr" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/01-AchGottundHerr_transposed_FullSFHTFDspecified_normalized.wav"></source>
         </audio>
     </th>
 </tr>
 
 <tr>
+    <th class="font-weight-normal" style="min-width: 130px; max-width: 260px">
+        02-AchLiebenChristen from Bach10 dataset [3]
+        <br>Key: A Minor &rarr; A Major 
+    </th>
     <th>
-        02-AchLiebenChristen from Bach10 dataset [2], A Minor
-        <br>
-        <audio id="original" controls preload="metadata">
+        <audio id="original 02-AchLiebenChristen" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/02-AchLiebenChristen_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        A Major 
-        <br>
-        <audio id="HNMF" controls preload="metadata">
+        <audio id="HNMF 02-AchLiebenChristen" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/02-AchLiebenChristen_transposed_HNMF_2_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        A Major 
-        <br>
-        <audio id="HTFD" controls preload="metadata">
+        <audio id="HTFD 02-AchLiebenChristen" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/02-AchLiebenChristen_transposed_HTFD5_2_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        A Major 
-        <br>
-        <audio id="SF-HTFD" controls preload="metadata">
+        <audio id="SF-HTFD 02-AchLiebenChristen" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/02-AchLiebenChristen_transposed_FullSFHTFDspecified_normalized.wav"></source>
         </audio>
     </th>
 </tr>
 
 <tr>
+    <th class="font-weight-normal" style="min-width: 130px; max-width: 260px">
+        03-ChristederdubistTagundLicht from Bach10 dataset [3]
+        <br>Key: Bb Major &rarr; Bb Natural Minor 
+    </th>
     <th>
-        03-ChristederdubistTagundLicht from Bach10 dataset [2], Bb Major
-        <br>
-        <audio id="original" controls preload="metadata">
+        <audio id="original 03-ChristederdubistTagundLicht" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/03-ChristederdubistTagundLicht_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        Bb Natural Minor 
-        <br>
-        <audio id="HNMF" controls preload="metadata">
+        <audio id="HNMF 03-ChristederdubistTagundLicht" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/03-ChristederdubistTagundLicht_transposed_HNMF_2_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        Bb Natural Minor 
-        <br>
-        <audio id="HTFD" controls preload="metadata">
+        <audio id="HTFD 03-ChristederdubistTagundLicht" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/03-ChristederdubistTagundLicht_transposed_HTFD5_2_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        Bb Natural Minor 
-        <br>
-        <audio id="SF-HTFD" controls preload="metadata">
+        <audio id="SF-HTFD 03-ChristederdubistTagundLicht" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/03-ChristederdubistTagundLicht_transposed_FullSFHTFDspecified_normalized.wav"></source>
         </audio>
     </th>
 </tr>
 
 <tr>
+    <th class="font-weight-normal" style="min-width: 130px; max-width: 260px">
+        04-ChristeDuBeistand from Bach10 dataset [3]
+        <br>Key: C Major &rarr; C Natural Minor 
+    </th>
     <th>
-        04-ChristeDuBeistand from Bach10 dataset [2], C Major
-        <br>
-        <audio id="original" controls preload="metadata">
+        <audio id="original 04-ChristeDuBeistand" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/04-ChristeDuBeistand_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        C Natural Minor 
-        <br>
-        <audio id="HNMF" controls preload="metadata">
+        <audio id="HNMF 04-ChristeDuBeistand" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/04-ChristeDuBeistand_transposed_HNMF_2_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        C Natural Minor 
-        <br>
-        <audio id="HTFD" controls preload="metadata">
+        <audio id="HTFD 04-ChristeDuBeistand" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/04-ChristeDuBeistand_transposed_HTFD5_2_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        C Natural Minor 
-        <br>
-        <audio id="SF-HTFD" controls preload="metadata">
+        <audio id="SF-HTFD 04-ChristeDuBeistand" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/04-ChristeDuBeistand_transposed_FullSFHTFDspecified_normalized.wav"></source>
         </audio>
     </th>
 </tr>
 
 <tr>
+    <th class="font-weight-normal" style="min-width: 130px; max-width: 260px">
+        09-Jesus from Bach10 dataset [3]
+        <br>Key: D Minor &rarr; D Major 
+    </th>
     <th>
-        09-Jesus from Bach10 dataset [2], D Minor
-        <br>
-        <audio id="original" controls preload="metadata">
+        <audio id="original 09-Jesus" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/09-Jesus_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        D Major 
-        <br>
-        <audio id="HNMF" controls preload="metadata">
+        <audio id="HNMF 09-Jesus" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/09-Jesus_transposed_HNMF_2_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        D Major 
-        <br>
-        <audio id="HTFD" controls preload="metadata">
+        <audio id="HTFD 09-Jesus" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/09-Jesus_transposed_HTFD5_2_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        D Major 
-        <br>
-        <audio id="SF-HTFD" controls preload="metadata">
+        <audio id="SF-HTFD 09-Jesus" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/09-Jesus_transposed_FullSFHTFDspecified_normalized.wav"></source>
         </audio>
     </th>
 </tr>
 
 <tr>
+    <th class="font-weight-normal" style="min-width: 130px; max-width: 260px">
+        10-NunBitten from Bach10 dataset [3]
+        <br>Key: A Major &rarr; A Natural Minor 
+    </th>
     <th>
-        10-NunBitten from Bach10 dataset [2], A Major
-        <br>
-        <audio id="original" controls preload="metadata">
+        <audio id="original 10-NunBitten" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/10-NunBitten_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        A Natural Minor 
-        <br>
-        <audio id="HNMF" controls preload="metadata">
+        <audio id="HNMF 10-NunBitten" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/10-NunBitten_transposed_HNMF_2_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        A Natural Minor 
-        <br>
-        <audio id="HTFD" controls preload="metadata">
+        <audio id="HTFD 10-NunBitten" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/10-NunBitten_transposed_HTFD5_2_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        A Natural Minor 
-        <br>
-        <audio id="SF-HTFD" controls preload="metadata">
+        <audio id="SF-HTFD 10-NunBitten" controls preload="metadata" style="min-width: 130px; max-width: 260px">
             <source src="data/10-NunBitten_transposed_FullSFHTFDspecified_normalized.wav"></source>
         </audio>
     </th>
 </tr>
 
 <!-- <tr>
+    <th class="font-weight-normal" style="min-width: 130px; max-width: 260px">
+        AuMix_04_Allegro_fl_fl from URMP dataset [4]
+        <br>Key: D Minor &rarr; D Major 
+    </th>
     <th>
-        AuMix_34_Fugue_tpt_tpt_hn_tbn from URMP dataset [3], F Major
-        <br>
-        <audio id="original" controls preload="metadata">
-            <source src="data/AuMix_34_Fugue_tpt_tpt_hn_tbn_normalized.wav"></source>
+        <audio id="original AuMix_04_Allegro_fl_fl" controls preload="metadata" style="min-width: 130px; max-width: 260px">
+            <source src="data/AuMix_04_Allegro_fl_fl_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        F Natural Minor 
-        <br>
-        <audio id="HNMF" controls preload="metadata">
-            <source src="data/AuMix_34_Fugue_tpt_tpt_hn_tbn_transposed_HNMF_2_normalized.wav"></source>
+        <audio id="HNMF AuMix_04_Allegro_fl_fl" controls preload="metadata" style="min-width: 130px; max-width: 260px">
+            <source src="data/AuMix_04_Allegro_fl_fl_transposed_HNMF_2_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        F Natural Minor 
-        <br>
-        <audio id="HTFD" controls preload="metadata">
-            <source src="data/AuMix_34_Fugue_tpt_tpt_hn_tbn_transposed_HTFD5_2_normalized.wav"></source>
+        <audio id="HTFD AuMix_04_Allegro_fl_fl" controls preload="metadata" style="min-width: 130px; max-width: 260px">
+            <source src="data/AuMix_04_Allegro_fl_fl_transposed_HTFD5_2_normalized.wav"></source>
         </audio>
     </th>
     <th>
-        F Natural Minor 
-        <br>
-        <audio id="SF-HTFD" controls preload="metadata">
-            <source src="data/AuMix_34_Fugue_tpt_tpt_hn_tbn_transposed_FullSFHTFDspecified_normalized.wav"></source>
+        <audio id="SF-HTFD AuMix_04_Allegro_fl_fl" controls preload="metadata" style="min-width: 130px; max-width: 260px">
+            <source src="data/AuMix_04_Allegro_fl_fl_transposed_FullSFHTFDspecified_normalized.wav"></source>
         </audio>
     </th>
 </tr> -->
 
+<tr>
+    <th class="font-weight-normal" style="min-width: 130px; max-width: 260px">
+        AuMix_05_Entertainer_tpt_tpt from URMP dataset [4]
+        <br>Key: Eb Major &rarr; Eb Natural Minor 
+    </th>
+    <th>
+        <audio id="original AuMix_05_Entertainer_tpt_tpt" controls preload="metadata" style="min-width: 130px; max-width: 260px">
+            <source src="data/AuMix_05_Entertainer_tpt_tpt_normalized.wav"></source>
+        </audio>
+    </th>
+    <th>
+        <audio id="HNMF AuMix_05_Entertainer_tpt_tpt" controls preload="metadata" style="min-width: 130px; max-width: 260px">
+            <source src="data/AuMix_05_Entertainer_tpt_tpt_transposed_HNMF_2_normalized.wav"></source>
+        </audio>
+    </th>
+    <th>
+        <audio id="HTFD AuMix_05_Entertainer_tpt_tpt" controls preload="metadata" style="min-width: 130px; max-width: 260px">
+            <source src="data/AuMix_05_Entertainer_tpt_tpt_transposed_HTFD5_2_normalized.wav"></source>
+        </audio>
+    </th>
+    <th>
+        <audio id="SF-HTFD AuMix_05_Entertainer_tpt_tpt" controls preload="metadata" style="min-width: 130px; max-width: 260px">
+            <source src="data/AuMix_05_Entertainer_tpt_tpt_transposed_FullSFHTFDspecified_normalized.wav"></source>
+        </audio>
+    </th>
+</tr>
+
+<tr>
+    <th class="font-weight-normal" style="min-width: 130px; max-width: 260px">
+        AuMix_34_Fugue_tpt_tpt_hn_tbn from URMP dataset [4]
+        <br>Key: F Major &rarr; F Natural Minor 
+    </th>
+    <th>
+        <audio id="original AuMix_34_Fugue_tpt_tpt_hn_tbn" controls preload="metadata" style="min-width: 130px; max-width: 260px">
+            <source src="data/AuMix_34_Fugue_tpt_tpt_hn_tbn_normalized.wav"></source>
+        </audio>
+    </th>
+    <th>
+        <audio id="HNMF AuMix_34_Fugue_tpt_tpt_hn_tbn" controls preload="metadata" style="min-width: 130px; max-width: 260px">
+            <source src="data/AuMix_34_Fugue_tpt_tpt_hn_tbn_transposed_HNMF_2_normalized.wav"></source>
+        </audio>
+    </th>
+    <th>
+        <audio id="HTFD AuMix_34_Fugue_tpt_tpt_hn_tbn" controls preload="metadata" style="min-width: 130px; max-width: 260px">
+            <source src="data/AuMix_34_Fugue_tpt_tpt_hn_tbn_transposed_HTFD5_2_normalized.wav"></source>
+        </audio>
+    </th>
+    <th>
+        <audio id="SF-HTFD AuMix_34_Fugue_tpt_tpt_hn_tbn" controls preload="metadata" style="min-width: 130px; max-width: 260px">
+            <source src="data/AuMix_34_Fugue_tpt_tpt_hn_tbn_transposed_FullSFHTFDspecified_normalized.wav"></source>
+        </audio>
+    </th>
+</tr>
+
                     </tbody>
-                </table>
-            </div>
-            <br>
-            <h1>References</h1>
-            <div>
-                [1] Tomohiko Nakamura and Hirokazu Kameoka, "Harmonic-Temporal Factor Decomposition for Monaural Music Source Separation," IEEE/ACM Transactions on Audio, Speech and Language Processing, 2020, submitted.
-                <br>
-                [2] Zhiyao Duan and Bryan Pardo, "Soundprism: An Online System for Score-Informed Source Separation of Music Audio," IEEE Journal of Selected Topics in Signal Processing, vol. 5, no. 6, pp. 1205-1215, 2011.
-                <!-- <br>
-                [3] Bochen Li, Xinzhao Liu, Karthik Dinesh, Zhiyao Duan, and Gaurav Sharma, "Creating a Multitrack Classical Music Performance Dataset for Multimodal Music Analysis: Challenges, Insights, and Applications," in IEEE Transactions on Multimedia, vol. 21, no. 2, pp. 522-535, 2019. -->
-            </div>
-            <br>
-            <br>
+            </table>
         </div>
-    </div>
+        <div class="container">
+        <h1>References</h1>
+        <div>
+            [1] Tomohiko Nakamura and Hirokazu Kameoka, "Harmonic-Temporal Factor Decomposition for Monaural Music Source Separation," IEEE/ACM Transactions on Audio, Speech and Language Processing, 2020, submitted.
+            <br>
+            [2] Tomohiko Nakamura and Hirokazu Kameoka, "Fast Signal Reconstruction from Magnitude Spectrogram of Continuous Wavelet Transform based on Spectrogram Consistency," Proceedings of 17th International Conference on Digital Audio Effects, pp. 129--135, 2014.
+            <br>
+            [3] Zhiyao Duan and Bryan Pardo, "Soundprism: An Online System for Score-Informed Source Separation of Music Audio," IEEE Journal of Selected Topics in Signal Processing, vol. 5, no. 6, pp. 1205--1215, 2011.
+            <br>
+            [4] Bochen Li, Xinzhao Liu, Karthik Dinesh, Zhiyao Duan, and Gaurav Sharma, "Creating a Multitrack Classical Music Performance Dataset for Multimodal Music Analysis: Challenges, Insights, and Applications," IEEE Transactions on Multimedia, vol. 21, no. 2, pp. 522--535, 2019.
+        </div>
+        <br>
+        <br>
+        </div>
 
-    <!-- <script type="text/javascript">
-        const tagList=["original", "HNMF", "HTFD"];
-
-        let wavesurferList = [
-            WaveSurfer.create({
-                container: '#'+tagList[0],
-                waveColor: 'violet',
-                progressColor: 'purple',
-            }),
-            WaveSurfer.create({
-                container: '#'+tagList[1],
-                waveColor: 'violet',
-                progressColor: 'purple'
-            }),
-            WaveSurfer.create({
-                container: '#'+tagList[2],
-                waveColor: 'violet',
-                progressColor: 'purple'
-            })
-        ];
-
-        for(let i=0; i<3; i++){
-            wavesurferList[i].addPlugin(
-                WaveSurfer.timeline.create({
-                    container: "#"+tagList[i]+"Timeline",
-                })
-            ).initPlugin('timeline');
-            wavesurferList[i].addPlugin(
-                WaveSurfer.spectrogram.create({
-                    wavesurfer: wavesurferList[i],
-                    container: "#"+tagList[i]+"Spec",
-                    labels: true
-                })
-            ).initPlugin('timeline');
-        }
-
-        wavesurferList[0].load("decay1.0/AuMix_02_Sonata_vn_vn.wav");
-        wavesurferList[1].load("decay1.0/AuMix_02_Sonata_vn_vn_transposed_HNMF2_44100.wav");
-        wavesurferList[2].load("decay1.0/AuMix_02_Sonata_vn_vn_transposed_HTFD3_44100.wav");
-    </script> -->
 </body>
 
 </html>
