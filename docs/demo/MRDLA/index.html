@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Automatic Key Transposition Using Harmonic-Temporal Factor Decomposition</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Demonstration on MultiResolution Deep Layered Analysis
+                Decomposition (MRDLA)</h1>
+            <p class="lead">
+                Tomohiko Nakamura and Hiroshi Saruwatari (The University of Tokyo)
+            </p>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row">
+            <p class="lead text-left">
+                Here we show some audio examples of separation results obtained with the proposed method, MRDLA, and the conventional method, Wave-U-Net.
+                The excerpts below are taken from the MUSDB18 dataset and are downsampled to 22.05 kHz.
+            </p>
+        </div>
+    </div>
+
+    <div class="album">
+        <div class="container">
+            <div class="row">
+                <table class="table light" style="table-layout: fixed; width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td width="10%" style="padding-bottom: 40px;"></td>
+                            <td width="30%">Al James - Schoolboy Facination</td>
+                            <td width="30%">Mu - Too Bright</td>
+                            <td width="30%">Triviul feat. The Fiend - Widow</td>
+                        </tr>
+                        <tr>
+                            <td style="padding-bottom: 80px;">
+                                <b>Mixture</b>
+                            </td>
+                            <td style="padding-bottom: 80px;">
+                                <audio controls preload="metadata">
+                                    <source src="audio/Al James - Schoolboy Facination/musdb18_22050/mixture.wav"></source>
+                                </audio>
+                            </td>
+                            <td style="padding-bottom: 80px;">
+                                <audio controls preload="metadata">
+                                    <source src="audio/Mu - Too Bright/musdb18_22050/mixture.wav"></source>
+                                </audio>
+                            </td>
+                            <td style="padding-bottom: 80px;">
+                                <audio controls preload="metadata">
+                                    <source src="audio/Triviul feat. The Fiend - Widow/musdb18_22050/mixture.wav"></source>
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Proposed</b>
+                                <br>
+                                bass
+                            </td>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Al James - Schoolboy Facination/haar_wide/bass.wav"></source>
+                                </audio>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Mu - Too Bright/haar_wide/bass.wav"></source>
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Triviul feat. The Fiend - Widow/haar_wide/bass.wav"></source>
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Proposed</b>
+                                <br>
+                                drums
+                            </td>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Al James - Schoolboy Facination/haar_wide/drums.wav"></source>
+                                </audio>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Mu - Too Bright/haar_wide/drums.wav"></source>
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Triviul feat. The Fiend - Widow/haar_wide/drums.wav"></source>
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Proposed</b>
+                                <br>
+                                vocals
+                            </td>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Al James - Schoolboy Facination/haar_wide/vocals.wav"></source>
+                                </audio>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Mu - Too Bright/haar_wide/vocals.wav"></source>
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Triviul feat. The Fiend - Widow/haar_wide/vocals.wav"></source>
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-bottom: 50px;">
+                                <b>Proposed</b>
+                                <br>
+                                other
+                            </td>
+                            <td style="padding-bottom: 50px;">
+                                <audio controls preload="metadata">
+                                    <source src="audio/Al James - Schoolboy Facination/haar_wide/other.wav"></source>
+                                </audio>
+                            <td style="padding-bottom: 50px;">
+                                <audio controls preload="metadata">
+                                    <source src="audio/Mu - Too Bright/haar_wide/other.wav"></source>
+                                </audio>
+                            </td>
+                            <td style="padding-bottom: 50px;">
+                                <audio controls preload="metadata">
+                                    <source src="audio/Triviul feat. The Fiend - Widow/haar_wide/other.wav"></source>
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Wave-U-Net</b>
+                                <br>
+                                bass
+                            </td>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Al James - Schoolboy Facination/waveunet/bass.wav"></source>
+                                </audio>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Mu - Too Bright/waveunet/bass.wav"></source>
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Triviul feat. The Fiend - Widow/waveunet/bass.wav"></source>
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Wave-U-Net</b>
+                                <br>
+                                drums
+                            </td>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Al James - Schoolboy Facination/waveunet/drums.wav"></source>
+                                </audio>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Mu - Too Bright/waveunet/drums.wav"></source>
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Triviul feat. The Fiend - Widow/waveunet/drums.wav"></source>
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Wave-U-Net</b>
+                                <br>
+                                vocals
+                            </td>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Al James - Schoolboy Facination/waveunet/vocals.wav"></source>
+                                </audio>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Mu - Too Bright/waveunet/vocals.wav"></source>
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Triviul feat. The Fiend - Widow/waveunet/vocals.wav"></source>
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-bottom: 50px;">
+                                <b>Wave-U-Net</b>
+                                <br>
+                                other
+                            </td>
+                            <td style="padding-bottom: 50px;">
+                                <audio controls preload="metadata">
+                                    <source src="audio/Al James - Schoolboy Facination/waveunet/other.wav"></source>
+                                </audio>
+                            <td style="padding-bottom: 50px;">
+                                <audio controls preload="metadata">
+                                    <source src="audio/Mu - Too Bright/waveunet/other.wav"></source>
+                                </audio>
+                            </td>
+                            <td style="padding-bottom: 50px;">
+                                <audio controls preload="metadata">
+                                    <source src="audio/Triviul feat. The Fiend - Widow/waveunet/other.wav"></source>
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Groundtruth</b>
+                                <br>
+                                bass
+                            </td>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Al James - Schoolboy Facination/musdb18_22050/bass.wav"></source>
+                                </audio>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Mu - Too Bright/musdb18_22050/bass.wav"></source>
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Triviul feat. The Fiend - Widow/musdb18_22050/bass.wav"></source>
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Groundtruth</b>
+                                <br>
+                                drums
+                            </td>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Al James - Schoolboy Facination/musdb18_22050/drums.wav"></source>
+                                </audio>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Mu - Too Bright/musdb18_22050/drums.wav"></source>
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Triviul feat. The Fiend - Widow/musdb18_22050/drums.wav"></source>
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Groundtruth</b>
+                                <br>
+                                vocals
+                            </td>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Al James - Schoolboy Facination/musdb18_22050/vocals.wav"></source>
+                                </audio>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Mu - Too Bright/musdb18_22050/vocals.wav"></source>
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls preload="metadata">
+                                    <source src="audio/Triviul feat. The Fiend - Widow/musdb18_22050/vocals.wav"></source>
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-bottom: 50px;">
+                                <b>Groundtruth</b>
+                                <br>
+                                other
+                            </td>
+                            <td style="padding-bottom: 50px;">
+                                <audio controls preload="metadata">
+                                    <source src="audio/Al James - Schoolboy Facination/musdb18_22050/other.wav"></source>
+                                </audio>
+                            <td style="padding-bottom: 50px;">
+                                <audio controls preload="metadata">
+                                    <source src="audio/Mu - Too Bright/musdb18_22050/other.wav"></source>
+                                </audio>
+                            </td>
+                            <td style="padding-bottom: 50px;">
+                                <audio controls preload="metadata">
+                                    <source src="audio/Triviul feat. The Fiend - Widow/musdb18_22050/other.wav"></source>
+                                </audio>
+                            </td>
+                        </tr>
+                        
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
