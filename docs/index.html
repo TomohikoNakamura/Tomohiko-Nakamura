@@ -11,40 +11,33 @@
 	<![endif]-->
 	<title>Tomohiko Nakamura</title>
 	<!-- BOOTSTRAP CORE STYLE  -->
-	<link href="assets/css/bootstrap.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<!-- FONT AWESOME ICON STYLE  -->
 	<link href="assets/css/font-awesome.css" rel="stylesheet" />
 	<!-- CUSTOM STYLE CSS -->
 	<link href="assets/css/style.css" rel="stylesheet" />
-	<!-- CUSTOM THEME COLOR -- YOU CAN USE LIGHT & DARK THEMES  -->
-	<link href="assets/css/themes/dark.css" rel="stylesheet" />
 	<!-- GOOGLE FONT -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 
 <body>
-	<div class="navbar navbar-inverse navbar-fixed-top scrollclass">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">TOP</a>
-			</div>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#home-sec">Home</a></li>
-					<li><a href="#interests">Research Interests</a></li>
-					<li><a href="#demo">Demo</a></li>
-					<li><a href="#biography">Biography</a></li>
-					<li><a href="#publications">Publications</a></li>
-					<li><a href="#funds_and_awards">Funds and Awards</a></li>
-				</ul>
-			</div>
+	<nav class="navbar navbar-expand-md  navbar-dark bg-dark">
+		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navigator" aria-controls="navigator" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		
+		<div class="collapse navbar-collapse" id="navigator">
+		  <ul class="navbar-nav">
+			<li class="nav-item"><a class="nav-link" href="#home-sec">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="#interests">Research Interests</a></li>
+			<li class="nav-item"><a class="nav-link" href="#demo">Demo</a></li>
+			<li class="nav-item"><a class="nav-link" href="#biography">Biography</a></li>
+			<li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+			<li class="nav-item"><a class="nav-link" href="#funds_and_awards">Funds and Awards</a></li>
+			<li class="nav-item"><a class="nav-link" href="./lecture.html">Lecture</a></li>
+		  </ul>
 		</div>
-	</div>
+	  </nav>
 	<!--END NAB BAR SECTION-->
 	<div id="home-sec">
 		<div class="overlay">
@@ -54,10 +47,16 @@
 						<img src="images/nakamura100x100.jpg" width="120"></img>
 					</div>
 					<div class="col-md-10">
-						<h1>Tomohiko Nakamura </h1>
+						<h1>Tomohiko Nakamura</h1>
+						<div class="row text-center">
+							<h2><a href="pdf/cv/nakamura_CV.pdf">[CV]</a>, <a
+									href="https://scholar.google.co.jp/citations?user=3NOsK7cAAAAJ&hl=ja">[Google Scholar]</a>, <a
+									href="https://researchmap.jp/tomohiko_nakamura">[researchmap]</a>, <a
+									href="https://www.linkedin.com/in/%E5%8F%8B%E5%BD%A6-%E4%B8%AD%E6%9D%91-971758192/">[Linkedin]</a>,
+								<a href="https://orcid.org/0000-0003-4385-7170">[ORCiD]</a></h2>
+						</div>
 						<p class="home-p">
-							I received B.E., M.S. and Ph.D. degrees from the University of Tokyo, Japan, in 2011, 2013
-							and 2016.
+							I received M.S. and Ph.D. degrees from the University of Tokyo, Japan, in 2013 and 2016.
 							<br>
 							I am currently with Graduate School of Information Science and Technology, the University of
 							Tokyo.
@@ -74,13 +73,6 @@
 	<!--END HOME SECTION-->
 	<section id="features-sec">
 		<div class="container">
-			<div class="row text-center">
-				<h2><a href="pdf/cv/nakamura_CV.pdf">[CV]</a>, <a
-						href="https://scholar.google.co.jp/citations?user=3NOsK7cAAAAJ&hl=ja">[Google Scholar]</a>, <a
-						href="https://researchmap.jp/tomohiko_nakamura">[researchmap]</a>, <a
-						href="https://www.linkedin.com/in/%E5%8F%8B%E5%BD%A6-%E4%B8%AD%E6%9D%91-971758192/">[Linkedin]</a>,
-					<a href="https://orcid.org/0000-0003-4385-7170">[ORCiD]</a></h2>
-			</div>
 			<div class="row text-left min-set">
 				<div class="col-md-12" id="interests">
 					<h2>Research Interests</h2>
@@ -727,15 +719,20 @@
 
 	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
 	<!-- CORE JQUERY  -->
-	<script src="assets/js/jquery-1.11.1.js"></script>
+	<!-- <script src="assets/js/jquery-1.11.1.js"></script> -->
 	<!-- BOOTSTRAP SCRIPTS  -->
-	<script src="assets/js/bootstrap.js"></script>
+	<!-- <script src="assets/js/bootstrap.js"></script> -->
 	<!-- NICE SCROLL SCRIPTS   -->
-	<script src="assets/js/jquery.nicescroll.min.js"></script>
+	<!-- <script src="assets/js/jquery.nicescroll.min.js"></script> -->
 	<!-- EASING SCROLL SCRIPTS   -->
-	<script src="assets/js/jquery.easing.min.js"></script>
+	<!-- <script src="assets/js/jquery.easing.min.js"></script> -->
 	<!-- CUSTOM SCRIPTS  -->
-	<script src="assets/js/custom.js"></script>
+	<!-- <script src="assets/js/custom.js"></script> -->
+
+	
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 
 </html>

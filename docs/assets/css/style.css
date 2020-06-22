@@ -14,6 +14,10 @@
 /* =============================================================
    GENERAL STYLES
  ============================================================ */
+
+ html{
+    font-size: 16px;
+}
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -67,14 +71,15 @@ h2 {
     border-color: rgba(255, 255, 255, 0);
 }
 
-    .navbar-inverse .navbar-brand {
-        color: #fff;
-    }
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
 
-    .navbar-inverse .navbar-nav > li > a {
-        color: #fff;
-        padding: 17px 12px;
-    }
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+    padding: 17px 12px;
+}
+
 /* =============================================================
   HOME SECTION STYLES
  ============================================================ */
@@ -86,38 +91,39 @@ h2 {
     min-height: 300px;
 }
 
-    #home-sec .overlay {
-        background-color: rgba(149, 166, 248, 0.75);
-        min-height: 300px;
-    }
+#home-sec .overlay {
+    /* background-color: rgba(44, 46, 53, 0.75); */
+    background-color: rgba(0, 0, 0, 0.1);
+    min-height: 300px;
+}
 
-    #home-sec h1 {
-        line-height: 80px;
-        font-size: 45px;
-        font-weight: 900;
-        color: #fff;
-    }
+#home-sec h1 {
+    line-height: 80px;
+    font-size: 45px;
+    font-weight: 900;
+    /* color: #fff; */
+}
 
-    #home-sec mark {
-        background-color: rgba(0, 0, 0, 0.5);
-        color: #fff;
-        padding: 0px 5px 0px 20px;
-        margin: 0px 15px 0px 8px;
-        border-radius: 10px;
-        -moz-border-radius: 10px;
-        -webkit-border-radius: 10px;
-    }
+#home-sec mark {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 0px 5px 0px 20px;
+    margin: 0px 15px 0px 8px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
 
 .home-p {
     line-height: 30px;
-    color: #E0E0E0;
-    font-size: 16px;
+    /* color: #E0E0E0; */
+    font-size: 1.2rem;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
 .btn-home {
-    background-color: rgba(66, 139, 202, 0.8);
+    /* background-color: rgba(35, 37, 39, 0.8); */
     border-radius: 30px;
     -moz-border-radius: 30px;
     -webkit-border-radius: 30px;
@@ -127,7 +133,7 @@ h2 {
     padding-left: 30px;
     padding-top: 180px;
     text-align: center;
-    color: #fff;
+    /* color: #fff; */
 }
 
 /* =============================================================
@@ -256,18 +262,19 @@ ul#filters {
     text-align: center;
 }
 
-    #filters li {
-        display: -webkit-inline-box;
-    }
+#filters li {
+    display: -webkit-inline-box;
+    font-size: 1rem;
+}
 
-        #filters li span {
-            display: block;
-            padding: 5px 4px;
-            text-decoration: none;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 800;
-        }
+#filters li span {
+    display: block;
+    padding: 5px 4px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 800;
+}
 
 #port-folio .portfolio-item {
     -webkit-box-sizing: border-box;
@@ -291,3 +298,5 @@ ul#filters {
         color: #000;
         font-weight: 900;
     }
+
+
