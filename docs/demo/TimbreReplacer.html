@@ -1,565 +1,485 @@
 <!DOCTYPE html>
 <html lang=en>
+
 <head>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-62446144-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-<meta charset=UTF-8>
-<title>Timbre Replacement for Harmonic and Drum components of Music
-Audio Signals</title>
-<!--<link href="http://hil.t.u-tokyo.ac.jp/~nakamura/style2.css"
-rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript" src="bevel.js"
-mce_src="bevel.js"></script>-->
-<!--[if lt IE 9]>
-2
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-3
-<![endif]-->
+  <script type="text/javascript" src="../assets/js/ganalytics_settings.js"></script>
+  <meta charset=UTF-8>
+  <title>Timbre Replacement for Harmonic and Drum components of Music Audio Signals</title>
 </head>
+
 <body>
-<div id="page">
-<header>
-<!--<h2><a href="../index.html">home</a></h2>
+  <div id="page">
+    <header>
+      <!--<h2><a href="../index.html">home</a></h2>
 <img src="../images/bg_banner_grey.gif" width="900" height="5" alt="logo_banner" />-->
-</header>
+    </header>
     <p>
-	 <h1><font color="#0000CD" size="6pt">Timbre Replacement of
-Harmonic and Drum components of Music Audio Signals</font></h1><br>
-<h3>Contributors:
-Tomohiko Nakamura, Hirokazu Kameoka (The University of Tokyo), Kazuyoshi
-Yoshii and Masataka Goto (National Insitute of Advanced Industrial
-Science and Technology).</h3>
-<br>
-<hr>
-<br>
-<div>
-  <em><font size="5.5pt">
-  This system allows us to replace the frequency characteristics of the harmonic component and the drum timbres of a musical piece with those of another musical piece.
-  </font></em>
-</div>
-<br>
-<h2>Demo audios</h2>
-<ul>
-<li>All the audio files are from RWC music database.</li>
-<li>Audio signals of the harmonic and percussive components are
-normalized such that their maximum power are unity.</li>
-</ul>
-<br>
+    <h1>
+      <font color="#0000CD" size="6pt">Timbre Replacement of
+        Harmonic and Drum components of Music Audio Signals</font>
+    </h1><br>
+    <h3>Contributors:
+      Tomohiko Nakamura, Hirokazu Kameoka (The University of Tokyo), Kazuyoshi
+      Yoshii and Masataka Goto (National Insitute of Advanced Industrial
+      Science and Technology).</h3>
+    <br>
+    <hr>
+    <br>
+    <div>
+      <em>
+        <font size="5.5pt">
+          This system allows us to replace the frequency characteristics of the harmonic component and the drum timbres
+          of a musical piece with those of another musical piece.
+        </font>
+      </em>
+    </div>
+    <br>
+    <h2>Demo audios</h2>
+    <ul>
+      <li>All the audio files are from RWC music database.</li>
+      <li>Audio signals of the harmonic and percussive components are
+        normalized such that their maximum power are unity.</li>
+    </ul>
+    <br>
 
-<table border="1">
-<tr><th>Input music audio signal</th><th>Reference music audio signal</th>
-<th>Synthesized music audio signal by Equalizing method</th>
-<th>Synthesized music audio signal by Copy and Paste method</th>
-</tr>
+    <table border="1">
+      <tr>
+        <th>Input music audio signal</th>
+        <th>Reference music audio signal</th>
+        <th>Synthesized music audio signal by Equalizing method</th>
+        <th>Synthesized music audio signal by Copy and Paste method</th>
+      </tr>
 
-<td>RWC-MDB-P-2001 No. 12 "KAGE-ROU"<br>
-Full<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_input.wav"
- type="audio/wav">
-</audio><br>
-Harmonic component<br>
-<audio controls preload="metadata">
-<source src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_input_H.wav"
- type="audio/wav">
-</audio><br>
-Percussive component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_input_P.wav"
- type="audio/wav">
-</audio><br>
-</td>
-<td>RWC-MDB-P-2001 No. 64 "So Long"<br>
-Full<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_target.wav"
- type="audio/wav">
-</audio><br>
-Harmonic component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_target_H.wav"
- type="audio/wav">
-</audio><br>
-Percussive component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_target_P.wav"
- type="audio/wav">
-</audio><br>
-</td>
-<td>Full<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_copy_algo4.wav"
- type="audio/wav">
-</audio><br>
-Harmonic component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_copy_H_algo4.wav"
- type="audio/wav">
-</audio><br>
-Percussive component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_copy_P_algo4.wav"
- type="audio/wav">
-</audio><br>
-</td>
-<td>Full<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_copy_algo12.wav"
- type="audio/wav">
-</audio><br>
-Harmonic component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_copy_H_algo12.wav"
- type="audio/wav">
-</audio><br>
-Percussive component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_copy_P_algo12.wav"
- type="audio/wav">
-</audio><br>
-</td>
-</tr>
+      <td>RWC-MDB-P-2001 No. 12 "KAGE-ROU"<br>
+        Full<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_input.wav" type="audio/wav">
+        </audio><br>
+        Harmonic component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_input_H.wav" type="audio/wav">
+        </audio><br>
+        Percussive component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_input_P.wav" type="audio/wav">
+        </audio><br>
+      </td>
+      <td>RWC-MDB-P-2001 No. 64 "So Long"<br>
+        Full<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_target.wav" type="audio/wav">
+        </audio><br>
+        Harmonic component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_target_H.wav" type="audio/wav">
+        </audio><br>
+        Percussive component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_target_P.wav" type="audio/wav">
+        </audio><br>
+      </td>
+      <td>Full<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_copy_algo4.wav" type="audio/wav">
+        </audio><br>
+        Harmonic component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_copy_H_algo4.wav" type="audio/wav">
+        </audio><br>
+        Percussive component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_copy_P_algo4.wav" type="audio/wav">
+        </audio><br>
+      </td>
+      <td>Full<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_copy_algo12.wav" type="audio/wav">
+        </audio><br>
+        Harmonic component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_copy_H_algo12.wav" type="audio/wav">
+        </audio><br>
+        Percussive component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P012-s40-50-b3_RM-P064-s60-70-b3_copy_P_algo12.wav" type="audio/wav">
+        </audio><br>
+      </td>
+      </tr>
 
 
-<td>RWC-MDB-P-2001 No. 52 "Haru ga kurukara"<br>
-Full<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_input.wav"
- type="audio/wav">
-</audio><br>
-Harmonic component<br>
-<audio controls preload="metadata">
-<source src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_input_H.wav"
- type="audio/wav">
-</audio><br>
-Percussive component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_input_P.wav"
- type="audio/wav">
-</audio><br>
-</td>
-<td>RWC-MDB-P-2001 No. 64 "So Long"<br>
-Full<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_target.wav"
- type="audio/wav">
-</audio><br>
-Harmonic component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_target_H.wav"
- type="audio/wav">
-</audio><br>
-Percussive component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_target_P.wav"
- type="audio/wav">
-</audio><br>
-</td>
-<td>Full<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_copy_algo4.wav"
- type="audio/wav">
-</audio><br>
-Harmonic component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_copy_H_algo4.wav"
- type="audio/wav">
-</audio><br>
-Percussive component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_copy_P_algo4.wav"
- type="audio/wav">
-</audio><br>
-</td>
-<td>Full<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_copy_algo12.wav"
- type="audio/wav">
-</audio><br>
-Harmonic component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_copy_H_algo12.wav"
- type="audio/wav">
-</audio><br>
-Percussive component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_copy_P_algo12.wav"
- type="audio/wav">
-</audio><br>
-</td>
-</tr>
+      <td>RWC-MDB-P-2001 No. 52 "Haru ga kurukara"<br>
+        Full<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_input.wav" type="audio/wav">
+        </audio><br>
+        Harmonic component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_input_H.wav" type="audio/wav">
+        </audio><br>
+        Percussive component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_input_P.wav" type="audio/wav">
+        </audio><br>
+      </td>
+      <td>RWC-MDB-P-2001 No. 64 "So Long"<br>
+        Full<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_target.wav" type="audio/wav">
+        </audio><br>
+        Harmonic component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_target_H.wav" type="audio/wav">
+        </audio><br>
+        Percussive component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_target_P.wav" type="audio/wav">
+        </audio><br>
+      </td>
+      <td>Full<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_copy_algo4.wav" type="audio/wav">
+        </audio><br>
+        Harmonic component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_copy_H_algo4.wav" type="audio/wav">
+        </audio><br>
+        Percussive component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_copy_P_algo4.wav" type="audio/wav">
+        </audio><br>
+      </td>
+      <td>Full<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_copy_algo12.wav" type="audio/wav">
+        </audio><br>
+        Harmonic component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_copy_H_algo12.wav" type="audio/wav">
+        </audio><br>
+        Percussive component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-P052-s45-65-b2_RM-P064-s60-70-b3_copy_P_algo12.wav" type="audio/wav">
+        </audio><br>
+      </td>
+      </tr>
 
 
-<td>RWC-MDB-G-2001 No. 13 "Guess Again"<br>
-Full<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_input.wav"
- type="audio/wav">
-</audio><br>
-Harmonic component<br>
-<audio controls preload="metadata">
-<source src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_input_H.wav"
- type="audio/wav">
-</audio><br>
-Percussive component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_input_P.wav"
- type="audio/wav">
-</audio><br>
-</td>
-<td>RWC-MDB-G-2001 No. 14 "Tuesday Morning"<br>
-Full<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_target.wav"
- type="audio/wav">
-</audio><br>
-Harmonic component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_target_H.wav"
- type="audio/wav">
-</audio><br>
-Percussive component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_target_P.wav"
- type="audio/wav">
-</audio><br>
-</td>
-<td>Full<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_copy_algo4.wav"
- type="audio/wav">
-</audio><br>
-Harmonic component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_copy_H_algo4.wav"
- type="audio/wav">
-</audio><br>
-Percussive component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_copy_P_algo4.wav"
- type="audio/wav">
-</audio><br>
-</td>
-<td>Full<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_copy_algo12.wav"
- type="audio/wav">
-</audio><br>
-Harmonic component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_copy_H_algo12.wav"
- type="audio/wav">
-</audio><br>
-Percussive component<br>
-<audio controls preload="metadata">
-<source
- src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_copy_P_algo12.wav"
- type="audio/wav">
-</audio><br>
-</td>
-</tr>
+      <td>RWC-MDB-G-2001 No. 13 "Guess Again"<br>
+        Full<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_input.wav" type="audio/wav">
+        </audio><br>
+        Harmonic component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_input_H.wav" type="audio/wav">
+        </audio><br>
+        Percussive component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_input_P.wav" type="audio/wav">
+        </audio><br>
+      </td>
+      <td>RWC-MDB-G-2001 No. 14 "Tuesday Morning"<br>
+        Full<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_target.wav" type="audio/wav">
+        </audio><br>
+        Harmonic component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_target_H.wav" type="audio/wav">
+        </audio><br>
+        Percussive component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_target_P.wav" type="audio/wav">
+        </audio><br>
+      </td>
+      <td>Full<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_copy_algo4.wav" type="audio/wav">
+        </audio><br>
+        Harmonic component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_copy_H_algo4.wav" type="audio/wav">
+        </audio><br>
+        Percussive component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_copy_P_algo4.wav" type="audio/wav">
+        </audio><br>
+      </td>
+      <td>Full<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_copy_algo12.wav" type="audio/wav">
+        </audio><br>
+        Harmonic component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_copy_H_algo12.wav" type="audio/wav">
+        </audio><br>
+        Percussive component<br>
+        <audio controls preload="metadata">
+          <source src="tca/RM-G013-s0-10-b4_RM-G014-s70-80-b4_copy_P_algo12.wav" type="audio/wav">
+        </audio><br>
+      </td>
+      </tr>
 
 
 
-<!-- <td>RWC-MDB-P-2001 No. 7 "Prologue"<br> -->
-<!-- Full<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_input.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Harmonic component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_input_H.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Percussive component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_input_P.wav" type="audio/wav"> -->
-<!-- </audio> -->
-<!-- </td> -->
-<!-- <td>RWC-MDB-P-2001 No. 64 "So Long"<br> -->
-<!-- Full<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_target.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Harmonic component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_target_H.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Percussive component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_target_P.wav" type="audio/wav"> -->
-<!-- </audio> -->
-<!-- </td> -->
-<!-- <td> -->
-<!-- Full<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_copy_algo4.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Harmonic component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_copy_H_algo4.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Percussive component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_copy_P_algo4.wav" type="audio/wav"> -->
-<!-- </audio> -->
-<!-- </td> -->
-<!-- <td> -->
-<!-- Full<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_copy_algo11.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Harmonic component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_copy_H_algo11.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Percussive component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_copy_P_algo11.wav" type="audio/wav"> -->
-<!-- </audio> -->
-<!-- </td> -->
-<!-- </tr> -->
+      <!-- <td>RWC-MDB-P-2001 No. 7 "Prologue"<br> -->
+      <!-- Full<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_input.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Harmonic component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_input_H.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Percussive component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_input_P.wav" type="audio/wav"> -->
+      <!-- </audio> -->
+      <!-- </td> -->
+      <!-- <td>RWC-MDB-P-2001 No. 64 "So Long"<br> -->
+      <!-- Full<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_target.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Harmonic component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_target_H.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Percussive component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_target_P.wav" type="audio/wav"> -->
+      <!-- </audio> -->
+      <!-- </td> -->
+      <!-- <td> -->
+      <!-- Full<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_copy_algo4.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Harmonic component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_copy_H_algo4.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Percussive component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_copy_P_algo4.wav" type="audio/wav"> -->
+      <!-- </audio> -->
+      <!-- </td> -->
+      <!-- <td> -->
+      <!-- Full<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_copy_algo11.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Harmonic component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_copy_H_algo11.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Percussive component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P01-07_RWC-P04-16_copy_P_algo11.wav" type="audio/wav"> -->
+      <!-- </audio> -->
+      <!-- </td> -->
+      <!-- </tr> -->
 
-<!-- <td>RWC-MDB-P-2001 No. 64 "So Long"<br> -->
-<!-- Full<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_input.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Harmonic component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_input_H.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Percussive component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_input_P.wav" type="audio/wav"> -->
-<!-- </audio> -->
-<!-- </td> -->
-<!-- <td>RWC-MDB-G-2001 No. 14 "Tuesday Morning"<br> -->
-<!-- Full<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_target.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Harmonic component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_target_H.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Percussive component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_target_P.wav" type="audio/wav"> -->
-<!-- </audio> -->
-<!-- </td> -->
-<!-- <td> -->
-<!-- Full<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_copy_algo4.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Harmonic component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_copy_H_algo4.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Percussive component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_copy_P_algo4.wav" type="audio/wav"> -->
-<!-- </audio> -->
-<!-- </td> -->
-<!-- <td> -->
-<!-- Full<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_copy_algo11.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Harmonic component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_copy_H_algo11.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Percussive component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_copy_P_algo11.wav" type="audio/wav"> -->
-<!-- </audio> -->
-<!-- </td> -->
-<!-- </tr> -->
+      <!-- <td>RWC-MDB-P-2001 No. 64 "So Long"<br> -->
+      <!-- Full<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_input.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Harmonic component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_input_H.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Percussive component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_input_P.wav" type="audio/wav"> -->
+      <!-- </audio> -->
+      <!-- </td> -->
+      <!-- <td>RWC-MDB-G-2001 No. 14 "Tuesday Morning"<br> -->
+      <!-- Full<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_target.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Harmonic component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_target_H.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Percussive component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_target_P.wav" type="audio/wav"> -->
+      <!-- </audio> -->
+      <!-- </td> -->
+      <!-- <td> -->
+      <!-- Full<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_copy_algo4.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Harmonic component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_copy_H_algo4.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Percussive component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_copy_P_algo4.wav" type="audio/wav"> -->
+      <!-- </audio> -->
+      <!-- </td> -->
+      <!-- <td> -->
+      <!-- Full<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_copy_algo11.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Harmonic component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_copy_H_algo11.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Percussive component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-P04-16_RWC-G02-02_copy_P_algo11.wav" type="audio/wav"> -->
+      <!-- </audio> -->
+      <!-- </td> -->
+      <!-- </tr> -->
 
-<!-- <td>RWC-MDB-G-2001 No. 14 "Tuesday Morning"<br> -->
-<!-- Full<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_input.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Harmonic component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_input_H.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Percussive component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_input_P.wav" type="audio/wav"> -->
-<!-- </audio> -->
-<!-- </td> -->
-<!-- <td>RWC-MDB-P-2001 No. 64 "So Long"<br> -->
-<!-- Full<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_target.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Harmonic component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_target_H.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Percussive component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_target_P.wav" type="audio/wav"> -->
-<!-- </audio> -->
-<!-- </td> -->
-<!-- <td> -->
-<!-- Full<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_copy_algo4.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Harmonic component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_copy_H_algo4.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Percussive component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_copy_P_algo4.wav" type="audio/wav"> -->
-<!-- </audio> -->
-<!-- </td> -->
-<!-- <td> -->
-<!-- Full<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_copy_algo11.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Harmonic component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_copy_H_algo11.wav" type="audio/wav"> -->
-<!-- </audio><br> -->
-<!-- Percussive component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_copy_P_algo11.wav" type="audio/wav"> -->
-<!-- </audio> -->
-<!-- </td> -->
-<!-- </tr> -->
-
-
-<!-- </table> -->
-
-<!-- <h3>Extreme example</h3> -->
-<!-- <table border="1"> -->
-<!-- <tr><th>Target music audio signal</th><th>Reference music audio signal</th> -->
-<!-- <th>Synthesized music audio signal by the equalizing method</th> -->
-<!-- <th>Synthesized music audio signal by the alignment method</th> -->
-<!-- <th>Remarks</th> -->
-<!-- </tr> -->
+      <!-- <td>RWC-MDB-G-2001 No. 14 "Tuesday Morning"<br> -->
+      <!-- Full<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_input.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Harmonic component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_input_H.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Percussive component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_input_P.wav" type="audio/wav"> -->
+      <!-- </audio> -->
+      <!-- </td> -->
+      <!-- <td>RWC-MDB-P-2001 No. 64 "So Long"<br> -->
+      <!-- Full<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_target.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Harmonic component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_target_H.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Percussive component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_target_P.wav" type="audio/wav"> -->
+      <!-- </audio> -->
+      <!-- </td> -->
+      <!-- <td> -->
+      <!-- Full<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_copy_algo4.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Harmonic component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_copy_H_algo4.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Percussive component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_copy_P_algo4.wav" type="audio/wav"> -->
+      <!-- </audio> -->
+      <!-- </td> -->
+      <!-- <td> -->
+      <!-- Full<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_copy_algo11.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Harmonic component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_copy_H_algo11.wav" type="audio/wav"> -->
+      <!-- </audio><br> -->
+      <!-- Percussive component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="http://hil.t.u-tokyo.ac.jp/~nakamura/demo/tca/RWC-G02-02_RWC-P04-16_copy_P_algo11.wav" type="audio/wav"> -->
+      <!-- </audio> -->
+      <!-- </td> -->
+      <!-- </tr> -->
 
 
-<!-- <tr><td>RWC-MDB-P-2001 No. 7 "Prologue"<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- Full<br> -->
-<!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_input.wav"></src> -->
-<!-- </audio> -->
-<!-- Harmonic component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_input_H.wav"></src> -->
-<!-- </audio> -->
-<!-- Percussive component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_input_P.wav"></src> -->
-<!-- </audio> -->
-<!-- </td> -->
-<!-- <td>RWC-MDB-P-2001 No. 64 "So Long"<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- Full<br> -->
-<!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_target.wav"></src> -->
-<!-- </audio> -->
-<!-- Harmonic component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_target_H.wav"></src> -->
-<!-- </audio> -->
-<!-- Percussive component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_target_P.wav"></src> -->
-<!-- </audio> -->
-<!-- </td> -->
-<!-- <td> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- Full<br> -->
-<!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_copy_algo4.wav"></src> -->
-<!-- </audio> -->
-<!-- Harmonic component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_copy_H_algo4.wav"></src> -->
-<!-- </audio> -->
-<!-- Percussive component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_copy_P_algo4.wav"></src> -->
-<!-- </audio> -->
-<!-- </td> -->
-<!-- <td> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- Full<br> -->
-<!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_copy_algo11.wav"></src> -->
-<!-- </audio> -->
-<!-- Harmonic component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_copy_H_algo11.wav"></src> -->
-<!-- </audio> -->
-<!-- Percussive component<br> -->
-<!-- <audio controls preload="metadata"> -->
-<!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_copy_P_algo11.wav"></src> -->
-<!-- </audio> -->
-<!-- </td> -->
+      <!-- </table> -->
 
-<!-- <td> -->
-<!-- All drum instruments of the target piece to snare drums of the reference piece. -->
-<!-- </td> -->
-<!-- </tr> -->
-
-</table>
+      <!-- <h3>Extreme example</h3> -->
+      <!-- <table border="1"> -->
+      <!-- <tr><th>Target music audio signal</th><th>Reference music audio signal</th> -->
+      <!-- <th>Synthesized music audio signal by the equalizing method</th> -->
+      <!-- <th>Synthesized music audio signal by the alignment method</th> -->
+      <!-- <th>Remarks</th> -->
+      <!-- </tr> -->
 
 
-<div style="clear: both;">&nbsp;</div>
-<hr>
-<footer>
-<!--<img src="../images/bg_banner_grey.gif" width="1300" height="5" alt="logo_banner"/><br>-->
-Tomohiko Nakamura's HP (c) 2013-2014
-</footer>
-</div>
+      <!-- <tr><td>RWC-MDB-P-2001 No. 7 "Prologue"<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- Full<br> -->
+      <!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_input.wav"></src> -->
+      <!-- </audio> -->
+      <!-- Harmonic component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_input_H.wav"></src> -->
+      <!-- </audio> -->
+      <!-- Percussive component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_input_P.wav"></src> -->
+      <!-- </audio> -->
+      <!-- </td> -->
+      <!-- <td>RWC-MDB-P-2001 No. 64 "So Long"<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- Full<br> -->
+      <!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_target.wav"></src> -->
+      <!-- </audio> -->
+      <!-- Harmonic component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_target_H.wav"></src> -->
+      <!-- </audio> -->
+      <!-- Percussive component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_target_P.wav"></src> -->
+      <!-- </audio> -->
+      <!-- </td> -->
+      <!-- <td> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- Full<br> -->
+      <!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_copy_algo4.wav"></src> -->
+      <!-- </audio> -->
+      <!-- Harmonic component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_copy_H_algo4.wav"></src> -->
+      <!-- </audio> -->
+      <!-- Percussive component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_copy_P_algo4.wav"></src> -->
+      <!-- </audio> -->
+      <!-- </td> -->
+      <!-- <td> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- Full<br> -->
+      <!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_copy_algo11.wav"></src> -->
+      <!-- </audio> -->
+      <!-- Harmonic component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_copy_H_algo11.wav"></src> -->
+      <!-- </audio> -->
+      <!-- Percussive component<br> -->
+      <!-- <audio controls preload="metadata"> -->
+      <!-- <source src="tca/RWC-P01-07_RWC-P04-16_allsnare_copy_P_algo11.wav"></src> -->
+      <!-- </audio> -->
+      <!-- </td> -->
+
+      <!-- <td> -->
+      <!-- All drum instruments of the target piece to snare drums of the reference piece. -->
+      <!-- </td> -->
+      <!-- </tr> -->
+
+    </table>
+
+
+    <div style="clear: both;">&nbsp;</div>
+    <hr>
+    <footer>
+      <!--<img src="../images/bg_banner_grey.gif" width="1300" height="5" alt="logo_banner"/><br>-->
+      Tomohiko Nakamura's HP (c) 2020
+    </footer>
+  </div>
 </body>
+
 </html>

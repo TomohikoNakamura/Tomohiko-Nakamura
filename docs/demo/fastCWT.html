@@ -1,182 +1,179 @@
 <!DOCTYPE html>
 <html lang=en>
+
 <head>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <script type="text/javascript" src="../assets/js/ganalytics_settings.js"></script>
 
-  ga('create', 'UA-62446144-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-<meta charset=UTF-8>
-<title>Fast Signal Reconstruction from Magnitude Spectrogram of Continuous
-Wavelet Transform based on Spectrogram Consistency</title>
-<!--<link href="http://hil.t.u-tokyo.ac.jp/~nakamura/style2.css"
+  <meta charset=UTF-8>
+  <title>Fast Signal Reconstruction from Magnitude Spectrogram of Continuous
+    Wavelet Transform based on Spectrogram Consistency</title>
+  <!--<link href="http://hil.t.u-tokyo.ac.jp/~nakamura/style2.css"
 rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="bevel.js"
 mce_src="bevel.js"></script>-->
-<!--[if lt IE 9]>
+  <!--[if lt IE 9]>
 2
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 3
 <![endif]-->
 </head>
+
 <body>
-<div id="page">
-<header>
-<!--<h2><a href="../index.html">home</a></h2>
+  <div id="page">
+    <header>
+      <!--<h2><a href="../index.html">home</a></h2>
 <img src="../images/bg_banner_grey.gif" width="900" height="5" alt="logo_banner" />-->
-</header>
+    </header>
     <p>
-     <h1><font color="#0000CD" size="6pt">Fast Signal Reconstruction from
-Magnitude Spectrogram of Continuous Wavelet Transform based on Spectrogram Consistency</font></h1><br>
-<h3>Contributors:
-Tomohiko Nakamura (The University of Tokyo) and Hirokazu Kameoka (The
-University of Tokyo/NTT Communication Science laboratories).</h3>
-<br>
+    <h1>
+      <font color="#0000CD" size="6pt">Fast Signal Reconstruction from
+        Magnitude Spectrogram of Continuous Wavelet Transform based on Spectrogram Consistency</font>
+    </h1><br>
+    <h3>Contributors:
+      Tomohiko Nakamura (The University of Tokyo) and Hirokazu Kameoka (The
+      University of Tokyo/NTT Communication Science laboratories).</h3>
+    <br>
 
-<hr>
+    <hr>
 
-<h2>Demonstration of signal reconstruction</h2>
-You will be aware of reconstructing the signal as same as the original signal iteration by iteration.
-<br>
-<br>
-<table border="1">
-<tr>
-<th>Original acoustic signal</th>
-<th>Magnitude CWT spectrogram with random phases</th>
-<th>Estimation results by the proposed algorithm</th>
-</tr>
+    <h2>Demonstration of signal reconstruction</h2>
+    You will be aware of reconstructing the signal as same as the original signal iteration by iteration.
+    <br>
+    <br>
+    <table border="1">
+      <tr>
+        <th>Original acoustic signal</th>
+        <th>Magnitude CWT spectrogram with random phases</th>
+        <th>Estimation results by the proposed algorithm</th>
+      </tr>
 
-<td>
-<audio controls preload="metadata">
-<source src="fastCWT/original.wav" type="audio/wav">
-</audio>
-</td>
-<td>
-<audio controls preload="metadata">
-<source src="fastCWT/randomphase.wav" type="audio/wav">
-</audio>
-</td>
+      <td>
+        <audio controls preload="metadata">
+          <source src="fastCWT/original.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls preload="metadata">
+          <source src="fastCWT/randomphase.wav" type="audio/wav">
+        </audio>
+      </td>
 
-<td>
-<table>
-<tr>
-<td>
- After 1 iterations<br>
- <audio controls preload="metadata">
- <source src="fastCWT/iter001.wav" type="audio/wav">
- </audio>
-</td>
-<td>
- After 10 iterations<br>
- <audio controls preload="metadata">
- <source src="fastCWT/iter010.wav" type="audio/wav">
- </audio>
-</td>
-<td>
- After 20 iterations<br>
- <audio controls preload="metadata">
- <source src="fastCWT/iter020.wav" type="audio/wav">
- </audio>
-</td>
-</tr>
-<tr>
-<td>
- After 50 iterations<br>
- <audio controls preload="metadata">
- <source src="fastCWT/iter050.wav" type="audio/wav">
- </audio>
-</td>
-<td>
- After 100 iterations<br>
- <audio controls preload="metadata">
- <source src="fastCWT/iter100.wav" type="audio/wav">
- </audio>
-</td>
-</tr>
-</table>
-</td>
+      <td>
+        <table>
+          <tr>
+            <td>
+              After 1 iterations<br>
+              <audio controls preload="metadata">
+                <source src="fastCWT/iter001.wav" type="audio/wav">
+              </audio>
+            </td>
+            <td>
+              After 10 iterations<br>
+              <audio controls preload="metadata">
+                <source src="fastCWT/iter010.wav" type="audio/wav">
+              </audio>
+            </td>
+            <td>
+              After 20 iterations<br>
+              <audio controls preload="metadata">
+                <source src="fastCWT/iter020.wav" type="audio/wav">
+              </audio>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              After 50 iterations<br>
+              <audio controls preload="metadata">
+                <source src="fastCWT/iter050.wav" type="audio/wav">
+              </audio>
+            </td>
+            <td>
+              After 100 iterations<br>
+              <audio controls preload="metadata">
+                <source src="fastCWT/iter100.wav" type="audio/wav">
+              </audio>
+            </td>
+          </tr>
+        </table>
+      </td>
 
-</tr>
-</table>
-
-
-<h2>Demonstration of pitch tranposition</h2>
-You can see that only shifting the complex CWT spectrogram is not enough to obtain the pitch-transposed signals, and the pitch transposition is realized by the proposed phase estimation.
-<br>
-<br>
-<table border="1">
-<tr>
-<th></th>
-<th>Original acoustic signal</th>
-<th>Shifting complex CWT spectrogram</th>
-<th>Shifting magnitude CWT spectrogram and zero phases</th>
-<th>Shifting magnitude CWT spectrogram and estimated phases</th>
-</tr>
-<td>
-Convert the original into low pitch
-</td>
-<td>
-<audio controls preload="metadata">
-<source src="fastCWT/original.wav" type="audio/wav">
-</audio>
-</td>
-<td>
-<audio controls preload="metadata">
-<source src="fastCWT/original_shift_pitchminus.wav" type="audio/wav">
-</audio>
-</td>
-<td>
-<audio controls preload="metadata">
-<source src="fastCWT/zerophase_pitchminus.wav" type="audio/wav">
-</audio>
-</td>
-<td>
-<audio controls preload="metadata">
-<source src="fastCWT/estimatedphase_pitchminus.wav" type="audio/wav">
-</audio>
-</td>
-</tr>
-<tr>
-<td>
-Convert the original into high pitch
-</td>
-<td>
-<audio controls preload="metadata">
-<source src="fastCWT/original.wav" type="audio/wav">
-</audio>
-</td>
-<td>
-<audio controls preload="metadata">
-<source src="fastCWT/original_shift_pitchplus.wav" type="audio/wav">
-</audio>
-</td>
-<td>
-<audio controls preload="metadata">
-<source src="fastCWT/zerophase_pitchplus.wav" type="audio/wav">
-</audio>
-</td>
-<td>
-<audio controls preload="metadata">
-<source src="fastCWT/estimatedphase_pitchplus.wav" type="audio/wav">
-</audio>
-</td>
-</tr>
-</table>
+      </tr>
+    </table>
 
 
-<div style="clear: both;">&nbsp;</div>
-<hr>
-<footer>
-<!--<img src="../images/bg_banner_grey.gif" width="1300" height="5" alt="logo_banner"/><br>-->
-Tomohiko Nakamura's HP (c) 2013-2014
-</footer>
-</div>
+    <h2>Demonstration of pitch tranposition</h2>
+    You can see that only shifting the complex CWT spectrogram is not enough to obtain the pitch-transposed signals, and
+    the pitch transposition is realized by the proposed phase estimation.
+    <br>
+    <br>
+    <table border="1">
+      <tr>
+        <th></th>
+        <th>Original acoustic signal</th>
+        <th>Shifting complex CWT spectrogram</th>
+        <th>Shifting magnitude CWT spectrogram and zero phases</th>
+        <th>Shifting magnitude CWT spectrogram and estimated phases</th>
+      </tr>
+      <td>
+        Convert the original into low pitch
+      </td>
+      <td>
+        <audio controls preload="metadata">
+          <source src="fastCWT/original.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls preload="metadata">
+          <source src="fastCWT/original_shift_pitchminus.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls preload="metadata">
+          <source src="fastCWT/zerophase_pitchminus.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls preload="metadata">
+          <source src="fastCWT/estimatedphase_pitchminus.wav" type="audio/wav">
+        </audio>
+      </td>
+      </tr>
+      <tr>
+        <td>
+          Convert the original into high pitch
+        </td>
+        <td>
+          <audio controls preload="metadata">
+            <source src="fastCWT/original.wav" type="audio/wav">
+          </audio>
+        </td>
+        <td>
+          <audio controls preload="metadata">
+            <source src="fastCWT/original_shift_pitchplus.wav" type="audio/wav">
+          </audio>
+        </td>
+        <td>
+          <audio controls preload="metadata">
+            <source src="fastCWT/zerophase_pitchplus.wav" type="audio/wav">
+          </audio>
+        </td>
+        <td>
+          <audio controls preload="metadata">
+            <source src="fastCWT/estimatedphase_pitchplus.wav" type="audio/wav">
+          </audio>
+        </td>
+      </tr>
+    </table>
+
+
+    <div style="clear: both;">&nbsp;</div>
+    <hr>
+    <footer>
+      <!--<img src="../images/bg_banner_grey.gif" width="1300" height="5" alt="logo_banner"/><br>-->
+      Tomohiko Nakamura's HP (c) 2013-2014
+    </footer>
+  </div>
 </body>
+
 </html>
