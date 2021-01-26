@@ -154,7 +154,7 @@ h2 {
 }
 /*  IMAGE STYLE   */
 .main-img {
-    content: url('../img/bulb-yellow.png'); /*YELLOW IMAGE URL  */
+    content: url('../images/bulb-yellow.png'); /*YELLOW IMAGE URL  */
     cursor: pointer;
     height: 250px;
     cursor: pointer;
@@ -162,7 +162,7 @@ h2 {
 }
     /*  IMAGE STYLE ON HOVER - WHICH CHANGE THE IMAGE TO bulb-white.png   */
     .main-img:hover {
-        content: url('../img/bulb-white.png'); /*WHITE IMAGE URL ON HOVER */
+        content: url('../images/bulb-white.png'); /*WHITE IMAGE URL ON HOVER */
         cursor: pointer;
     }
 
@@ -186,7 +186,7 @@ h2 {
 
     #skill-sec .overlay {
         padding-top: 50px;
-        background: url(../img/15.png);
+        background: url(../images/15.png);
         min-height: 250px;
         background-color: rgba(5, 5, 5, 0.45);
     }
