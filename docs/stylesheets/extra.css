@@ -1,0 +1,7 @@
+.md-typeset a {
+    color: var(--md-code-hl-keyword-color);
+}
+
+/* .md-typeset h1 {
+    color: var(--md-code-hl-keyword-color)
+} */
