@@ -5,6 +5,11 @@
 /* .md-typeset h1 {
     color: var(--md-code-hl-keyword-color)
 } */
+.md-typeset h1 {
+    /* color: var(--md-primary-bg-color); */
+    /* color: var(--md-footer-bg-color); */
+    font-weight: bold;
+}
 
 .center {
     display: block;

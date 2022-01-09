@@ -47,13 +47,13 @@
     <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9EPRVMYY0Z"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-9EPRVMYY0Z');
+  gtag('config', '');
 </script>
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sampling-frequency-independent-deep-learning" class="md-skip">
+        <a href="#empirical-bayesian-independent-deeply-learned-matrix-analysis" class="md-skip">
           Skip to content
         </a>
       
@@ -87,9 +87,7 @@
     
       
 
-  
-
-<header class="md-header md-header--lifted" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="index.html" title="Tomohiko Nakamura" class="md-header__button md-logo" aria-label="Tomohiko Nakamura" data-md-component="logo">
       
@@ -122,72 +120,13 @@
     
   </nav>
   
-    
-      
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
-    <a href="index.html" class="md-tabs__link">
-      Home
-    </a>
-  </li>
-
-      
-        
-  
-  
-    
-  
-
-
-  <li class="md-tabs__item">
-    <a href="research.html" class="md-tabs__link md-tabs__link--active">
-      Research / Demo
-    </a>
-  </li>
-
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
-    <a href="publications.html" class="md-tabs__link">
-      Publications
-    </a>
-  </li>
-
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
-    <a href="lecture.html" class="md-tabs__link">
-      Lecture Notes
-    </a>
-  </li>
-
-      
-    </ul>
-  </div>
-</nav>
-    
-  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -197,17 +136,15 @@
               
                 
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
 
-  
-
 
   
 
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="index.html" title="Tomohiko Nakamura" class="md-nav__button md-logo" aria-label="Tomohiko Nakamura" data-md-component="logo">
       
@@ -303,15 +240,18 @@
               
                 
 
-<h1 id="sampling-frequency-independent-deep-learning">Sampling-Frequency-Independent Deep Learning<a class="headerlink" href="#sampling-frequency-independent-deep-learning" title="Permanent link">&para;</a></h1>
-<p>We propose a DNN-based audio source separation method that can consistently work for audio signals of arbitrary (unseen) sampling frequencies, even if it is trained with a single sampling frequency.
-Focusing on the fact that a convolutional layer is interpreted as a digital FIR filter, we build a sampling-frequency-independent convolutional layer, of which weights (the impulse responses of the digital filters) are generated from latent analog filters using a classical DSP technique, digital filter design.</p>
-<p>たとえ単一のサンプリング周波数で学習されていたとしても，任意の（未学習の）任意のサンプリング周波数にも適用可能なDNNベース音源分離手法を提案しました．
-畳み込み層がデジタルFIRフィルタとみなせることに着眼し，古典的な信号処理技法であるデジタルフィルタ設計技法を用いてアナログフィルタからの畳み込み層の重みの生成過程を導入することで，サンプリング周波数に非依存な畳み込み層を構築しました．</p>
-<ul>
-<li>Koichi Saito, <ins>Tomohiko Nakamura</ins>, Kohei Yatabe, Yuma Koizumi, and Hiroshi Saruwatari, “<strong>Sampling-Frequency-Independent Audio Source Separation Using Convolution Layer Based on Impulse Invariant Method</strong>,” in <em>Proceedings of the 29<sup>th</sup> European Signal Processing Conference</em>, Aug. 2021, pp. 321–325. <a href="https://doi.org/10.23919/eusipco54536.2021.9616245"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M369.9 97.9 286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48zm250.2-143.7c-12.2-12-47-8.7-64.4-6.5-17.2-10.5-28.7-25-36.8-46.3 3.9-16.1 10.1-40.6 5.4-56-4.2-26.2-37.8-23.6-42.6-5.9-4.4 16.1-.4 38.5 7 67.1-10 23.9-24.9 56-35.4 74.4-20 10.3-47 26.2-51 46.2-3.3 15.8 26 55.2 76.1-31.2 22.4-7.4 46.8-16.5 68.4-20.1 18.9 10.2 41 17 55.8 17 25.5 0 28-28.2 17.5-38.7zm-198.1 77.8c5.1-13.7 24.5-29.5 30.4-35-19 30.3-30.4 35.7-30.4 35zm81.6-190.6c7.4 0 6.7 32.1 1.8 40.8-4.4-13.9-4.3-40.8-1.8-40.8zm-24.4 136.6c9.7-16.9 18-37 24.7-54.7 8.3 15.1 18.9 27.2 30.1 35.5-20.8 4.3-38.9 13.1-54.8 19.2zm131.6-5s-5 6-37.3-7.8c35.1-2.6 40.9 5.4 37.3 7.8z"/></svg></span></a>, <a href="https://arxiv.org/abs/2105.04079"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M369.9 97.9 286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48zm250.2-143.7c-12.2-12-47-8.7-64.4-6.5-17.2-10.5-28.7-25-36.8-46.3 3.9-16.1 10.1-40.6 5.4-56-4.2-26.2-37.8-23.6-42.6-5.9-4.4 16.1-.4 38.5 7 67.1-10 23.9-24.9 56-35.4 74.4-20 10.3-47 26.2-51 46.2-3.3 15.8 26 55.2 76.1-31.2 22.4-7.4 46.8-16.5 68.4-20.1 18.9 10.2 41 17 55.8 17 25.5 0 28-28.2 17.5-38.7zm-198.1 77.8c5.1-13.7 24.5-29.5 30.4-35-19 30.3-30.4 35.7-30.4 35zm81.6-190.6c7.4 0 6.7 32.1 1.8 40.8-4.4-13.9-4.3-40.8-1.8-40.8zm-24.4 136.6c9.7-16.9 18-37 24.7-54.7 8.3 15.1 18.9 27.2 30.1 35.5-20.8 4.3-38.9 13.1-54.8 19.2zm131.6-5s-5 6-37.3-7.8c35.1-2.6 40.9 5.4 37.3 7.8z"/></svg></span></a></li>
-</ul>
-<hr />
+<!-- # Sampling-Frequency-Independent Deep Learning
+
+We propose a DNN-based audio source separation method that can consistently work for audio signals of arbitrary (unseen) sampling frequencies, even if it is trained with a single sampling frequency.
+Focusing on the fact that a convolutional layer is interpreted as a digital FIR filter, we build a sampling-frequency-independent convolutional layer, of which weights (the impulse responses of the digital filters) are generated from latent analog filters using a classical DSP technique, digital filter design.
+
+たとえ単一のサンプリング周波数で学習されていたとしても，任意の（未学習の）任意のサンプリング周波数にも適用可能なDNNベース音源分離手法を提案しました．
+畳み込み層がデジタルFIRフィルタとみなせることに着眼し，古典的な信号処理技法であるデジタルフィルタ設計技法を用いてアナログフィルタからの畳み込み層の重みの生成過程を導入することで，サンプリング周波数に非依存な畳み込み層を構築しました．
+
+- Koichi Saito, ^^Tomohiko Nakamura^^, Kohei Yatabe, Yuma Koizumi, and Hiroshi Saruwatari, “**Sampling-Frequency-Independent Audio Source Separation Using Convolution Layer Based on Impulse Invariant Method**,” in *Proceedings of the 29th European Signal Processing Conference*, Aug. 2021, pp. 321–325. [:fontawesome-regular-file-pdf:](https://doi.org/10.23919/eusipco54536.2021.9616245), [:fontawesome-regular-file-pdf:](https://arxiv.org/abs/2105.04079)
+
+--- -->
+
 <h1 id="empirical-bayesian-independent-deeply-learned-matrix-analysis">Empirical Bayesian Independent Deeply Learned Matrix Analysis<a class="headerlink" href="#empirical-bayesian-independent-deeply-learned-matrix-analysis" title="Permanent link">&para;</a></h1>
 <p>We propose an extension of independent deeply learned matrix analysis (IDLMA), empirical Bayesian IDLMA, that can deal with uncertainty of source power spectrogram estimates at each time-frequency bin using DNN-based hyperparameter estimation of prior distributions of sources.</p>
 <p>高性能な多チャネル音源分離手法の1つである独立深層学習行列分析を各時間周波数ビンでの音源パワー推定値の不確実性を扱えるように拡張した，経験ベイズ独立深層学習行列分析を提案しました．</p>
@@ -442,7 +382,7 @@ factorization, and a source-filter model.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
     
     
       <script src="assets/javascripts/bundle.649a939e.min.js"></script>
