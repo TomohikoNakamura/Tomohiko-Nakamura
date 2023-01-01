@@ -1,0 +1,362 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- BOOTSTRAP CORE STYLE  -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <!-- GOOGLE FONT -->
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' crossorigin="anonymous" />
+
+        <!-- BOOTSTRAP JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+        <!-- CUSTOM STYLE CSS -->
+        <link href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/assets/css/style.css" rel="stylesheet" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+        <!-- Page description -->
+        
+
+        <!-- Page keywords -->
+        
+
+        <!-- Page author -->
+        
+            <meta name="author" content="Tomohiko Nakamura" />
+        
+
+        <!-- Site title -->
+        
+        
+            <title>Demonstration on Music Source Separation Using Sampling-Frequency-Independent Convolutional Layer - Tomohiko Nakamura</title>
+        
+        
+
+        
+            
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9EPRVMYY0Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9EPRVMYY0Z');
+</script>
+            
+        
+
+    </head>
+    <body>
+        <!-- START NAB BAR SECTION -->
+        <nav class="navbar navbar-expand-md  navbar-dark bg-dark">
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navigator" aria-controls="navigator" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navigator">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/">Home</a></li>
+              </ul>
+            </div>
+          </nav>
+        <!--END NAB BAR SECTION-->    
+
+        <section class="jumbotron text-center">
+    <div class="container">
+        
+            <h1 class="jumbotron-heading">Demonstration on Music Source Separation Using Sampling-Frequency-Independent Convolutional Layer</h1>
+        
+        
+            <p class="lead">
+                Koichi Saito, Tomohiko Nakamura (The University of Tokyo), Kohei Yatabe, and Hiroshi Saruwatari (The University of Tokyo)
+            </p>
+        
+    </div>
+</section>
+        
+            <p><link rel="stylesheet" type="text/css" href="style.css"></p>
+<div class="container">
+    <div class="row">
+        <p class="lead text-left">
+            <h3>Abstract</h3>
+            Audio source separation is often used for the preprocessing of various tasks, and one of its ultimate goals is to construct a single versatile preprocessor that can handle every variety of audio signal. One of the most important varieties of the discrete-time audio signal is sampling frequency. Since it is usually task-specific, the versatile preprocessor must handle all the sampling frequencies required by the possible downstream tasks. However, conventional models based on deep neural networks (DNNs) are not designed for handling a variety of sampling frequencies. Thus, for unseen sampling frequencies, they may not work appropriately. 
+            <br>
+            In this paper, we propose sampling-frequency-independent (SFI) convolutional layers capable of handling various sampling frequencies. The core idea of the proposed layers comes from our finding that a convolutional layer can be viewed as a collection of digital filters and inherently depends on sampling frequency. To overcome this dependency, we propose an SFI structure that features analog filters and generates weights of a convolutional layer from the analog filters. By utilizing time- and frequency-domain analog-to-digital filter conversion techniques, we can adapt the convolutional layer for various sampling frequencies. As an example application, we construct an SFI version of a conventional source separation network. Through music source separation experiments, we show that the proposed layers enable separation networks to consistently work well for unseen sampling frequencies in objective and perceptual separation qualities. We also demonstrate that the proposed method outperforms a conventional method based on signal resampling when the sampling frequencies of input signals are significantly lower than the trained sampling frequency.
+        </p>
+    </div>
+</div>
+<p><br></p>
+<div class="album">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-1">
+            </div>
+            <div class="col-10">
+                <h2>Separated examples</h2>
+                <div class="row text-left">
+                    Some separated results obtained by the following three methods are available.
+                    Mixture and groundtruth signals are from the MUSDB18-HQ dataset.
+                    <ul class="list-group">
+                        <li class="list-group-item">Conv-TasNet [3]: Directly separate mixture audio signals untrained sampling frequencies</li>
+                        <li class="list-group-item">Signal Resampling: Resample mixture audio signals with the trained sampling frequency (32 kHz) before separation</li>
+                        <li class="list-group-item">Proposed SFI Conv-TasNet [1]: Use the proposed SFI convolutional and transposed convolutional layers for Conv-TasNet</li>
+                    </ul>
+                </div>
+                <div class="row"><br><br></div>
+            <h3>Conv-TasNet vs. Proposed SFI Conv-TasNet</h3>
+            <table class="table light" style="table-layout: fixed;">
+                <thead>
+                    <tr>
+                        <th>Mixture</th>
+                        <th>Instrument</th>
+                        <th>Ground Truth</th>
+                        <th><b>Conv-TasNet [3]</b></th>
+                        <th><b>Proposed SFI Conv-TasNet [1]</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+<tr>
+    <td class="font-weight-normal" style="vertical-align: middle;" rowspan="4">
+        Song 0<br>
+        8 kHz<audio controls preload="metadata" src="audio/song0/8k/mix.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song0/20k/mix.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song0/32k/mix.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song0/40k/mix.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song0/48k/mix.wav"></audio><br>
+    </td><td style="vertical-align: middle;">vocals</td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song0/8k/gt_vocals.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song0/20k/gt_vocals.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song0/32k/gt_vocals.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song0/40k/gt_vocals.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song0/48k/gt_vocals.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song0/8k/conv_vocals.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song0/20k/conv_vocals.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song0/32k/conv_vocals.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song0/40k/conv_vocals.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song0/48k/conv_vocals.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song0/8k/proposed_vocals.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song0/20k/proposed_vocals.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song0/32k/proposed_vocals.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song0/40k/proposed_vocals.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song0/48k/proposed_vocals.wav"></audio><br>
+    </td>
+</tr>
+<tr>
+    <td style="vertical-align: middle;">bass</td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song0/8k/gt_bass.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song0/20k/gt_bass.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song0/32k/gt_bass.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song0/40k/gt_bass.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song0/48k/gt_bass.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song0/8k/conv_bass.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song0/20k/conv_bass.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song0/32k/conv_bass.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song0/40k/conv_bass.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song0/48k/conv_bass.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song0/8k/proposed_bass.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song0/20k/proposed_bass.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song0/32k/proposed_bass.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song0/40k/proposed_bass.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song0/48k/proposed_bass.wav"></audio><br>
+    </td>
+</tr>
+<tr>
+    <td style="vertical-align: middle;">drums</td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song0/8k/gt_drums.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song0/20k/gt_drums.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song0/32k/gt_drums.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song0/40k/gt_drums.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song0/48k/gt_drums.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song0/8k/conv_drums.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song0/20k/conv_drums.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song0/32k/conv_drums.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song0/40k/conv_drums.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song0/48k/conv_drums.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song0/8k/proposed_drums.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song0/20k/proposed_drums.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song0/32k/proposed_drums.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song0/40k/proposed_drums.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song0/48k/proposed_drums.wav"></audio><br>
+    </td>
+</tr>
+<tr>
+    <td style="vertical-align: middle;">other</td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song0/8k/gt_other.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song0/20k/gt_other.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song0/32k/gt_other.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song0/40k/gt_other.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song0/48k/gt_other.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song0/8k/conv_other.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song0/20k/conv_other.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song0/32k/conv_other.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song0/40k/conv_other.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song0/48k/conv_other.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song0/8k/proposed_other.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song0/20k/proposed_other.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song0/32k/proposed_other.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song0/40k/proposed_other.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song0/48k/proposed_other.wav"></audio><br>
+    </td>
+</tr>
+<tr>
+    <td class="font-weight-normal" style="vertical-align: middle;" rowspan="4">
+        Song 1<br>
+        8 kHz<audio controls preload="metadata" src="audio/song1/8k/mix.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song1/20k/mix.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song1/32k/mix.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song1/40k/mix.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song1/48k/mix.wav"></audio><br>
+    </td><td style="vertical-align: middle;">vocals</td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song1/8k/gt_vocals.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song1/20k/gt_vocals.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song1/32k/gt_vocals.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song1/40k/gt_vocals.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song1/48k/gt_vocals.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song1/8k/conv_vocals.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song1/20k/conv_vocals.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song1/32k/conv_vocals.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song1/40k/conv_vocals.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song1/48k/conv_vocals.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song1/8k/proposed_vocals.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song1/20k/proposed_vocals.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song1/32k/proposed_vocals.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song1/40k/proposed_vocals.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song1/48k/proposed_vocals.wav"></audio><br>
+    </td>
+</tr>
+<tr>
+    <td style="vertical-align: middle;">bass</td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song1/8k/gt_bass.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song1/20k/gt_bass.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song1/32k/gt_bass.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song1/40k/gt_bass.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song1/48k/gt_bass.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song1/8k/conv_bass.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song1/20k/conv_bass.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song1/32k/conv_bass.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song1/40k/conv_bass.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song1/48k/conv_bass.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song1/8k/proposed_bass.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song1/20k/proposed_bass.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song1/32k/proposed_bass.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song1/40k/proposed_bass.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song1/48k/proposed_bass.wav"></audio><br>
+    </td>
+</tr>
+<tr>
+    <td style="vertical-align: middle;">drums</td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song1/8k/gt_drums.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song1/20k/gt_drums.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song1/32k/gt_drums.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song1/40k/gt_drums.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song1/48k/gt_drums.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song1/8k/conv_drums.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song1/20k/conv_drums.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song1/32k/conv_drums.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song1/40k/conv_drums.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song1/48k/conv_drums.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song1/8k/proposed_drums.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song1/20k/proposed_drums.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song1/32k/proposed_drums.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song1/40k/proposed_drums.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song1/48k/proposed_drums.wav"></audio><br>
+    </td>
+</tr>
+<tr>
+    <td style="vertical-align: middle;">other</td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song1/8k/gt_other.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song1/20k/gt_other.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song1/32k/gt_other.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song1/40k/gt_other.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song1/48k/gt_other.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song1/8k/conv_other.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song1/20k/conv_other.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song1/32k/conv_other.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song1/40k/conv_other.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song1/48k/conv_other.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio/song1/8k/proposed_other.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio/song1/20k/proposed_other.wav"></audio><br>32 kHz<audio controls preload="metadata" src="audio/song1/32k/proposed_other.wav"></audio><br>40 kHz<audio controls preload="metadata" src="audio/song1/40k/proposed_other.wav"></audio><br>48 kHz<audio controls preload="metadata" src="audio/song1/48k/proposed_other.wav"></audio><br>
+    </td>
+</tr>
+                </tbody>
+            </table>
+            <div class="row"><br><br></div>
+            <h3>Signal Resampling vs. Proposed SFI Conv-TasNet</h3>
+            <table class="table light" style="table-layout: fixed;">
+                <thead>
+                    <tr>
+                        <th>Mixture</th>
+                        <th>Instrument</th>
+                        <th>Ground Truth</th>
+                        <th><b>Signal Resampling</b></th>
+                        <th><b>Proposed SFI Conv-TasNet [1]</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+<tr>
+    <td class="font-weight-normal" style="vertical-align: middle;" rowspan="4">
+        Song 0<br>
+        8 kHz<audio controls preload="metadata" src="audio2/song0/8k/mix.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song0/12k/mix.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song0/16k/mix.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song0/20k/mix.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song0/24k/mix.wav"></audio><br>
+    </td><td style="vertical-align: middle;">vocals</td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song0/8k/gt_vocals.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song0/12k/gt_vocals.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song0/16k/gt_vocals.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song0/20k/gt_vocals.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song0/24k/gt_vocals.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song0/8k/resample_vocals.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song0/12k/resample_vocals.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song0/16k/resample_vocals.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song0/20k/resample_vocals.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song0/24k/resample_vocals.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song0/8k/proposed_vocals.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song0/12k/proposed_vocals.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song0/16k/proposed_vocals.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song0/20k/proposed_vocals.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song0/24k/proposed_vocals.wav"></audio><br>
+    </td>
+</tr>
+<tr>
+    <td style="vertical-align: middle;">bass</td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song0/8k/gt_bass.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song0/12k/gt_bass.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song0/16k/gt_bass.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song0/20k/gt_bass.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song0/24k/gt_bass.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song0/8k/resample_bass.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song0/12k/resample_bass.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song0/16k/resample_bass.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song0/20k/resample_bass.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song0/24k/resample_bass.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song0/8k/proposed_bass.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song0/12k/proposed_bass.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song0/16k/proposed_bass.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song0/20k/proposed_bass.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song0/24k/proposed_bass.wav"></audio><br>
+    </td>
+</tr>
+<tr>
+    <td style="vertical-align: middle;">drums</td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song0/8k/gt_drums.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song0/12k/gt_drums.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song0/16k/gt_drums.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song0/20k/gt_drums.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song0/24k/gt_drums.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song0/8k/resample_drums.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song0/12k/resample_drums.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song0/16k/resample_drums.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song0/20k/resample_drums.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song0/24k/resample_drums.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song0/8k/proposed_drums.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song0/12k/proposed_drums.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song0/16k/proposed_drums.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song0/20k/proposed_drums.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song0/24k/proposed_drums.wav"></audio><br>
+    </td>
+</tr>
+<tr>
+    <td style="vertical-align: middle;">other</td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song0/8k/gt_other.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song0/12k/gt_other.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song0/16k/gt_other.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song0/20k/gt_other.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song0/24k/gt_other.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song0/8k/resample_other.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song0/12k/resample_other.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song0/16k/resample_other.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song0/20k/resample_other.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song0/24k/resample_other.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song0/8k/proposed_other.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song0/12k/proposed_other.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song0/16k/proposed_other.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song0/20k/proposed_other.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song0/24k/proposed_other.wav"></audio><br>
+    </td>
+</tr>
+<tr>
+    <td class="font-weight-normal" style="vertical-align: middle;" rowspan="4">
+        Song 1<br>
+        8 kHz<audio controls preload="metadata" src="audio2/song1/8k/mix.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song1/12k/mix.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song1/16k/mix.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song1/20k/mix.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song1/24k/mix.wav"></audio><br>
+    </td><td style="vertical-align: middle;">vocals</td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song1/8k/gt_vocals.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song1/12k/gt_vocals.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song1/16k/gt_vocals.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song1/20k/gt_vocals.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song1/24k/gt_vocals.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song1/8k/resample_vocals.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song1/12k/resample_vocals.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song1/16k/resample_vocals.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song1/20k/resample_vocals.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song1/24k/resample_vocals.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song1/8k/proposed_vocals.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song1/12k/proposed_vocals.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song1/16k/proposed_vocals.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song1/20k/proposed_vocals.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song1/24k/proposed_vocals.wav"></audio><br>
+    </td>
+</tr>
+<tr>
+    <td style="vertical-align: middle;">bass</td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song1/8k/gt_bass.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song1/12k/gt_bass.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song1/16k/gt_bass.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song1/20k/gt_bass.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song1/24k/gt_bass.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song1/8k/resample_bass.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song1/12k/resample_bass.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song1/16k/resample_bass.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song1/20k/resample_bass.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song1/24k/resample_bass.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song1/8k/proposed_bass.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song1/12k/proposed_bass.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song1/16k/proposed_bass.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song1/20k/proposed_bass.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song1/24k/proposed_bass.wav"></audio><br>
+    </td>
+</tr>
+<tr>
+    <td style="vertical-align: middle;">drums</td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song1/8k/gt_drums.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song1/12k/gt_drums.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song1/16k/gt_drums.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song1/20k/gt_drums.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song1/24k/gt_drums.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song1/8k/resample_drums.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song1/12k/resample_drums.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song1/16k/resample_drums.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song1/20k/resample_drums.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song1/24k/resample_drums.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song1/8k/proposed_drums.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song1/12k/proposed_drums.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song1/16k/proposed_drums.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song1/20k/proposed_drums.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song1/24k/proposed_drums.wav"></audio><br>
+    </td>
+</tr>
+<tr>
+    <td style="vertical-align: middle;">other</td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song1/8k/gt_other.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song1/12k/gt_other.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song1/16k/gt_other.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song1/20k/gt_other.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song1/24k/gt_other.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song1/8k/resample_other.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song1/12k/resample_other.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song1/16k/resample_other.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song1/20k/resample_other.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song1/24k/resample_other.wav"></audio><br>
+    </td>
+    <td>
+        8 kHz<audio controls preload="metadata" src="audio2/song1/8k/proposed_other.wav"></audio><br>12 kHz<audio controls preload="metadata" src="audio2/song1/12k/proposed_other.wav"></audio><br>16 kHz<audio controls preload="metadata" src="audio2/song1/16k/proposed_other.wav"></audio><br>20 kHz<audio controls preload="metadata" src="audio2/song1/20k/proposed_other.wav"></audio><br>24 kHz<audio controls preload="metadata" src="audio2/song1/24k/proposed_other.wav"></audio><br>
+    </td>
+</tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="col-1">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h1>References</h1>
+    <div>
+        [1] Koichi Saito, <ins>Tomohiko Nakamura</ins>, Kohei Yatabe, and Hiroshi Saruwatari, "<strong>Sampling-frequency-independent convolutional layer and its application to audio source separation</strong>," <em>IEEE/ACM Transactions on Audio, Speech, and Language Processing</em>, vol. 30, pp. 2928--2943, Sep. 2022. <a href="https://doi.org/10.1109/TASLP.2022.3203907">pdf</a>, <a href="https://github.com/TomohikoNakamura/sfi_convtasnet">code</a>
+        <br>
+        [2] Zafar Rafii, Antoine Liutkus, Fabian-Robert Sto&#776;ter, and Rachel Bittner, "MUSDB18-HQ - an uncompressed version of MUSDB18," Aug. 2019.
+        <br>
+        [3] Yi Luo and Nima Mesgarani, "Conv-TasNet: Surpassing ideal time–frequency magnitude masking for speech separation," <em>IEEE/ACM Transactions on Audio, Speech, and Language Processing</em>, vol. 27, no. 8, pp. 1256--1266, May 2019.
+    </div>
+</div>
+        
+    </body>
+</html>
