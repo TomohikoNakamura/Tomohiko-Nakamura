@@ -318,31 +318,39 @@
 <h1 id="tips">計算機関連のTips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h1>
 <p><strong>単なる備忘録なので，以下に関して一切の保証はしない．
 また，他の人にはあまり参考にならないかもしれない．</strong></p>
-<h2 id="jetson-orin-nanonvme-m2-ssdos">Jetson Orin Nanoでの，NVMe M.2 SSDへのOSインストール<a class="headerlink" href="#jetson-orin-nanonvme-m2-ssdos" title="Permanent link">&para;</a></h2>
+<h2 id="jetson-orin-nanonvme-ssdos">Jetson Orin NanoでのNVMe SSDへのOSインストール<a class="headerlink" href="#jetson-orin-nanonvme-ssdos" title="Permanent link">&para;</a></h2>
 <p>Jetson Orin NanoにNVMe M.2 SSDを接続して，SSDにOSをインストールすることができる．
 ただし，SDK Managerを使って入れようとすると上手くいかなかった．
-基本的には，<a href="https://docs.nvidia.com/jetson/archives/r36.3/DeveloperGuide/IN/QuickStart.html">ここ</a>を見てやれば良い．
-大まかな手順は以下の通り．
-- Jetson Orin NanoをForced Recovery Modeで起動．
-    - Jetson Orin Nanoの電源を消しておく．
-    - Header Button Pinの9，10番をジャンパピンで短絡．（ジャンパピンがなければ買う．）
-    - Jetson Orin Nanoの電源を入れて，JetsonのUSB-C端子とホストマシンのUSB-A端子とケーブルで繋ぐ．
-- ホストマシンからJetsonがForced Recovery Modeで認識されるか<code>lsusb</code>で確認．
-- CUIでJetson OSをフラッシュ．
-    - <a href="https://developer.nvidia.com/embedded/jetson-linux-archive">ここ</a>から，Jetson OS，Sample root file systemのtbz2ファイルをダウンロード．以下では，それぞれ<code>${L4T_RELEASE_PACKAGE}</code>，<code>${SAMPLE_FS_PACKAGE}</code>とする．
-    - 展開して前準備をする．
-        <div class="highlight"><pre><span></span><code>tar<span class="w"> </span>xf<span class="w"> </span><span class="si">${</span><span class="nv">L4T_RELEASE_PACKAGE</span><span class="si">}</span>
+基本的には，<a href="https://docs.nvidia.com/jetson/archives/r36.3/DeveloperGuide/IN/QuickStart.html">ここ</a>を見てやれば良い．  </p>
+<p>大まかな手順は以下の通り．</p>
+<ol>
+<li>Jetson Orin NanoをForced Recovery Modeで起動．<ul>
+<li>Jetson Orin Nanoの電源を消しておく．</li>
+<li>Header Button Pinの9，10番をジャンパピンで短絡．（ジャンパピンがなければ買う．）</li>
+<li>Jetson Orin Nanoの電源を入れて，JetsonのUSB-C端子とホストマシンのUSB-A端子とケーブルで繋ぐ．</li>
+</ul>
+</li>
+<li>ホストマシンからJetsonがForced Recovery Modeで認識されるか<code>lsusb</code>で確認．</li>
+<li>CUIでJetson OSをフラッシュ．<ul>
+<li><a href="https://developer.nvidia.com/embedded/jetson-linux-archive">ここ</a>から，Jetson OS，Sample root file systemのtbz2ファイルをダウンロード．以下では，それぞれ<code>${L4T_RELEASE_PACKAGE}</code>，<code>${SAMPLE_FS_PACKAGE}</code>とする．</li>
+<li>展開して前準備をする．
+    <div class="highlight"><pre><span></span><code>tar<span class="w"> </span>xf<span class="w"> </span><span class="si">${</span><span class="nv">L4T_RELEASE_PACKAGE</span><span class="si">}</span>
 sudo<span class="w"> </span>tar<span class="w"> </span>xpf<span class="w"> </span><span class="si">${</span><span class="nv">SAMPLE_FS_PACKAGE</span><span class="si">}</span><span class="w"> </span>-C<span class="w"> </span>Linux_for_Tegra/rootfs/
 <span class="nb">cd</span><span class="w"> </span>Linux_for_Tegra/
 sudo<span class="w"> </span>./tools/l4t_flash_prerequisites.sh
 sudo<span class="w"> </span>./apply_binaries.sh
-</code></pre></div>
-    - JetsonのSSDにOSをフラッシュ．
-        <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>./tools/kernel_flash/l4t_initrd_flash.sh<span class="w"> </span>--external-device<span class="w"> </span>nvme0n1p1<span class="w"> </span>-c<span class="w"> </span>tools/kernel_flash/flash_l4t_t234_nvme.xml<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;-c bootloader/generic/cfg/flash_t234_qspi.xml&quot;</span><span class="w"> </span>--showlogs<span class="w"> </span>--network<span class="w"> </span>usb0<span class="w"> </span>jetson-orin-nano-devkit<span class="w"> </span>internal
-</code></pre></div>
-- Jetsonを再起動．
-    - Jetsonの電源を切って，Header Button Pinの9，10番のジャンパピンを外す．
-    - Jetsonの電源を入れる．ディスプレイやキーボードを接続して，OSが正常に起動するか確認する．</p>
+</code></pre></div></li>
+<li>JetsonのSSDにOSをフラッシュ．
+    <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>./tools/kernel_flash/l4t_initrd_flash.sh<span class="w"> </span>--external-device<span class="w"> </span>nvme0n1p1<span class="w"> </span>-c<span class="w"> </span>tools/kernel_flash/flash_l4t_t234_nvme.xml<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;-c bootloader/generic/cfg/flash_t234_qspi.xml&quot;</span><span class="w"> </span>--showlogs<span class="w"> </span>--network<span class="w"> </span>usb0<span class="w"> </span>jetson-orin-nano-devkit<span class="w"> </span>internal
+</code></pre></div></li>
+</ul>
+</li>
+<li>Jetsonを再起動．<ul>
+<li>Jetsonの電源を切って，Header Button Pinの9，10番のジャンパピンを外す．</li>
+<li>Jetsonの電源を入れる．ディスプレイやキーボードを接続して，OSが正常に起動するか確認する．</li>
+</ul>
+</li>
+</ol>
 <h2 id="usbwifiubuntu2204">USB接続WifiアダプターがUbuntu22.04で認識されない<a class="headerlink" href="#usbwifiubuntu2204" title="Permanent link">&para;</a></h2>
 <p>RTL8852AUが採用されている場合は，<a href="https://github.com/lwfinger/rtl8852au">ここ</a>のドライバーをインストールすれば良い．
 具体的には以下．
