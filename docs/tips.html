@@ -318,6 +318,9 @@
 <h1 id="tips">計算機関連のTips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h1>
 <p><strong>単なる備忘録なので，以下に関して一切の保証はしない．
 また，他の人にはあまり参考にならないかもしれない．</strong></p>
+<h2 id="jetsonpytorch">JetsonへのPyTorchインストール<a class="headerlink" href="#jetsonpytorch" title="Permanent link">&para;</a></h2>
+<p>基本は<a href="https://docs.nvidia.com/deeplearning/frameworks/install-pytorch-jetson-platform/index.html">ここ</a>を参照．<br />
+<a href="https://developer.download.nvidia.com/compute/redist/jp/">NVIDIAの整備しているリポジトリ</a>からJetPackのバージョンに合わせてPyTorchのwheelをチェックして，それをpipで導入．<code>numpy</code>のバージョンはpytorchに会うように指定する．</p>
 <h2 id="jetson-orin-nanonvme-ssdos">Jetson Orin NanoでのNVMe SSDへのOSインストール<a class="headerlink" href="#jetson-orin-nanonvme-ssdos" title="Permanent link">&para;</a></h2>
 <p>Jetson Orin NanoにNVMe M.2 SSDを接続して，SSDにOSをインストールすることができる．
 ただし，SDK Managerを使って入れようとすると上手くいかなかった．
@@ -366,6 +369,11 @@ sudo<span class="w"> </span>dkms<span class="w"> </span>build<span class="w"> </
 sudo<span class="w"> </span>dkms<span class="w"> </span>install<span class="w"> </span>rtl8852au<span class="w"> </span>-v<span class="w"> </span><span class="m">1</span>.15.0.1
 
 <span class="c1"># 再起動して，ドライバーをロード（modprobeでもOK）</span>
+</code></pre></div></p>
+<h2 id="ubuntu">Ubuntuでネットワークカードが検出されない時<a class="headerlink" href="#ubuntu" title="Permanent link">&para;</a></h2>
+<p>大抵の場合ドライバが標準で入っていない．
+以下でリポジトリを追加して，所望のドライバがあればインストールする．ない場合は頑張って探す．
+<div class="highlight"><pre><span></span><code>add-apt-repository<span class="w"> </span>ppa:hardkernel/ppa
 </code></pre></div></p>
 
 
