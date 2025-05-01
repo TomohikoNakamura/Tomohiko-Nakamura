@@ -15,3 +15,19 @@
     display: block;
     margin: 0 auto;
 }
+
+.md-typeset .md-button.md-button--small {
+    margin-left: 0;
+    margin-right: 0.8em;
+    background: none;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    font-size: inherit;
+    line-height: inherit;
+    height: auto;
+    text-transform: none;
+    vertical-align: baseline;
+    font-weight: normal;
+    color: var(--md-code-hl-keyword-color);
+}
