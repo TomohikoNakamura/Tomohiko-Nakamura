@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://tomohikonakamura.github.io/Tomohiko-Nakamura/sitemap.xml

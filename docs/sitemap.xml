@@ -1,79 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/index.html</loc>
-         <lastmod>2026-08-06</lastmod>
+        <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/</loc>
     </url>
     <url>
-         <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/datasets.html</loc>
-         <lastmod>2026-08-06</lastmod>
+        <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/datasets/</loc>
     </url>
     <url>
-         <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/lecture.html</loc>
-         <lastmod>2026-08-06</lastmod>
+        <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/demo/HTFD/</loc>
     </url>
     <url>
-         <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/members.html</loc>
-         <lastmod>2026-08-06</lastmod>
+        <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/demo/MRDLA/</loc>
     </url>
     <url>
-         <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/research.html</loc>
-         <lastmod>2026-08-06</lastmod>
+        <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/demo/automatic_accompaniment/</loc>
     </url>
     <url>
-         <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/tips.html</loc>
-         <lastmod>2026-08-06</lastmod>
+        <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/demo/drum_timbre_replacement/</loc>
     </url>
     <url>
-         <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/demo/HTFD/index.html</loc>
-         <lastmod>2026-08-06</lastmod>
+        <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/demo/fastCWT/</loc>
     </url>
     <url>
-         <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/demo/MRDLA/index.html</loc>
-         <lastmod>2026-08-06</lastmod>
+        <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/demo/jaCappella_sep/</loc>
     </url>
     <url>
-         <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/demo/automatic_accompaniment/index.html</loc>
-         <lastmod>2026-08-06</lastmod>
+        <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/demo/sfi_convtasnet/</loc>
     </url>
     <url>
-         <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/demo/drum_timbre_replacement/index.html</loc>
-         <lastmod>2026-08-06</lastmod>
+        <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/lecture/</loc>
     </url>
     <url>
-         <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/demo/fastCWT/index.html</loc>
-         <lastmod>2026-08-06</lastmod>
+        <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/members/</loc>
     </url>
     <url>
-         <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/demo/jaCappella_sep/index.html</loc>
-         <lastmod>2026-08-06</lastmod>
+        <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/publications/</loc>
     </url>
     <url>
-         <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/demo/sfi_convtasnet/index.html</loc>
-         <lastmod>2026-08-06</lastmod>
+        <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/publications/awards/</loc>
     </url>
     <url>
-         <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/publications/index.html</loc>
-         <lastmod>2026-08-06</lastmod>
+        <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/publications/dom_confs/</loc>
     </url>
     <url>
-         <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/publications/awards.html</loc>
-         <lastmod>2026-08-06</lastmod>
+        <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/publications/int_confs/</loc>
     </url>
     <url>
-         <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/publications/dom_confs.html</loc>
-         <lastmod>2026-08-06</lastmod>
+        <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/publications/journals/</loc>
     </url>
     <url>
-         <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/publications/int_confs.html</loc>
-         <lastmod>2026-08-06</lastmod>
+        <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/publications/review_patents_and_talks/</loc>
     </url>
     <url>
-         <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/publications/journals.html</loc>
-         <lastmod>2026-08-06</lastmod>
+        <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/research/</loc>
     </url>
     <url>
-         <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/publications/review_patents_and_talks.html</loc>
-         <lastmod>2026-08-06</lastmod>
+        <loc>https://tomohikonakamura.github.io/Tomohiko-Nakamura/tips/</loc>
     </url>
 </urlset>

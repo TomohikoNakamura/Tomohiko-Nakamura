@@ -1,74 +1,58 @@
 <!doctype html>
-<html>
-    <head>
-        <!-- BOOTSTRAP CORE STYLE  -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <!-- GOOGLE FONT -->
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' crossorigin="anonymous" />
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Tomohiko Nakamura&#x27;s research homepage">
+  <title>Demonstration on Music Source Separation Using MRDLA · Tomohiko Nakamura</title>
+  <script>
+    (function () {
+      let saved = null;
+      try { saved = window.localStorage.getItem("color-theme"); } catch (_) {}
+      const media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+      const systemDark = media ? media.matches : false;
+      document.documentElement.dataset.theme = saved === "light" || saved === "dark"
+        ? saved
+        : (systemDark ? "dark" : "light");
+    })();
+  </script>
+  <link rel="stylesheet" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/styles/site.css">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9EPRVMYY0Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9EPRVMYY0Z');
+  </script>
+  
+</head>
+<body>
+  <header class="site-header">
+  <div class="nav-wrap">
+    <a class="site-title" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/">Tomohiko Nakamura</a>
+    <nav class="top-nav" aria-label="Main navigation">
+      <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/members/">Members</a>
+      <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/publications/">Publications</a>
+      <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/datasets/">Datasets</a>
+      <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/research/">Research / Demo</a>
+      <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/lecture/">Lecture Notes</a>
+      <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/tips/">Tips</a>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme">
+      <img class="theme-icon theme-icon-moon" src="https://tomohikonakamura.github.io/Tomohiko-Nakamura/icons/fontawesome/moon.svg" alt="" aria-hidden="true">
+      <img class="theme-icon theme-icon-sun" src="https://tomohikonakamura.github.io/Tomohiko-Nakamura/icons/fontawesome/sun.svg" alt="" aria-hidden="true">
+    </button>
+  </div>
+</header>
 
-        <!-- BOOTSTRAP JS -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <main class="site-main demo-main">
     
-        <!-- CUSTOM STYLE CSS -->
-        <link href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/assets/css/style.css" rel="stylesheet" />
-
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-        <!-- Page description -->
-        
-
-        <!-- Page keywords -->
-        
-
-        <!-- Page author -->
-        
-            <meta name="author" content="Tomohiko Nakamura" />
-        
-
-        <!-- Site title -->
-        
-        
-            <title>Demonstration on Music Source Separation Using MRDLA - Tomohiko Nakamura</title>
-        
-        
-
-        
-            
-        
-
-    </head>
-    <body>
-        <!-- START NAB BAR SECTION -->
-        <nav class="navbar navbar-expand-md  navbar-dark bg-dark">
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navigator" aria-controls="navigator" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navigator">
-              <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/">Home</a></li>
-              </ul>
-            </div>
-          </nav>
-        <!--END NAB BAR SECTION-->    
-
-        <section class="jumbotron text-center">
-    <div class="container">
-        
-            <h1 class="jumbotron-heading">Demonstration on Music Source Separation Using Multiresolution Deep Layered Analysis (MRDLA)</h1>
-        
-        
-            <p class="lead">
-                Tomohiko Nakamura, Shihori Kozuka, and Hiroshi Saruwatari (The University of Tokyo)
-            </p>
-        
-    </div>
-</section>
-        
-            <p><link rel="stylesheet" type="text/css" href="style.css"></p>
+<article class="demo-content">
+  <h1>Demonstration on Music Source Separation Using Multiresolution Deep Layered Analysis (MRDLA)</h1>
+  <p class="demo-authors">Tomohiko Nakamura, Shihori Kozuka, and Hiroshi Saruwatari (The University of Tokyo)</p>
+  <link rel="stylesheet" type="text/css" href="style.css">
 <div class="container">
     <div class="row">
         <p class="lead text-left">
@@ -86,7 +70,7 @@
         </p>
     </div>
 </div>
-<p><br></p>
+<br>
 <div class="album">
     <div class="fluid-container">
         <div class="row">
@@ -633,22 +617,10 @@
         </div>
     </div>
 </div>
-
 <div class="container">
     <h1>References</h1>
     <div>
-        [1] <ins>Tomohiko Nakamura</ins>, Shihori Kozuka, and Hiroshi Saruwatari, “<strong><a href="https://doi.org/10.1109/TASLP.2021.3072496">Time-domain audio source separation with neural networks based on multiresolution analysis</a></strong>,” <em>IEEE/ACM Transactions on Audio, Speech, and Language Processing</em>, vol. 29, pp. 1687–1701, Apr. 2021.<br />
-<span style="color: var(--md-code-hl-function-color)">[The Itakura Prize Innovative Young Researcher Award / 第17回日本音響学会・独創研究奨励賞板倉記念]</span><br><a class="md-button md-button--small" href="javascript:void(0);" onclick="toggleBib('TNakamura202104IEEEACMTASLP')">bib</a>   <a class="md-button md-button--small" href="https://drive.google.com/file/d/10z8dxzKtCf8dAfv-_MYQUWkWGawt3rrI/view?usp=share_link">slides </a>   <a class="md-button md-button--small" href="https://drive.google.com/file/d/106d2i7NYkIdNgYR1NpUgm1xXBoP6TKwX/view?usp=share_link">poster </a>   <a class="md-button md-button--small" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/demo/MRDLA/">demo </a>   <a class="md-button md-button--small" href="https://github.com/TomohikoNakamura/dwtls">code </a><br><div id="TNakamura202104IEEEACMTASLP" class="bibtex" style="display:none;"><div class="highlight"><pre><span></span><code><span class="nc">@article</span><span class="p">{</span><span class="nl">TNakamura202104IEEEACMTASLP</span><span class="p">,</span>
-<span class="w">    </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Nakamura, Tomohiko and Kozuka, Shihori and Saruwatari, Hiroshi&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="na">journal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;IEEE/ACM Transactions on Audio, Speech, and Language Processing&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Time-domain audio source separation with neural networks based on multiresolution analysis&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="na">year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;2021&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="na">doi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;10.1109/TASLP.2021.3072496&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="na">month</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;April&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="na">volume</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;29&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="na">pages</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;1687--1701&quot;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+        [1] {{ get_bibentry_html("TNakamura202104IEEEACMTASLP", lang="en") }}
         <br>
         [2] Zafar Rafii, Antoine Liutkus, Fabian-Robert Sto&#776;ter, and Rachel Bittner, "The MUSDB18 corpus for
         music separation," Dec. 2017.
@@ -662,6 +634,55 @@
         [5] Yi Luo and Nima Mesgarani, "Conv-TasNet: Surpassing ideal time–frequency magnitude masking for speech separation," <em>IEEE/ACM Transactions on Audio, Speech, and Language Processing</em>, vol. 27, no. 8, pp. 1256--1266, May 2019.
     </div>
 </div>
-        
-    </body>
+
+</article>
+
+  </main>
+  <footer class="site-footer">
+  <div>© 2021–2026 Tomohiko Nakamura</div>
+</footer>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const button = document.getElementById("theme-toggle");
+      const media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+      if (!button) return;
+
+      function savedTheme() {
+        try {
+          const saved = window.localStorage.getItem("color-theme");
+          return saved === "light" || saved === "dark" ? saved : null;
+        } catch (_) {
+          return null;
+        }
+      }
+
+      function updateButton() {
+        const dark = root.dataset.theme === "dark";
+        button.setAttribute("aria-label", dark ? "Use light theme" : "Use dark theme");
+        button.setAttribute("title", dark ? "Use light theme" : "Use dark theme");
+        button.setAttribute("aria-pressed", dark ? "true" : "false");
+      }
+
+      button.addEventListener("click", function () {
+        const next = root.dataset.theme === "dark" ? "light" : "dark";
+        root.dataset.theme = next;
+        try { window.localStorage.setItem("color-theme", next); } catch (_) {}
+        updateButton();
+      });
+
+      if (media) {
+        media.addEventListener("change", function (event) {
+          if (savedTheme() === null) {
+            root.dataset.theme = event.matches ? "dark" : "light";
+            updateButton();
+          }
+        });
+      }
+
+      updateButton();
+    })();
+  </script>
+</body>
 </html>

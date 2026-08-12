@@ -1,74 +1,58 @@
 <!doctype html>
-<html>
-    <head>
-        <!-- BOOTSTRAP CORE STYLE  -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <!-- GOOGLE FONT -->
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' crossorigin="anonymous" />
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Tomohiko Nakamura&#x27;s research homepage">
+  <title>Fast Signal Reconstruction from Magnitude CWT Spectrogram · Tomohiko Nakamura</title>
+  <script>
+    (function () {
+      let saved = null;
+      try { saved = window.localStorage.getItem("color-theme"); } catch (_) {}
+      const media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+      const systemDark = media ? media.matches : false;
+      document.documentElement.dataset.theme = saved === "light" || saved === "dark"
+        ? saved
+        : (systemDark ? "dark" : "light");
+    })();
+  </script>
+  <link rel="stylesheet" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/styles/site.css">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9EPRVMYY0Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9EPRVMYY0Z');
+  </script>
+  
+</head>
+<body>
+  <header class="site-header">
+  <div class="nav-wrap">
+    <a class="site-title" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/">Tomohiko Nakamura</a>
+    <nav class="top-nav" aria-label="Main navigation">
+      <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/members/">Members</a>
+      <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/publications/">Publications</a>
+      <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/datasets/">Datasets</a>
+      <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/research/">Research / Demo</a>
+      <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/lecture/">Lecture Notes</a>
+      <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/tips/">Tips</a>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme">
+      <img class="theme-icon theme-icon-moon" src="https://tomohikonakamura.github.io/Tomohiko-Nakamura/icons/fontawesome/moon.svg" alt="" aria-hidden="true">
+      <img class="theme-icon theme-icon-sun" src="https://tomohikonakamura.github.io/Tomohiko-Nakamura/icons/fontawesome/sun.svg" alt="" aria-hidden="true">
+    </button>
+  </div>
+</header>
 
-        <!-- BOOTSTRAP JS -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <main class="site-main demo-main">
     
-        <!-- CUSTOM STYLE CSS -->
-        <link href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/assets/css/style.css" rel="stylesheet" />
-
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-        <!-- Page description -->
-        
-
-        <!-- Page keywords -->
-        
-
-        <!-- Page author -->
-        
-            <meta name="author" content="Tomohiko Nakamura" />
-        
-
-        <!-- Site title -->
-        
-        
-            <title>Fast Signal Reconstruction from Magnitude CWT Spectrogram - Tomohiko Nakamura</title>
-        
-        
-
-        
-            
-        
-
-    </head>
-    <body>
-        <!-- START NAB BAR SECTION -->
-        <nav class="navbar navbar-expand-md  navbar-dark bg-dark">
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navigator" aria-controls="navigator" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navigator">
-              <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/">Home</a></li>
-              </ul>
-            </div>
-          </nav>
-        <!--END NAB BAR SECTION-->    
-
-        <section class="jumbotron text-center">
-    <div class="container">
-        
-            <h1 class="jumbotron-heading">Fast Signal Reconstruction from Magnitude Spectrogram of Continuous Wavelet Transform based on Spectrogram Consistency</h1>
-        
-        
-            <p class="lead">
-                Tomohiko Nakamura (The University of Tokyo) and Hirokazu Kameoka (The University of Tokyo/NTT Communication Science laboratories)
-            </p>
-        
-    </div>
-</section>
-        
-            <div class="container">
+<article class="demo-content">
+  <h1>Fast Signal Reconstruction from Magnitude Spectrogram of Continuous Wavelet Transform based on Spectrogram Consistency</h1>
+  <p class="demo-authors">Tomohiko Nakamura (The University of Tokyo) and Hirokazu Kameoka (The University of Tokyo&#x2F;NTT Communication Science laboratories)</p>
+  <div class="container">
   <div class="row">
     <h3>Demonstration of signal reconstruction from magnitude spectrogram</h3>
     <div class="text-left">
@@ -78,7 +62,6 @@
     </div>
   </div>
 </div>
-
 <div class="container-fluid px-5 py-3">
   <table class="table light px-5">
     <thead>
@@ -141,7 +124,6 @@
     </tbody>
   </table>
 </div>
-
 <div class="container">
   <div class="row">
     <h3>Demonstration of pitch transposition</h3>
@@ -151,7 +133,6 @@
     </div>
   </div>
 </div>
-
 <div class="container-fluid px-5 py-3">
   <table class="table light px-5">
     <thead>
@@ -214,27 +195,64 @@
     </tr>
   </table>
 </div>
-
 <div class="container">
   <h1>References</h1>
   <div>
-      [1] <ins>Tomohiko Nakamura</ins> and Hirokazu Kameoka, “<strong><a href="http://www.dafx14.fau.de/papers/dafx14_tomohiko_nakamura_fast_signal_reconstructio.pdf">Fast signal reconstruction from magnitude spectrogram of continuous wavelet transform based on spectrogram consistency</a></strong>,” in <em>Proceedings of International Conference on Digital Audio Effects</em>, Sept. 2014, pp. 129–135.<br />
-<span style="color: var(--md-code-hl-function-color)">[Travel Grant by the Hara Research Foundation]</span><br><a class="md-button md-button--small" href="javascript:void(0);" onclick="toggleBib('TNakamura201409DAFx')">bib</a>   <a class="md-button md-button--small" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/demo/fastCWT/">demo </a><br><div id="TNakamura201409DAFx" class="bibtex" style="display:none;"><div class="highlight"><pre><span></span><code><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">TNakamura201409DAFx</span><span class="p">,</span>
-<span class="w">    </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Nakamura, Tomohiko and Kameoka, Hirokazu&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="na">booktitle</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Proceedings of International Conference on Digital Audio Effects&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="na">month</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;September&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="na">pages</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;129--135&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Fast signal reconstruction from magnitude spectrogram of continuous wavelet transform based on spectrogram consistency&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="na">year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;2014&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="na">doi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;http://www.dafx14.fau.de/papers/dafx14_tomohiko_nakamura_fast_signal_reconstructio.pdf&quot;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+      [1] {{ get_bibentry_html("TNakamura201409DAFx", lang="en") }}
       <br>
       [2] Masataka Goto, "Development of the RWC Music Database," Proc. 18th International Congress on Acoustics (ICA 2004), pp. I-553--556, April 2004.
   </div>
   <br>
   <br>
 </div>
-        
-    </body>
+</article>
+
+  </main>
+  <footer class="site-footer">
+  <div>© 2021–2026 Tomohiko Nakamura</div>
+</footer>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const button = document.getElementById("theme-toggle");
+      const media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+      if (!button) return;
+
+      function savedTheme() {
+        try {
+          const saved = window.localStorage.getItem("color-theme");
+          return saved === "light" || saved === "dark" ? saved : null;
+        } catch (_) {
+          return null;
+        }
+      }
+
+      function updateButton() {
+        const dark = root.dataset.theme === "dark";
+        button.setAttribute("aria-label", dark ? "Use light theme" : "Use dark theme");
+        button.setAttribute("title", dark ? "Use light theme" : "Use dark theme");
+        button.setAttribute("aria-pressed", dark ? "true" : "false");
+      }
+
+      button.addEventListener("click", function () {
+        const next = root.dataset.theme === "dark" ? "light" : "dark";
+        root.dataset.theme = next;
+        try { window.localStorage.setItem("color-theme", next); } catch (_) {}
+        updateButton();
+      });
+
+      if (media) {
+        media.addEventListener("change", function (event) {
+          if (savedTheme() === null) {
+            root.dataset.theme = event.matches ? "dark" : "light";
+            updateButton();
+          }
+        });
+      }
+
+      updateButton();
+    })();
+  </script>
+</body>
 </html>
