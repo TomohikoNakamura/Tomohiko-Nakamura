@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="中村友彦の研究ホームページ">
+  <title>Tips · 中村友彦</title>
+  <script>
+    (function () {
+      let saved = null;
+      try { saved = window.localStorage.getItem("color-theme"); } catch (_) {}
+      const media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+      const systemDark = media ? media.matches : false;
+      document.documentElement.dataset.theme = saved === "light" || saved === "dark"
+        ? saved
+        : (systemDark ? "dark" : "light");
+    })();
+  </script>
+  <link rel="stylesheet" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/styles/site.css">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9EPRVMYY0Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9EPRVMYY0Z');
+  </script>
+  
+</head>
+<body>
+  
+
+  
+  
+  
+
+
+
+  
+    
+      
+    
+  
+    
+  
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="site-title" href="https:&#x2F;&#x2F;tomohikonakamura.github.io&#x2F;Tomohiko-Nakamura&#x2F;ja&#x2F;">中村友彦</a>
+    <nav class="top-nav" aria-label="メインナビゲーション">
+      <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/members/">メンバー</a>
+      <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/">発表文献</a>
+      <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/datasets/">データセット</a>
+      <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/research/">研究 / デモ</a>
+      <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/lecture/">講義資料</a>
+      <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/tips/">Tips</a>
+      <a class="language-switch" href="https:&#x2F;&#x2F;tomohikonakamura.github.io&#x2F;Tomohiko-Nakamura&#x2F;tips&#x2F;" hreflang="en">English</a>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="表示テーマを切り替える">
+      <img class="theme-icon theme-icon-moon" src="https://tomohikonakamura.github.io/Tomohiko-Nakamura/icons/fontawesome/moon.svg" alt="" aria-hidden="true">
+      <img class="theme-icon theme-icon-sun" src="https://tomohikonakamura.github.io/Tomohiko-Nakamura/icons/fontawesome/sun.svg" alt="" aria-hidden="true">
+    </button>
+  </div>
+</header>
+
+  <main class="site-main ">
+    
+<article class="prose">
+  <h1 id="ji-suan-ji-guan-lian-notips">計算機関連のTips</h1>
+<p><strong>単なる備忘録なので，以下に関して一切の保証はしない．
+また，他の人にはあまり参考にならないかもしれない．</strong></p>
+<h2 id="jetsonhenopytorchinsutoru">JetsonへのPyTorchインストール</h2>
+<p>基本は<a rel="noopener external" target="_blank" href="https://docs.nvidia.com/deeplearning/frameworks/install-pytorch-jetson-platform/index.html">ここ</a>を参照．<br />
+<a rel="noopener external" target="_blank" href="https://developer.download.nvidia.com/compute/redist/jp/">NVIDIAの整備しているリポジトリ</a>からJetPackのバージョンに合わせてPyTorchのwheelをチェックして，それをpipで導入．<code>numpy</code>のバージョンはpytorchに会うように指定する．</p>
+<h2 id="jetson-orin-nanodenonvme-ssdhenoosinsutoru">Jetson Orin NanoでのNVMe SSDへのOSインストール</h2>
+<p>Jetson Orin NanoにNVMe M.2 SSDを接続して，SSDにOSをインストールすることができる．
+ただし，SDK Managerを使って入れようとすると上手くいかなかった．
+基本的には，<a rel="noopener external" target="_blank" href="https://docs.nvidia.com/jetson/archives/r36.3/DeveloperGuide/IN/QuickStart.html">ここ</a>を見てやれば良い．</p>
+<p>大まかな手順は以下の通り．</p>
+<ol>
+<li>Jetson Orin NanoをForced Recovery Modeで起動．
+<ul>
+<li>Jetson Orin Nanoの電源を消しておく．</li>
+<li>Header Button Pinの9，10番をジャンパピンで短絡．（ジャンパピンがなければ買う．）</li>
+<li>Jetson Orin Nanoの電源を入れて，JetsonのUSB-C端子とホストマシンのUSB-A端子とケーブルで繋ぐ．</li>
+</ul>
+</li>
+<li>ホストマシンからJetsonがForced Recovery Modeで認識されるか<code>lsusb</code>で確認．</li>
+<li>CUIでJetson OSをフラッシュ．
+<ul>
+<li><a rel="noopener external" target="_blank" href="https://developer.nvidia.com/embedded/jetson-linux-archive">ここ</a>から，Jetson OS，Sample root file systemのtbz2ファイルをダウンロード．以下では，それぞれ<code>${L4T_RELEASE_PACKAGE}</code>，<code>${SAMPLE_FS_PACKAGE}</code>とする．</li>
+<li>展開して前準備をする．<pre><code data-lang="bash">tar xf ${L4T_RELEASE_PACKAGE}
+sudo tar xpf ${SAMPLE_FS_PACKAGE} -C Linux_for_Tegra/rootfs/
+cd Linux_for_Tegra/
+sudo ./tools/l4t_flash_prerequisites.sh
+sudo ./apply_binaries.sh
+</code></pre>
+</li>
+<li>JetsonのSSDにOSをフラッシュ．<pre><code data-lang="bash">sudo ./tools/kernel_flash/l4t_initrd_flash.sh --external-device nvme0n1p1 -c tools/kernel_flash/flash_l4t_t234_nvme.xml -p &quot;-c bootloader/generic/cfg/flash_t234_qspi.xml&quot; --showlogs --network usb0 jetson-orin-nano-devkit internal
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>Jetsonを再起動．
+<ul>
+<li>Jetsonの電源を切って，Header Button Pinの9，10番のジャンパピンを外す．</li>
+<li>Jetsonの電源を入れる．ディスプレイやキーボードを接続して，OSが正常に起動するか確認する．</li>
+</ul>
+</li>
+</ul>
+<h2 id="usbjie-sok-wifiadaputagaubuntu22-04deren-shi-sarenai">USB接続WifiアダプターがUbuntu22.04で認識されない</h2>
+<p>RTL8852AUが採用されている場合は，<a rel="noopener external" target="_blank" href="https://github.com/lwfinger/rtl8852au">ここ</a>のドライバーをインストールすれば良い．
+具体的には以下．</p>
+<pre><code data-lang="bash">sudo apt install make gcc linux-headers-$(uname -r) build-essential git
+git clone https://github.com/lwfinger/rtl8852au
+cd rtl8852au
+make
+sudo make install
+
+# 以下はカーネルアップデートに追従するための設定
+sudo dkms add .
+sudo dkms build rtl8852au -v 1.15.0.1
+sudo dkms install rtl8852au -v 1.15.0.1
+
+# 再起動して，ドライバーをロード（modprobeでもOK）
+</code></pre>
+<h2 id="ubuntudenetutowakukadogajian-chu-sarenaishi">Ubuntuでネットワークカードが検出されない時</h2>
+<p>大抵の場合ドライバが標準で入っていない．
+以下でリポジトリを追加して，所望のドライバがあればインストールする．ない場合は頑張って探す．</p>
+<pre><code data-lang="bash">add-apt-repository ppa:hardkernel/ppa
+</code></pre>
+
+</article>
+
+  </main>
+  <footer class="site-footer">
+  <div>© 2021–2026 Tomohiko Nakamura</div>
+</footer>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const button = document.getElementById("theme-toggle");
+      const media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+      if (!button) return;
+
+      function savedTheme() {
+        try {
+          const saved = window.localStorage.getItem("color-theme");
+          return saved === "light" || saved === "dark" ? saved : null;
+        } catch (_) {
+          return null;
+        }
+      }
+
+      function updateButton() {
+        const dark = root.dataset.theme === "dark";
+        button.setAttribute("aria-label", dark ? "Use light theme" : "Use dark theme");
+        button.setAttribute("title", dark ? "Use light theme" : "Use dark theme");
+        button.setAttribute("aria-pressed", dark ? "true" : "false");
+      }
+
+      button.addEventListener("click", function () {
+        const next = root.dataset.theme === "dark" ? "light" : "dark";
+        root.dataset.theme = next;
+        try { window.localStorage.setItem("color-theme", next); } catch (_) {}
+        updateButton();
+      });
+
+      if (media) {
+        media.addEventListener("change", function (event) {
+          if (savedTheme() === null) {
+            root.dataset.theme = event.matches ? "dark" : "light";
+            updateButton();
+          }
+        });
+      }
+
+      updateButton();
+    })();
+  </script>
+</body>
+</html>

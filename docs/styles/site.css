@@ -75,6 +75,7 @@ details.pub-bibtex summary { cursor:pointer; list-style:none; }
 details.pub-bibtex summary::-webkit-details-marker { display:none; }
 details.pub-bibtex[open] { flex-basis:100%; width:100%; }
 details.pub-bibtex pre, pre, code { background:var(--code-bg); }
+pre { max-width:100%; overflow-x:auto; }
 details.pub-bibtex pre { width:100%; overflow-x:auto; border:1px solid var(--line); margin:.35rem 0 0; padding:.8rem; font-size:.8rem; }
 .research-figure { margin:1.2rem 0 1.6rem; text-align:center; }
 .research-figure img { display:block; width:min(var(--research-image-width),100%); max-width:100%; height:auto; margin:0 auto; }

@@ -29,9 +29,25 @@
   
 </head>
 <body>
-  <header class="site-header">
+  
+
+  
+  
+  
+
+
+
+  
+    
+  
+    
+      
+    
+  
+
+<header class="site-header">
   <div class="nav-wrap">
-    <a class="site-title" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/">Tomohiko Nakamura</a>
+    <a class="site-title" href="https:&#x2F;&#x2F;tomohikonakamura.github.io&#x2F;Tomohiko-Nakamura&#x2F;">Tomohiko Nakamura</a>
     <nav class="top-nav" aria-label="Main navigation">
       <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/members/">Members</a>
       <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/publications/">Publications</a>
@@ -39,6 +55,7 @@
       <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/research/">Research / Demo</a>
       <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/lecture/">Lecture Notes</a>
       <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/tips/">Tips</a>
+      <a class="language-switch" href="https:&#x2F;&#x2F;tomohikonakamura.github.io&#x2F;Tomohiko-Nakamura&#x2F;ja&#x2F;tips&#x2F;" hreflang="ja">日本語</a>
     </nav>
     <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme">
       <img class="theme-icon theme-icon-moon" src="https://tomohikonakamura.github.io/Tomohiko-Nakamura/icons/fontawesome/moon.svg" alt="" aria-hidden="true">
@@ -50,71 +67,8 @@
   <main class="site-main ">
     
 <article class="prose">
-  <h1 id="ji-suan-ji-guan-lian-notips">計算機関連のTips</h1>
-<p><strong>単なる備忘録なので，以下に関して一切の保証はしない．
-また，他の人にはあまり参考にならないかもしれない．</strong></p>
-<h2 id="jetsonhenopytorchinsutoru">JetsonへのPyTorchインストール</h2>
-<p>基本は<a rel="noopener external" target="_blank" href="https://docs.nvidia.com/deeplearning/frameworks/install-pytorch-jetson-platform/index.html">ここ</a>を参照．<br />
-<a rel="noopener external" target="_blank" href="https://developer.download.nvidia.com/compute/redist/jp/">NVIDIAの整備しているリポジトリ</a>からJetPackのバージョンに合わせてPyTorchのwheelをチェックして，それをpipで導入．<code>numpy</code>のバージョンはpytorchに会うように指定する．</p>
-<h2 id="jetson-orin-nanodenonvme-ssdhenoosinsutoru">Jetson Orin NanoでのNVMe SSDへのOSインストール</h2>
-<p>Jetson Orin NanoにNVMe M.2 SSDを接続して，SSDにOSをインストールすることができる．
-ただし，SDK Managerを使って入れようとすると上手くいかなかった．
-基本的には，<a rel="noopener external" target="_blank" href="https://docs.nvidia.com/jetson/archives/r36.3/DeveloperGuide/IN/QuickStart.html">ここ</a>を見てやれば良い．</p>
-<p>大まかな手順は以下の通り．</p>
-<ol>
-<li>Jetson Orin NanoをForced Recovery Modeで起動．
-<ul>
-<li>Jetson Orin Nanoの電源を消しておく．</li>
-<li>Header Button Pinの9，10番をジャンパピンで短絡．（ジャンパピンがなければ買う．）</li>
-<li>Jetson Orin Nanoの電源を入れて，JetsonのUSB-C端子とホストマシンのUSB-A端子とケーブルで繋ぐ．</li>
-</ul>
-</li>
-<li>ホストマシンからJetsonがForced Recovery Modeで認識されるか<code>lsusb</code>で確認．</li>
-<li>CUIでJetson OSをフラッシュ．
-<ul>
-<li><a rel="noopener external" target="_blank" href="https://developer.nvidia.com/embedded/jetson-linux-archive">ここ</a>から，Jetson OS，Sample root file systemのtbz2ファイルをダウンロード．以下では，それぞれ<code>${L4T_RELEASE_PACKAGE}</code>，<code>${SAMPLE_FS_PACKAGE}</code>とする．</li>
-<li>展開して前準備をする．<pre><code data-lang="bash">tar xf ${L4T_RELEASE_PACKAGE}
-sudo tar xpf ${SAMPLE_FS_PACKAGE} -C Linux_for_Tegra/rootfs/
-cd Linux_for_Tegra/
-sudo ./tools/l4t_flash_prerequisites.sh
-sudo ./apply_binaries.sh
-</code></pre>
-</li>
-<li>JetsonのSSDにOSをフラッシュ．<pre><code data-lang="bash">sudo ./tools/kernel_flash/l4t_initrd_flash.sh --external-device nvme0n1p1 -c tools/kernel_flash/flash_l4t_t234_nvme.xml -p &quot;-c bootloader/generic/cfg/flash_t234_qspi.xml&quot; --showlogs --network usb0 jetson-orin-nano-devkit internal
-</code></pre>
-</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>Jetsonを再起動．
-<ul>
-<li>Jetsonの電源を切って，Header Button Pinの9，10番のジャンパピンを外す．</li>
-<li>Jetsonの電源を入れる．ディスプレイやキーボードを接続して，OSが正常に起動するか確認する．</li>
-</ul>
-</li>
-</ul>
-<h2 id="usbjie-sok-wifiadaputagaubuntu22-04deren-shi-sarenai">USB接続WifiアダプターがUbuntu22.04で認識されない</h2>
-<p>RTL8852AUが採用されている場合は，<a rel="noopener external" target="_blank" href="https://github.com/lwfinger/rtl8852au">ここ</a>のドライバーをインストールすれば良い．
-具体的には以下．</p>
-<pre><code data-lang="bash">sudo apt install make gcc linux-headers-$(uname -r) build-essential git
-git clone https://github.com/lwfinger/rtl8852au
-cd rtl8852au
-make
-sudo make install
-
-# 以下はカーネルアップデートに追従するための設定
-sudo dkms add .
-sudo dkms build rtl8852au -v 1.15.0.1
-sudo dkms install rtl8852au -v 1.15.0.1
-
-# 再起動して，ドライバーをロード（modprobeでもOK）
-</code></pre>
-<h2 id="ubuntudenetutowakukadogajian-chu-sarenaishi">Ubuntuでネットワークカードが検出されない時</h2>
-<p>大抵の場合ドライバが標準で入っていない．
-以下でリポジトリを追加して，所望のドライバがあればインストールする．ない場合は頑張って探す．</p>
-<pre><code data-lang="bash">add-apt-repository ppa:hardkernel/ppa
-</code></pre>
+  <h1 id="technical-tips">Technical Tips</h1>
+<p>These are personal technical notes. The detailed notes are currently maintained in Japanese; use the language switch to view them.</p>
 
 </article>
 
