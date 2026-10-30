@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-labelledby="svg-title svg-desc">
+<title id="svg-title">Neural and physics-informed spatial audio processing</title>
+<desc id="svg-desc">Original conceptual diagram of sparse acoustic measurements, alternative neural, physics-informed and generative methods, and an illustrative continuous sound field with HRTF-related tasks.</desc>
+<defs>
+<marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L10 5.5 L1 10 Z" fill="#668097"/></marker>
+<radialGradient id="warm-field" cx="43%" cy="49%" r="75%"><stop offset="0" stop-color="#f5d38f"/><stop offset=".18" stop-color="#f1bd86"/><stop offset=".38" stop-color="#96c7bf"/><stop offset=".64" stop-color="#5fa6bb"/><stop offset=".84" stop-color="#4d87b5"/><stop offset="1" stop-color="#3e6e9b"/></radialGradient>
+<clipPath id="fieldclip"><rect x="691" y="115" width="226" height="336" rx="12"/></clipPath>
+<clipPath id="sparseclip"><rect x="45" y="117" width="219" height="335" rx="11"/></clipPath>
+</defs>
+<rect width="960" height="600" fill="#ffffff"/>
+<rect x="20" y="32" width="270" height="516" rx="16" fill="#f9fbfd" stroke="#d4e0eb" stroke-width="2"/>
+<path d="M21 84 H289" fill="none" stroke="#dbe5ee" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<rect x="340" y="32" width="280" height="516" rx="16" fill="#f9fbfd" stroke="#d4e0eb" stroke-width="2"/>
+<path d="M341 84 H619" fill="none" stroke="#dbe5ee" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<rect x="670" y="32" width="270" height="516" rx="16" fill="#f9fbfd" stroke="#d4e0eb" stroke-width="2"/>
+<path d="M671 84 H939" fill="none" stroke="#dbe5ee" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<text x="42" y="68" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#253d57" text-anchor="start">Sparse sampling</text>
+<text x="364" y="68" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#253d57" text-anchor="start">Estimation</text>
+<text x="688" y="68" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#253d57" text-anchor="start">Dense sound field</text>
+<rect x="45" y="117" width="219" height="335" rx="11" fill="#ffffff" stroke="#dce7ef" stroke-width="1.5"/>
+<g clip-path="url(#sparseclip)">
+<path d="M81.5 120 V447" fill="none" stroke="#dfe7ee" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<path d="M48 172.5 H260" fill="none" stroke="#dfe7ee" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<path d="M118.0 120 V447" fill="none" stroke="#dfe7ee" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<path d="M48 228.0 H260" fill="none" stroke="#dfe7ee" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<path d="M154.5 120 V447" fill="none" stroke="#dfe7ee" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<path d="M48 283.5 H260" fill="none" stroke="#dfe7ee" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<path d="M191.0 120 V447" fill="none" stroke="#dfe7ee" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<path d="M48 339.0 H260" fill="none" stroke="#dfe7ee" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<path d="M227.5 120 V447" fill="none" stroke="#dfe7ee" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<path d="M48 394.5 H260" fill="none" stroke="#dfe7ee" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<circle cx="149" cy="285" r="39" fill="none" stroke="#8eb8c9" stroke-width="1.1"/>
+<circle cx="149" cy="285" r="84" fill="none" stroke="#8eb8c9" stroke-width="1.1"/>
+<circle cx="149" cy="285" r="132" fill="none" stroke="#8eb8c9" stroke-width="1.1"/>
+<circle cx="149" cy="285" r="191" fill="none" stroke="#8eb8c9" stroke-width="1.1"/>
+<circle cx="88" cy="170" r="9.5" fill="#f6fcff" stroke="#327eb9" stroke-width="2.6"/>
+<circle cx="88" cy="170" r="3.4" fill="#327eb9" stroke="none" stroke-width="1.5"/>
+<circle cx="214" cy="195" r="9.5" fill="#f6fcff" stroke="#327eb9" stroke-width="2.6"/>
+<circle cx="214" cy="195" r="3.4" fill="#327eb9" stroke="none" stroke-width="1.5"/>
+<circle cx="120" cy="279" r="9.5" fill="#f6fcff" stroke="#327eb9" stroke-width="2.6"/>
+<circle cx="120" cy="279" r="3.4" fill="#327eb9" stroke="none" stroke-width="1.5"/>
+<circle cx="227" cy="334" r="9.5" fill="#f6fcff" stroke="#327eb9" stroke-width="2.6"/>
+<circle cx="227" cy="334" r="3.4" fill="#327eb9" stroke="none" stroke-width="1.5"/>
+<circle cx="78" cy="385" r="9.5" fill="#f6fcff" stroke="#327eb9" stroke-width="2.6"/>
+<circle cx="78" cy="385" r="3.4" fill="#327eb9" stroke="none" stroke-width="1.5"/>
+<circle cx="171" cy="412" r="9.5" fill="#f6fcff" stroke="#327eb9" stroke-width="2.6"/>
+<circle cx="171" cy="412" r="3.4" fill="#327eb9" stroke="none" stroke-width="1.5"/>
+</g>
+<text x="156" y="487" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="600" fill="#54788e" text-anchor="middle">few observations</text>
+<rect x="367" y="128" width="224" height="104" rx="12" fill="#eaf3fa" stroke="#d3e0e9" stroke-width="1.2"/>
+<circle cx="395" cy="180" r="15" fill="#327eb9" stroke="none" stroke-width="1.5"/>
+<text x="421" y="172" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#253d57" text-anchor="start">Neural models</text>
+<text x="421" y="202" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="500" fill="#60798f" text-anchor="start">approach</text>
+<rect x="367" y="260" width="224" height="104" rx="12" fill="#eaf7f3" stroke="#d3e0e9" stroke-width="1.2"/>
+<circle cx="395" cy="312" r="15" fill="#2d998a" stroke="none" stroke-width="1.5"/>
+<text x="421" y="304" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#253d57" text-anchor="start">Physics-informed</text>
+<text x="421" y="334" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="500" fill="#60798f" text-anchor="start">approach</text>
+<rect x="367" y="392" width="224" height="104" rx="12" fill="#f3f0fa" stroke="#d3e0e9" stroke-width="1.2"/>
+<circle cx="395" cy="444" r="15" fill="#907bb4" stroke="none" stroke-width="1.5"/>
+<text x="421" y="436" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#253d57" text-anchor="start">Generative</text>
+<text x="421" y="466" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="500" fill="#60798f" text-anchor="start">approach</text>
+<rect x="691" y="115" width="226" height="336" rx="12" fill="#e9f2f8" stroke="#c5dce9" stroke-width="1.4"/>
+<g clip-path="url(#fieldclip)">
+<rect x="693" y="117" width="222" height="332" rx="0" fill="url(#warm-field)" stroke="none" stroke-width="0"/>
+<ellipse cx="795" cy="280" rx="61" ry="41" transform="rotate(-14 795 280)" fill="none" stroke="#ffffff" stroke-width="2.8" opacity="0.52"/>
+<ellipse cx="795" cy="280" rx="114" ry="83" transform="rotate(-14 795 280)" fill="none" stroke="#ffffff" stroke-width="2.8" opacity="0.45"/>
+<ellipse cx="795" cy="280" rx="169" ry="128" transform="rotate(-14 795 280)" fill="none" stroke="#ffffff" stroke-width="2.8" opacity="0.35"/>
+<ellipse cx="795" cy="280" rx="214" ry="166" transform="rotate(-14 795 280)" fill="none" stroke="#ffffff" stroke-width="2.8" opacity="0.24"/>
+<path d="M736 117 V449" fill="none" stroke="#ffffff" stroke-width="0.95" stroke-linejoin="round" stroke-linecap="round" opacity="0.16"/>
+<path d="M691 183 H917" fill="none" stroke="#ffffff" stroke-width="0.95" stroke-linejoin="round" stroke-linecap="round" opacity="0.16"/>
+<path d="M781 117 V449" fill="none" stroke="#ffffff" stroke-width="0.95" stroke-linejoin="round" stroke-linecap="round" opacity="0.16"/>
+<path d="M691 249 H917" fill="none" stroke="#ffffff" stroke-width="0.95" stroke-linejoin="round" stroke-linecap="round" opacity="0.16"/>
+<path d="M826 117 V449" fill="none" stroke="#ffffff" stroke-width="0.95" stroke-linejoin="round" stroke-linecap="round" opacity="0.16"/>
+<path d="M691 315 H917" fill="none" stroke="#ffffff" stroke-width="0.95" stroke-linejoin="round" stroke-linecap="round" opacity="0.16"/>
+<path d="M871 117 V449" fill="none" stroke="#ffffff" stroke-width="0.95" stroke-linejoin="round" stroke-linecap="round" opacity="0.16"/>
+<path d="M691 381 H917" fill="none" stroke="#ffffff" stroke-width="0.95" stroke-linejoin="round" stroke-linecap="round" opacity="0.16"/>
+</g>
+<text x="802" y="488" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="600" fill="#54788e" text-anchor="middle">field interpolation</text>
+<rect x="697" y="500" width="215" height="28" rx="9" fill="#ecf5f6" stroke="#d1e3e8" stroke-width="1.2"/>
+<text x="804" y="520" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="500" fill="#476e84" text-anchor="middle">HRTF interpolation</text>
+<path d="M295 305 H332" fill="none" stroke="#668097" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" opacity="1" marker-end="url(#arrow)"/>
+<path d="M626 305 H662" fill="none" stroke="#668097" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" opacity="1" marker-end="url(#arrow)"/>
+<text x="155" y="571" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="500" fill="#637b92" text-anchor="middle">acoustic measurements</text>
+<text x="480" y="571" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="500" fill="#637b92" text-anchor="middle">alternative approaches</text>
+<text x="805" y="571" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="500" fill="#637b92" text-anchor="middle">spatial representation</text>
+<text x="480" y="593" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#8899a8" text-anchor="middle">Conceptual field only; not an experimental result</text>
+</svg>
