@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-labelledby="svg-title svg-desc">
 <title id="svg-title">DDSP source-wise synthesis and mixture matching</title>
-<desc id="svg-desc">Illustrative source-wise DDSP: observed audio mixture is modeled by two source synthesizers; summed outputs are matched using a spectral loss. No publication figure reproduced.</desc>
+<desc id="svg-desc">Source-wise DDSP synthesis and mixture reconstruction using spectral fitting</desc>
 <defs>
 <marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L10 5.5 L1 10 Z" fill="#668097"/></marker>
 <radialGradient id="warm-field" cx="43%" cy="49%" r="75%"><stop offset="0" stop-color="#f5d38f"/><stop offset=".18" stop-color="#f1bd86"/><stop offset=".38" stop-color="#96c7bf"/><stop offset=".64" stop-color="#5fa6bb"/><stop offset=".84" stop-color="#4d87b5"/><stop offset="1" stop-color="#3e6e9b"/></radialGradient>
@@ -53,5 +53,4 @@
 <text x="155" y="571" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="500" fill="#637b92" text-anchor="middle">input waveform</text>
 <text x="480" y="571" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="500" fill="#637b92" text-anchor="middle">two source decoders</text>
 <text x="805" y="571" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="500" fill="#637b92" text-anchor="middle">analysis-by-synthesis</text>
-<text x="480" y="593" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#8899a8" text-anchor="middle">Illustrative waveforms; no measured results</text>
 </svg>
