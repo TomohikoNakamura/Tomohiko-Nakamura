@@ -17,7 +17,7 @@
         : (systemDark ? "dark" : "light");
     })();
   </script>
-  <link rel="stylesheet" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/styles/site.css?h=000f2d7a9ab5649059ae">
+  <link rel="stylesheet" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/styles/site.css?h=demo-score-779f5b0">
   <link rel="stylesheet" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/styles/research.css?h=8158341170830d237021">
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9EPRVMYY0Z"></script>
@@ -66,12 +66,14 @@
 <article class="demo-content">
   <h1>Acoustic Automatic Accompaniment System for Musical Performance with Errors and Arbitrary Repeats and Skips</h1>
   <p class="demo-authors">Tomohiko Nakamura, Eita Nakamura, and Shigeki Sagayama (The University of Tokyo)</p>
-  <div class="container">
+  <div class="container demo-accompaniment">
   <p>We propose a system that can synchronize musical accompaniment automatically to a human performance with insertion/deletion/substitution errors and arbitrary repeats/skips in real time [1].</p>
+
   <section class="demo-accompaniment-section">
     <h2>Accompanying to Human Performance during Practice</h2>
-    <iframe class="demo-accompaniment-embed" title="Automatic accompaniment during practice" src="https://www.youtube.com/embed/fW6VKiC4k34" loading="lazy" allowfullscreen></iframe>
+    <iframe class="demo-accompaniment-embed" title="Automatic accompaniment during practice" src="https://www.youtube.com/embed/fW6VKiC4k34" width="640" height="390" loading="lazy" allowfullscreen></iframe>
   </section>
+
   <section class="demo-accompaniment-section">
     <h2>Accompanying to Human Performance with a Deletion Error</h2>
     <video class="demo-accompaniment-video" controls width="320" height="240" preload="metadata">
@@ -80,67 +82,56 @@
       <source src="short_videos/20130205drop_perform.ogv" type="video/ogg">
       Your browser does not support video playback.
     </video>
-    <img src="images/doremi_wd.png" alt="Score with a deletion error" style="width:60%">
+    <figure class="demo-accompaniment-score">
+      <a href="images/doremi_wd.png" target="_blank" rel="noopener">
+        <img src="images/doremi_wd.png" alt="Score for the deletion-error example" loading="lazy">
+      </a>
+    </figure>
   </section>
+
   <section class="demo-accompaniment-section">
     <h2>Accompanying to Human Performance with Repeats and Errors</h2>
-    <div class="demo-accompaniment-grid">
-      <div>
-        <ul>
-          <li>
-            A repeat and tempo changes
-            <video class="demo-accompaniment-video" controls width="320" height="240" preload="metadata">
-              <source src="long_videos/tempo_changes.webm" type="video/webm">
-              <source src="long_videos/tempo_changes.mp4" type="video/mp4">
-              <source src="long_videos/tempo_changes.ogv" type="video/ogg">
-              Your browser does not support video playback.
-            </video>
-          </li>
-          <li>
-            Some repeats
-            <video class="demo-accompaniment-video" controls width="320" height="240" preload="metadata">
-              <source src="long_videos/lv1.webm" type="video/webm">
-              <source src="long_videos/lv1.mp4" type="video/mp4">
-              <source src="long_videos/lv1.ogv" type="video/ogg">
-              Your browser does not support video playback.
-            </video>
-          </li>
-          <li>
-            Many errors and repeats in a short time (00:39 to end)
-            <video class="demo-accompaniment-video" controls width="320" height="240" preload="metadata">
-              <source src="long_videos/lv2.webm" type="video/webm">
-              <source src="long_videos/lv2.mp4" type="video/mp4">
-              <source src="long_videos/lv2.ogv" type="video/ogg">
-              Your browser does not support video playback.
-            </video>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h3>Whole Score: Do-Re-Mi</h3>
-        <p>The parts highlighted in pink are played by the human, and the others are played by the proposed system.</p>
-        <img src="images/doremi_mod2.png" alt="Do-Re-Mi score highlighting the human player's parts">
-      </div>
+    <div class="demo-accompaniment-examples">
+      <figure class="demo-accompaniment-case">
+        <figcaption>A repeat and tempo changes</figcaption>
+        <video class="demo-accompaniment-video" controls width="320" height="240" preload="metadata">
+          <source src="long_videos/tempo_changes.webm" type="video/webm">
+          <source src="long_videos/tempo_changes.mp4" type="video/mp4">
+          <source src="long_videos/tempo_changes.ogv" type="video/ogg">
+          Your browser does not support video playback.
+        </video>
+      </figure>
+      <figure class="demo-accompaniment-case">
+        <figcaption>Some repeats</figcaption>
+        <video class="demo-accompaniment-video" controls width="320" height="240" preload="metadata">
+          <source src="long_videos/lv1.webm" type="video/webm">
+          <source src="long_videos/lv1.mp4" type="video/mp4">
+          <source src="long_videos/lv1.ogv" type="video/ogg">
+          Your browser does not support video playback.
+        </video>
+      </figure>
+      <figure class="demo-accompaniment-case">
+        <figcaption>Many errors and repeats in a short time (00:39 to end)</figcaption>
+        <video class="demo-accompaniment-video" controls width="320" height="240" preload="metadata">
+          <source src="long_videos/lv2.webm" type="video/webm">
+          <source src="long_videos/lv2.mp4" type="video/mp4">
+          <source src="long_videos/lv2.ogv" type="video/ogg">
+          Your browser does not support video playback.
+        </video>
+      </figure>
     </div>
+
+    <figure class="demo-accompaniment-score">
+      <figcaption>Whole Score: Do-Re-Mi</figcaption>
+      <p>The parts highlighted in pink are played by the human, and the others are played by the proposed system.</p>
+      <a href="images/doremi_mod2.png" target="_blank" rel="noopener">
+        <img src="images/doremi_mod2.png" alt="Do-Re-Mi score highlighting the human player's parts" loading="lazy">
+      </a>
+      <p><a href="images/doremi_mod2.png" target="_blank" rel="noopener">View full-size score</a></p>
+    </figure>
   </section>
 </div>
 
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 <section class="demo-references" aria-label="References">
   <h2>References</h2>
   <ol class="demo-reference-list">
