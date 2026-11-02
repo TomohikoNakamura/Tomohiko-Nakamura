@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   <meta name="description" content="Tomohiko Nakamura&#x27;s research homepage">
-  <title>Variable-Time-Resolution Neural Audio Codec · Tomohiko Nakamura</title>
+  <title>Neural Audio Codecs: Variable Time Resolution and Robustness · Tomohiko Nakamura</title>
   <script>
     (function () {
       let saved = null;
@@ -40,9 +40,9 @@
 
   
     
-      
-    
   
+    
+      
     
   
 
@@ -71,7 +71,7 @@
   <nav class="research-back-link" aria-label="Back to research projects">
     <a href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/research/">← Research Projects</a>
   </nav>
-  <h1>Variable-Time-Resolution Neural Audio Codec</h1>
+  <h1>Neural Audio Codecs: Variable Time Resolution and Robustness</h1>
   
 
 
@@ -83,7 +83,7 @@
   
     
 <figure class="research-project-figure">
-  <img src="https://tomohikonakamura.github.io/Tomohiko-Nakamura/images/research/nac_variable_ttr.png?h=8a88ba92c3ce7c01d988" alt="DAC architecture with SFI convolutional layers controlling neural audio token temporal resolution" decoding="async">
+  <img src="https://tomohikonakamura.github.io/Tomohiko-Nakamura/images/research/nac_variable_ttr.jpg?h=be32c49f2f5372ada3d5" alt="DAC architecture with SFI convolutional layers controlling neural audio token temporal resolution" decoding="async">
   
   <figcaption>
     Architecture of the variable-token-temporal-resolution neural audio codec (Fig. 2).
@@ -96,7 +96,7 @@
   
 </figure>
 
-<p class="research-project-description">We investigate neural audio codecs whose token temporal resolution can be adjusted within a single model. Sampling-frequency-independent convolutional layers adapt analysis and synthesis operations across token rates. The codec is one concrete realization of the broader direction of variable-time-resolution audio processing.</p>
+<p class="research-project-description">We develop neural audio codecs that adjust token temporal resolution within a single model using sampling-frequency-independent convolutional layers. In a related but distinct line of research, we examine neural audio codec vulnerabilities through white-box adversarial-example generation.</p>
 
 
 <h2 class="research-publications-heading">Related Publications</h2>
@@ -104,1279 +104,441 @@
 <ul class="research-publications">
 
   
-    
+
   
-    
+
+  
+
+  
+
+  
+
   
 
   
     
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-      
     <li data-publication-key="TNakamura2026IWAENC" data-publication-lang="en"><u>Tomohiko Nakamura</u>, Wataru Nakata, Kanami Imamura, and Yuki Saito, “<strong>Neural audio codec with adjustable token temporal resolution using sampling-frequency-independent convolutional layers</strong>,” in <em>Proceedings of International Workshop on Acoustic Signal Enhancement</em>, Sept. 2026.</li>
-      
     
   
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-      
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
 
   
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
 
-  
-    
   
-    
-  
 
-  
-    
   
-    
-  
 
-  
-    
   
-    
-  
 
-  
-    
   
-    
-  
 
-  
-    
   
-    
-  
 
-  
-    
   
-    
-  
 
-  
-    
   
-    
-  
 
-  
-    
   
-    
-  
 
-  
-    
   
-    
-  
 
   
-    
-  
-    
+
   
 
   
-    
+
   
     
   
 
-  
-    
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
     
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
   
-    
+
   
-    
+
   
 
 </ul>
 
+
+  
+
+  
 
   
 
