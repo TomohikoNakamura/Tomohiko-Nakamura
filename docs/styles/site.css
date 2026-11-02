@@ -178,6 +178,23 @@ html[data-theme="dark"] .dataset-card__logo--dark { display: block; }
 }
 .dataset-card__link:hover { text-decoration: underline; }
 
+/* Legacy Bootstrap layout utilities retained by the six table-based demos. */
+.demo-content .lead { font-size: 1.15rem; line-height: 1.55; }
+.demo-content .font-weight-normal { font-weight: 400; }
+.demo-content .row > .lead,
+.demo-content .row > .w-100 { flex: 0 0 100%; max-width: 100%; min-width: 0; }
+.demo-content .row > .col-1 { flex: 0 0 8.333333%; max-width: 8.333333%; }
+.demo-content .row > .col-10 { flex: 0 0 83.333333%; max-width: 83.333333%; min-width: 0; }
+.demo-content .row > table.col-10 { min-width: 960px; max-width: none; }
+.demo-content .list-group { list-style: none; display: flex; flex-direction: column; margin: .75rem 0; padding-left: 0; }
+.demo-content .list-group-item { padding: .65rem .9rem; border: 1px solid var(--line); background: var(--surface); }
+.demo-content .list-group-item + .list-group-item { border-top: 0; }
+@media (max-width: 760px) {
+  .demo-content .row > .col-1 { display: none; }
+  .demo-content .row > .col-10 { flex-basis: 100%; max-width: 100%; }
+  .demo-content .row > table.col-10 { flex: 0 0 auto; min-width: 960px; max-width: none; }
+}
+
 /* Demo tables, reference lists, and video layouts. */
 .demo-content .demo-table-scroll {
   max-width: 100%;
