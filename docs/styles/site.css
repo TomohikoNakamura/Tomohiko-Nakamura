@@ -278,3 +278,23 @@ html[data-theme="dark"] .dataset-card__logo--dark { display: block; }
 @media (max-width: 780px) {
   .demo-content .demo-table-scroll .table { min-width: 700px; }
 }
+
+/* Compact bilingual News feed on the home page and full archive. */
+.news-feed { margin:1.6rem 0 2rem; }
+.news-feed .news-list { margin:0; padding:0; list-style:none; }
+.news-item { display:grid; grid-template-columns:6.1rem minmax(0,1fr); gap:.9rem; align-items:start; padding:.75rem .3rem; border-bottom:1px solid var(--line); }
+.news-item--pinned { margin:.45rem 0; padding:.75rem .85rem; background:var(--surface); border:1px solid var(--line); border-radius:9px; }
+.news-date { color:var(--muted); font-size:.84rem; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.news-body { min-width:0; overflow-wrap:anywhere; }
+.news-headline { display:block; font-size:.95rem; line-height:1.55; }
+.news-pin { display:inline-block; margin:0 0 .2rem; padding:.06rem .4rem; border:1px solid var(--line); border-radius:4px; color:var(--muted); font-size:.7rem; font-weight:600; line-height:1.45; }
+.news-details { margin:.2rem 0 0; font-size:.83rem; }
+.news-details summary { width:fit-content; color:var(--link); cursor:pointer; }
+.news-details ul { margin:.45rem 0 .2rem; padding-left:1.4rem; }
+.news-details li { margin:.3rem 0; }
+.news-more { margin:.7rem .3rem 0; text-align:right; font-size:.88rem; }
+.news-feed--archive { margin-top:1.2rem; }
+@media (max-width:520px) {
+  .news-item { grid-template-columns:minmax(0,1fr); gap:.1rem; padding:.8rem .2rem; }
+  .news-item--pinned { padding:.7rem .75rem; }
+}
