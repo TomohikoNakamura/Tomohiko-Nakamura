@@ -72,6 +72,12 @@ html[data-theme="dark"] .meta-icon { filter:invert(1); }
 
 /* Publication histogram: years on x-axis, counts on y-axis; no chart library. */
 .pub-year-chart { margin:1.25rem 0 1.7rem; padding:1.1rem 1.15rem; border:1px solid var(--line); border-radius:12px; background:var(--surface); }
+.pub-chart-switch { display:flex; flex-wrap:wrap; gap:.35rem; margin:0 0 .8rem; }
+.pub-chart-switch-button { padding:.28rem .7rem; border:1px solid var(--line); border-radius:7px; background:transparent; color:var(--fg); font:inherit; font-size:.8rem; cursor:pointer; }
+.pub-chart-switch-button[aria-pressed="true"] { background:var(--surface-strong); border-color:var(--link); color:var(--link); font-weight:600; }
+.pub-chart-switch-button:focus-visible { outline:2px solid var(--link); outline-offset:2px; }
+.pub-chart-panel[hidden] { display:none; }
+.pub-chart-note { margin:.6rem 0 0; font-size:.76rem; color:var(--muted); }
 .pub-year-chart-legend { display:flex; flex-wrap:wrap; gap:.32rem .9rem; margin:0 0 .65rem; }
 .pub-year-chart-legend-item { display:inline-flex; align-items:center; gap:.35rem; font-size:.75rem; color:var(--fg); line-height:1.45; }
 .pub-year-chart-swatch { display:inline-block; width:.72rem; height:.72rem; border-radius:2px; flex:0 0 auto; }
@@ -92,7 +98,7 @@ html[data-theme="dark"] .meta-icon { filter:invert(1); }
 .pub-year-chart-grid::after { top:50%; }
 .pub-year-chart-columns { position:relative; display:flex; align-items:stretch; gap:6px; width:max-content; list-style:none; margin:0; padding:0; }
 .pub-year-chart-column { flex:0 0 45px; min-width:0; margin:0; }
-.pub-year-chart-column-link, .pub-year-chart-column-empty { display:flex; flex-direction:column; align-items:center; border-radius:4px; color:var(--fg); text-decoration:none; }
+.pub-year-chart-column-link, .pub-year-chart-column-empty, .pub-year-chart-column-display { display:flex; flex-direction:column; align-items:center; border-radius:4px; color:var(--fg); text-decoration:none; }
 .pub-year-chart-column-link:hover { text-decoration:none; background:var(--surface-strong); }
 .pub-year-chart-column-link:hover .pub-year-chart-year { color:var(--link); text-decoration:underline; }
 .pub-year-chart-bar-cell { position:relative; display:flex; align-items:flex-end; justify-content:center; width:100%; height:var(--pub-chart-height); }

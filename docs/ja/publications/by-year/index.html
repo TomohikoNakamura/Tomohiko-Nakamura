@@ -17,7 +17,7 @@
         : (systemDark ? "dark" : "light");
     })();
   </script>
-  <link rel="stylesheet" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/styles/site.css?h=e1220813a6cdb49f3e1d">
+  <link rel="stylesheet" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/styles/site.css?h=5782afeb8af8168e1c2d">
   <link rel="stylesheet" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/styles/research.css?h=8158341170830d237021">
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9EPRVMYY0Z"></script>
@@ -83,6 +83,10 @@
 </nav>
 
 <figure class="pub-year-chart" aria-label="年別発表件数">
+  <div class="pub-chart-switch" role="group" aria-label="集計期間">
+    <button type="button" class="pub-chart-switch-button" data-chart-period="calendar" aria-pressed="true">暦年</button>
+    <button type="button" class="pub-chart-switch-button" data-chart-period="fiscal" aria-pressed="false">年度（4月始まり）</button>
+  </div>
   <div class="pub-year-chart-legend" aria-label="文献種別">
     
       <span class="pub-year-chart-legend-item" data-category="journals">
@@ -126,364 +130,728 @@
       </span>
     
   </div>
-  <div class="pub-year-chart-y-label">件数</div>
-  <div class="pub-year-chart-frame">
-    <div class="pub-year-chart-y-axis" aria-hidden="true">
-      <span>40</span>
-      <span>20</span>
-      <span>0</span>
-    </div>
-    <div class="pub-year-chart-scroll" role="region" aria-label="年別発表件数のグラフ。左にスクロールすると過去の年を表示" tabindex="0">
-      <div class="pub-year-chart-plot">
-        <div class="pub-year-chart-plot-area">
-          <div class="pub-year-chart-grid" aria-hidden="true"></div>
-          <ol class="pub-year-chart-columns">
-            
-              <li class="pub-year-chart-column" data-year="2011" data-total="3">
-                
-                  <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2011" aria-label="2011: 3 件; 国際会議・ワークショップ（査読付き）: 2; 国内会議: 1">
-                    <span class="pub-year-chart-bar-cell" style="--pub-year-height: 7.5%;">
-                      <span class="pub-year-chart-total" aria-hidden="true">3</span>
-                      <span class="pub-year-chart-bar" aria-hidden="true">
-                        
-                          <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="2" style="flex-grow: 2;" title="国際会議・ワークショップ（査読付き）: 2"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="1" style="flex-grow: 1;" title="国内会議: 1"></span>
-                        
+  <div class="pub-chart-panel" data-chart-panel="calendar">
+    
+    <div class="pub-year-chart-y-label">件数</div>
+    <div class="pub-year-chart-frame">
+      <div class="pub-year-chart-y-axis" aria-hidden="true">
+        <span>40</span>
+        <span>20</span>
+        <span>0</span>
+      </div>
+      <div class="pub-year-chart-scroll" role="region" aria-label="年別発表件数のグラフ。左にスクロールすると過去の年を表示" tabindex="0">
+        <div class="pub-year-chart-plot">
+          <div class="pub-year-chart-plot-area">
+            <div class="pub-year-chart-grid" aria-hidden="true"></div>
+            <ol class="pub-year-chart-columns">
+              
+                <li class="pub-year-chart-column" data-year="2011" data-total="3">
+                  
+                    <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2011" aria-label="2011: 3 件; 国際会議・ワークショップ（査読付き）: 2; 国内会議: 1">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 7.5%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">3</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="2" style="flex-grow: 2;" title="国際会議・ワークショップ（査読付き）: 2"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="1" style="flex-grow: 1;" title="国内会議: 1"></span>
+                          
+                        </span>
                       </span>
-                    </span>
-                    <span class="pub-year-chart-year" aria-hidden="true">2011</span>
-                  </a>
-                
-              </li>
-            
-              <li class="pub-year-chart-column" data-year="2012" data-total="1">
-                
-                  <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2012" aria-label="2012: 1 件; 国内会議: 1">
-                    <span class="pub-year-chart-bar-cell" style="--pub-year-height: 2.5%;">
-                      <span class="pub-year-chart-total" aria-hidden="true">1</span>
-                      <span class="pub-year-chart-bar" aria-hidden="true">
-                        
-                          <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="1" style="flex-grow: 1;" title="国内会議: 1"></span>
-                        
+                      <span class="pub-year-chart-year" aria-hidden="true">2011</span>
+                    </a>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2012" data-total="1">
+                  
+                    <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2012" aria-label="2012: 1 件; 国内会議: 1">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 2.5%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">1</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="1" style="flex-grow: 1;" title="国内会議: 1"></span>
+                          
+                        </span>
                       </span>
-                    </span>
-                    <span class="pub-year-chart-year" aria-hidden="true">2012</span>
-                  </a>
-                
-              </li>
-            
-              <li class="pub-year-chart-column" data-year="2013" data-total="4">
-                
-                  <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2013" aria-label="2013: 4 件; 国際会議・ワークショップ（査読付き）: 1; 国内会議: 3">
-                    <span class="pub-year-chart-bar-cell" style="--pub-year-height: 10%;">
-                      <span class="pub-year-chart-total" aria-hidden="true">4</span>
-                      <span class="pub-year-chart-bar" aria-hidden="true">
-                        
-                          <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="1" style="flex-grow: 1;" title="国際会議・ワークショップ（査読付き）: 1"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="3" style="flex-grow: 3;" title="国内会議: 3"></span>
-                        
+                      <span class="pub-year-chart-year" aria-hidden="true">2012</span>
+                    </a>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2013" data-total="4">
+                  
+                    <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2013" aria-label="2013: 4 件; 国際会議・ワークショップ（査読付き）: 1; 国内会議: 3">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 10%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">4</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="1" style="flex-grow: 1;" title="国際会議・ワークショップ（査読付き）: 1"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="3" style="flex-grow: 3;" title="国内会議: 3"></span>
+                          
+                        </span>
                       </span>
-                    </span>
-                    <span class="pub-year-chart-year" aria-hidden="true">2013</span>
-                  </a>
-                
-              </li>
-            
-              <li class="pub-year-chart-column" data-year="2014" data-total="15">
-                
-                  <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2014" aria-label="2014: 15 件; 査読付き論文誌: 2; 国際会議・ワークショップ（査読付き）: 5; 国際会議での発表・デモ: 1; 国内会議: 7">
-                    <span class="pub-year-chart-bar-cell" style="--pub-year-height: 37.5%;">
-                      <span class="pub-year-chart-total" aria-hidden="true">15</span>
-                      <span class="pub-year-chart-bar" aria-hidden="true">
-                        
-                          <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="2" style="flex-grow: 2;" title="査読付き論文誌: 2"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="5" style="flex-grow: 5;" title="国際会議・ワークショップ（査読付き）: 5"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-international_presentations" data-category="international_presentations" data-count="1" style="flex-grow: 1;" title="国際会議での発表・デモ: 1"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="7" style="flex-grow: 7;" title="国内会議: 7"></span>
-                        
+                      <span class="pub-year-chart-year" aria-hidden="true">2013</span>
+                    </a>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2014" data-total="15">
+                  
+                    <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2014" aria-label="2014: 15 件; 査読付き論文誌: 2; 国際会議・ワークショップ（査読付き）: 5; 国際会議での発表・デモ: 1; 国内会議: 7">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 37.5%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">15</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="2" style="flex-grow: 2;" title="査読付き論文誌: 2"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="5" style="flex-grow: 5;" title="国際会議・ワークショップ（査読付き）: 5"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international_presentations" data-category="international_presentations" data-count="1" style="flex-grow: 1;" title="国際会議での発表・デモ: 1"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="7" style="flex-grow: 7;" title="国内会議: 7"></span>
+                          
+                        </span>
                       </span>
-                    </span>
-                    <span class="pub-year-chart-year" aria-hidden="true">2014</span>
-                  </a>
-                
-              </li>
-            
-              <li class="pub-year-chart-column" data-year="2015" data-total="4">
-                
-                  <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2015" aria-label="2015: 4 件; 国際会議・ワークショップ（査読付き）: 1; 国内会議: 2; 解説記事: 1">
-                    <span class="pub-year-chart-bar-cell" style="--pub-year-height: 10%;">
-                      <span class="pub-year-chart-total" aria-hidden="true">4</span>
-                      <span class="pub-year-chart-bar" aria-hidden="true">
-                        
-                          <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="1" style="flex-grow: 1;" title="国際会議・ワークショップ（査読付き）: 1"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="2" style="flex-grow: 2;" title="国内会議: 2"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-reviews" data-category="reviews" data-count="1" style="flex-grow: 1;" title="解説記事: 1"></span>
-                        
+                      <span class="pub-year-chart-year" aria-hidden="true">2014</span>
+                    </a>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2015" data-total="4">
+                  
+                    <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2015" aria-label="2015: 4 件; 国際会議・ワークショップ（査読付き）: 1; 国内会議: 2; 解説記事: 1">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 10%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">4</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="1" style="flex-grow: 1;" title="国際会議・ワークショップ（査読付き）: 1"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="2" style="flex-grow: 2;" title="国内会議: 2"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-reviews" data-category="reviews" data-count="1" style="flex-grow: 1;" title="解説記事: 1"></span>
+                          
+                        </span>
                       </span>
-                    </span>
-                    <span class="pub-year-chart-year" aria-hidden="true">2015</span>
-                  </a>
-                
-              </li>
-            
-              <li class="pub-year-chart-column" data-year="2016" data-total="6">
-                
-                  <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2016" aria-label="2016: 6 件; 査読付き論文誌: 1; 国際会議・ワークショップ（査読付き）: 1; 国内会議: 4">
-                    <span class="pub-year-chart-bar-cell" style="--pub-year-height: 15%;">
-                      <span class="pub-year-chart-total" aria-hidden="true">6</span>
-                      <span class="pub-year-chart-bar" aria-hidden="true">
-                        
-                          <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="1" style="flex-grow: 1;" title="査読付き論文誌: 1"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="1" style="flex-grow: 1;" title="国際会議・ワークショップ（査読付き）: 1"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="4" style="flex-grow: 4;" title="国内会議: 4"></span>
-                        
+                      <span class="pub-year-chart-year" aria-hidden="true">2015</span>
+                    </a>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2016" data-total="6">
+                  
+                    <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2016" aria-label="2016: 6 件; 査読付き論文誌: 1; 国際会議・ワークショップ（査読付き）: 1; 国内会議: 4">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 15%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">6</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="1" style="flex-grow: 1;" title="査読付き論文誌: 1"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="1" style="flex-grow: 1;" title="国際会議・ワークショップ（査読付き）: 1"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="4" style="flex-grow: 4;" title="国内会議: 4"></span>
+                          
+                        </span>
                       </span>
+                      <span class="pub-year-chart-year" aria-hidden="true">2016</span>
+                    </a>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2017" data-total="0">
+                  
+                    <span class="pub-year-chart-column-empty" aria-label="2017: 0 件">
+                      <span class="pub-year-chart-bar-cell"><span class="pub-year-chart-zero-count" aria-hidden="true">0</span></span>
+                      <span class="pub-year-chart-year" aria-hidden="true">2017</span>
                     </span>
-                    <span class="pub-year-chart-year" aria-hidden="true">2016</span>
-                  </a>
-                
-              </li>
-            
-              <li class="pub-year-chart-column" data-year="2017" data-total="0">
-                
-                  <span class="pub-year-chart-column-empty" aria-label="2017: 0 件">
-                    <span class="pub-year-chart-bar-cell"><span class="pub-year-chart-zero-count" aria-hidden="true">0</span></span>
-                    <span class="pub-year-chart-year" aria-hidden="true">2017</span>
-                  </span>
-                
-              </li>
-            
-              <li class="pub-year-chart-column" data-year="2018" data-total="1">
-                
-                  <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2018" aria-label="2018: 1 件; 特許: 1">
-                    <span class="pub-year-chart-bar-cell" style="--pub-year-height: 2.5%;">
-                      <span class="pub-year-chart-total" aria-hidden="true">1</span>
-                      <span class="pub-year-chart-bar" aria-hidden="true">
-                        
-                          <span class="pub-year-chart-segment pub-chart-patents" data-category="patents" data-count="1" style="flex-grow: 1;" title="特許: 1"></span>
-                        
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2018" data-total="1">
+                  
+                    <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2018" aria-label="2018: 1 件; 特許: 1">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 2.5%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">1</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-patents" data-category="patents" data-count="1" style="flex-grow: 1;" title="特許: 1"></span>
+                          
+                        </span>
                       </span>
-                    </span>
-                    <span class="pub-year-chart-year" aria-hidden="true">2018</span>
-                  </a>
-                
-              </li>
-            
-              <li class="pub-year-chart-column" data-year="2019" data-total="1">
-                
-                  <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2019" aria-label="2019: 1 件; 国内会議: 1">
-                    <span class="pub-year-chart-bar-cell" style="--pub-year-height: 2.5%;">
-                      <span class="pub-year-chart-total" aria-hidden="true">1</span>
-                      <span class="pub-year-chart-bar" aria-hidden="true">
-                        
-                          <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="1" style="flex-grow: 1;" title="国内会議: 1"></span>
-                        
+                      <span class="pub-year-chart-year" aria-hidden="true">2018</span>
+                    </a>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2019" data-total="1">
+                  
+                    <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2019" aria-label="2019: 1 件; 国内会議: 1">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 2.5%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">1</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="1" style="flex-grow: 1;" title="国内会議: 1"></span>
+                          
+                        </span>
                       </span>
-                    </span>
-                    <span class="pub-year-chart-year" aria-hidden="true">2019</span>
-                  </a>
-                
-              </li>
-            
-              <li class="pub-year-chart-column" data-year="2020" data-total="11">
-                
-                  <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2020" aria-label="2020: 11 件; 査読付き論文誌: 1; 国際会議・ワークショップ（査読付き）: 2; 国内会議: 4; 特許: 4">
-                    <span class="pub-year-chart-bar-cell" style="--pub-year-height: 27.5%;">
-                      <span class="pub-year-chart-total" aria-hidden="true">11</span>
-                      <span class="pub-year-chart-bar" aria-hidden="true">
-                        
-                          <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="1" style="flex-grow: 1;" title="査読付き論文誌: 1"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="2" style="flex-grow: 2;" title="国際会議・ワークショップ（査読付き）: 2"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="4" style="flex-grow: 4;" title="国内会議: 4"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-patents" data-category="patents" data-count="4" style="flex-grow: 4;" title="特許: 4"></span>
-                        
+                      <span class="pub-year-chart-year" aria-hidden="true">2019</span>
+                    </a>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2020" data-total="11">
+                  
+                    <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2020" aria-label="2020: 11 件; 査読付き論文誌: 1; 国際会議・ワークショップ（査読付き）: 2; 国内会議: 4; 特許: 4">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 27.5%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">11</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="1" style="flex-grow: 1;" title="査読付き論文誌: 1"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="2" style="flex-grow: 2;" title="国際会議・ワークショップ（査読付き）: 2"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="4" style="flex-grow: 4;" title="国内会議: 4"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-patents" data-category="patents" data-count="4" style="flex-grow: 4;" title="特許: 4"></span>
+                          
+                        </span>
                       </span>
-                    </span>
-                    <span class="pub-year-chart-year" aria-hidden="true">2020</span>
-                  </a>
-                
-              </li>
-            
-              <li class="pub-year-chart-column" data-year="2021" data-total="22">
-                
-                  <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2021" aria-label="2021: 22 件; 査読付き論文誌: 1; 国際会議・ワークショップ（査読付き）: 6; 国内会議: 15">
-                    <span class="pub-year-chart-bar-cell" style="--pub-year-height: 55%;">
-                      <span class="pub-year-chart-total" aria-hidden="true">22</span>
-                      <span class="pub-year-chart-bar" aria-hidden="true">
-                        
-                          <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="1" style="flex-grow: 1;" title="査読付き論文誌: 1"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="6" style="flex-grow: 6;" title="国際会議・ワークショップ（査読付き）: 6"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="15" style="flex-grow: 15;" title="国内会議: 15"></span>
-                        
+                      <span class="pub-year-chart-year" aria-hidden="true">2020</span>
+                    </a>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2021" data-total="22">
+                  
+                    <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2021" aria-label="2021: 22 件; 査読付き論文誌: 1; 国際会議・ワークショップ（査読付き）: 6; 国内会議: 15">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 55%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">22</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="1" style="flex-grow: 1;" title="査読付き論文誌: 1"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="6" style="flex-grow: 6;" title="国際会議・ワークショップ（査読付き）: 6"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="15" style="flex-grow: 15;" title="国内会議: 15"></span>
+                          
+                        </span>
                       </span>
-                    </span>
-                    <span class="pub-year-chart-year" aria-hidden="true">2021</span>
-                  </a>
-                
-              </li>
-            
-              <li class="pub-year-chart-column" data-year="2022" data-total="21">
-                
-                  <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2022" aria-label="2022: 21 件; 査読付き論文誌: 1; 国際会議・ワークショップ（査読付き）: 5; 国内会議: 13; 招待講演: 2">
-                    <span class="pub-year-chart-bar-cell" style="--pub-year-height: 52.5%;">
-                      <span class="pub-year-chart-total" aria-hidden="true">21</span>
-                      <span class="pub-year-chart-bar" aria-hidden="true">
-                        
-                          <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="1" style="flex-grow: 1;" title="査読付き論文誌: 1"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="5" style="flex-grow: 5;" title="国際会議・ワークショップ（査読付き）: 5"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="13" style="flex-grow: 13;" title="国内会議: 13"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-invited_talks" data-category="invited_talks" data-count="2" style="flex-grow: 2;" title="招待講演: 2"></span>
-                        
+                      <span class="pub-year-chart-year" aria-hidden="true">2021</span>
+                    </a>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2022" data-total="21">
+                  
+                    <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2022" aria-label="2022: 21 件; 査読付き論文誌: 1; 国際会議・ワークショップ（査読付き）: 5; 国内会議: 13; 招待講演: 2">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 52.5%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">21</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="1" style="flex-grow: 1;" title="査読付き論文誌: 1"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="5" style="flex-grow: 5;" title="国際会議・ワークショップ（査読付き）: 5"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="13" style="flex-grow: 13;" title="国内会議: 13"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-invited_talks" data-category="invited_talks" data-count="2" style="flex-grow: 2;" title="招待講演: 2"></span>
+                          
+                        </span>
                       </span>
-                    </span>
-                    <span class="pub-year-chart-year" aria-hidden="true">2022</span>
-                  </a>
-                
-              </li>
-            
-              <li class="pub-year-chart-column" data-year="2023" data-total="18">
-                
-                  <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2023" aria-label="2023: 18 件; 査読付き論文誌: 1; 国際会議・ワークショップ（査読付き）: 4; 国内会議: 7; 特許: 5; 招待講演: 1">
-                    <span class="pub-year-chart-bar-cell" style="--pub-year-height: 45%;">
-                      <span class="pub-year-chart-total" aria-hidden="true">18</span>
-                      <span class="pub-year-chart-bar" aria-hidden="true">
-                        
-                          <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="1" style="flex-grow: 1;" title="査読付き論文誌: 1"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="4" style="flex-grow: 4;" title="国際会議・ワークショップ（査読付き）: 4"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="7" style="flex-grow: 7;" title="国内会議: 7"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-patents" data-category="patents" data-count="5" style="flex-grow: 5;" title="特許: 5"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-invited_talks" data-category="invited_talks" data-count="1" style="flex-grow: 1;" title="招待講演: 1"></span>
-                        
+                      <span class="pub-year-chart-year" aria-hidden="true">2022</span>
+                    </a>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2023" data-total="18">
+                  
+                    <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2023" aria-label="2023: 18 件; 査読付き論文誌: 1; 国際会議・ワークショップ（査読付き）: 4; 国内会議: 7; 特許: 5; 招待講演: 1">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 45%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">18</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="1" style="flex-grow: 1;" title="査読付き論文誌: 1"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="4" style="flex-grow: 4;" title="国際会議・ワークショップ（査読付き）: 4"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="7" style="flex-grow: 7;" title="国内会議: 7"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-patents" data-category="patents" data-count="5" style="flex-grow: 5;" title="特許: 5"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-invited_talks" data-category="invited_talks" data-count="1" style="flex-grow: 1;" title="招待講演: 1"></span>
+                          
+                        </span>
                       </span>
-                    </span>
-                    <span class="pub-year-chart-year" aria-hidden="true">2023</span>
-                  </a>
-                
-              </li>
-            
-              <li class="pub-year-chart-column" data-year="2024" data-total="20">
-                
-                  <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2024" aria-label="2024: 20 件; 査読付き論文誌: 2; 国際会議・ワークショップ（査読付き）: 6; 国際会議での発表・デモ: 2; 国内会議: 9; 解説記事: 1">
-                    <span class="pub-year-chart-bar-cell" style="--pub-year-height: 50%;">
-                      <span class="pub-year-chart-total" aria-hidden="true">20</span>
-                      <span class="pub-year-chart-bar" aria-hidden="true">
-                        
-                          <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="2" style="flex-grow: 2;" title="査読付き論文誌: 2"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="6" style="flex-grow: 6;" title="国際会議・ワークショップ（査読付き）: 6"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-international_presentations" data-category="international_presentations" data-count="2" style="flex-grow: 2;" title="国際会議での発表・デモ: 2"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="9" style="flex-grow: 9;" title="国内会議: 9"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-reviews" data-category="reviews" data-count="1" style="flex-grow: 1;" title="解説記事: 1"></span>
-                        
+                      <span class="pub-year-chart-year" aria-hidden="true">2023</span>
+                    </a>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2024" data-total="20">
+                  
+                    <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2024" aria-label="2024: 20 件; 査読付き論文誌: 2; 国際会議・ワークショップ（査読付き）: 6; 国際会議での発表・デモ: 2; 国内会議: 9; 解説記事: 1">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 50%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">20</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="2" style="flex-grow: 2;" title="査読付き論文誌: 2"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="6" style="flex-grow: 6;" title="国際会議・ワークショップ（査読付き）: 6"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international_presentations" data-category="international_presentations" data-count="2" style="flex-grow: 2;" title="国際会議での発表・デモ: 2"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="9" style="flex-grow: 9;" title="国内会議: 9"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-reviews" data-category="reviews" data-count="1" style="flex-grow: 1;" title="解説記事: 1"></span>
+                          
+                        </span>
                       </span>
-                    </span>
-                    <span class="pub-year-chart-year" aria-hidden="true">2024</span>
-                  </a>
-                
-              </li>
-            
-              <li class="pub-year-chart-column" data-year="2025" data-total="36">
-                
-                  <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2025" aria-label="2025: 36 件; 査読付き論文誌: 4; 国際会議・ワークショップ（査読付き）: 7; 国際会議での発表・デモ: 6; 国内会議: 17; 特許: 1; 招待講演: 1">
-                    <span class="pub-year-chart-bar-cell" style="--pub-year-height: 90%;">
-                      <span class="pub-year-chart-total" aria-hidden="true">36</span>
-                      <span class="pub-year-chart-bar" aria-hidden="true">
-                        
-                          <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="4" style="flex-grow: 4;" title="査読付き論文誌: 4"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="7" style="flex-grow: 7;" title="国際会議・ワークショップ（査読付き）: 7"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-international_presentations" data-category="international_presentations" data-count="6" style="flex-grow: 6;" title="国際会議での発表・デモ: 6"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="17" style="flex-grow: 17;" title="国内会議: 17"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-patents" data-category="patents" data-count="1" style="flex-grow: 1;" title="特許: 1"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-invited_talks" data-category="invited_talks" data-count="1" style="flex-grow: 1;" title="招待講演: 1"></span>
-                        
+                      <span class="pub-year-chart-year" aria-hidden="true">2024</span>
+                    </a>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2025" data-total="36">
+                  
+                    <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2025" aria-label="2025: 36 件; 査読付き論文誌: 4; 国際会議・ワークショップ（査読付き）: 7; 国際会議での発表・デモ: 6; 国内会議: 17; 特許: 1; 招待講演: 1">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 90%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">36</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="4" style="flex-grow: 4;" title="査読付き論文誌: 4"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="7" style="flex-grow: 7;" title="国際会議・ワークショップ（査読付き）: 7"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international_presentations" data-category="international_presentations" data-count="6" style="flex-grow: 6;" title="国際会議での発表・デモ: 6"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="17" style="flex-grow: 17;" title="国内会議: 17"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-patents" data-category="patents" data-count="1" style="flex-grow: 1;" title="特許: 1"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-invited_talks" data-category="invited_talks" data-count="1" style="flex-grow: 1;" title="招待講演: 1"></span>
+                          
+                        </span>
                       </span>
-                    </span>
-                    <span class="pub-year-chart-year" aria-hidden="true">2025</span>
-                  </a>
-                
-              </li>
-            
-              <li class="pub-year-chart-column" data-year="2026" data-total="40">
-                
-                  <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2026" aria-label="2026: 40 件; 査読付き論文誌: 2; 国際会議・ワークショップ（査読付き）: 11; 国際会議での発表・デモ: 2; 国内会議: 23; 解説記事: 1; 著書: 1">
-                    <span class="pub-year-chart-bar-cell" style="--pub-year-height: 100%;">
-                      <span class="pub-year-chart-total" aria-hidden="true">40</span>
-                      <span class="pub-year-chart-bar" aria-hidden="true">
-                        
-                          <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="2" style="flex-grow: 2;" title="査読付き論文誌: 2"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="11" style="flex-grow: 11;" title="国際会議・ワークショップ（査読付き）: 11"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-international_presentations" data-category="international_presentations" data-count="2" style="flex-grow: 2;" title="国際会議での発表・デモ: 2"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="23" style="flex-grow: 23;" title="国内会議: 23"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-reviews" data-category="reviews" data-count="1" style="flex-grow: 1;" title="解説記事: 1"></span>
-                        
-                          <span class="pub-year-chart-segment pub-chart-books" data-category="books" data-count="1" style="flex-grow: 1;" title="著書: 1"></span>
-                        
+                      <span class="pub-year-chart-year" aria-hidden="true">2025</span>
+                    </a>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2026" data-total="40">
+                  
+                    <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2026" aria-label="2026: 40 件; 査読付き論文誌: 2; 国際会議・ワークショップ（査読付き）: 11; 国際会議での発表・デモ: 2; 国内会議: 23; 解説記事: 1; 著書: 1">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 100%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">40</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="2" style="flex-grow: 2;" title="査読付き論文誌: 2"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="11" style="flex-grow: 11;" title="国際会議・ワークショップ（査読付き）: 11"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international_presentations" data-category="international_presentations" data-count="2" style="flex-grow: 2;" title="国際会議での発表・デモ: 2"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="23" style="flex-grow: 23;" title="国内会議: 23"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-reviews" data-category="reviews" data-count="1" style="flex-grow: 1;" title="解説記事: 1"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-books" data-category="books" data-count="1" style="flex-grow: 1;" title="著書: 1"></span>
+                          
+                        </span>
                       </span>
-                    </span>
-                    <span class="pub-year-chart-year" aria-hidden="true">2026</span>
-                  </a>
-                
-              </li>
-            
-              <li class="pub-year-chart-column" data-year="2027" data-total="1">
-                
-                  <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2027" aria-label="2027: 1 件; 国際会議での発表・デモ: 1">
-                    <span class="pub-year-chart-bar-cell" style="--pub-year-height: 2.5%;">
-                      <span class="pub-year-chart-total" aria-hidden="true">1</span>
-                      <span class="pub-year-chart-bar" aria-hidden="true">
-                        
-                          <span class="pub-year-chart-segment pub-chart-international_presentations" data-category="international_presentations" data-count="1" style="flex-grow: 1;" title="国際会議での発表・デモ: 1"></span>
-                        
+                      <span class="pub-year-chart-year" aria-hidden="true">2026</span>
+                    </a>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2027" data-total="1">
+                  
+                    <a class="pub-year-chart-column-link" href="https://tomohikonakamura.github.io/Tomohiko-Nakamura/ja/publications/by-year/#year-2027" aria-label="2027: 1 件; 国際会議での発表・デモ: 1">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 2.5%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">1</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-international_presentations" data-category="international_presentations" data-count="1" style="flex-grow: 1;" title="国際会議での発表・デモ: 1"></span>
+                          
+                        </span>
                       </span>
-                    </span>
-                    <span class="pub-year-chart-year" aria-hidden="true">2027</span>
-                  </a>
-                
-              </li>
-            
-          </ol>
+                      <span class="pub-year-chart-year" aria-hidden="true">2027</span>
+                    </a>
+                  
+                </li>
+              
+            </ol>
+          </div>
         </div>
       </div>
     </div>
+    <div class="pub-year-chart-x-label">年</div>
+    
+      <p class="pub-year-chart-scroll-hint">← 左へスクロールすると過去の年を表示できます</p>
+    
   </div>
-  <div class="pub-year-chart-x-label">年</div>
-  
-    <p class="pub-year-chart-scroll-hint">← 左へスクロールすると過去の年を表示できます</p>
-  
+  <div class="pub-chart-panel" data-chart-panel="fiscal" hidden>
+    
+    <div class="pub-year-chart-y-label">件数</div>
+    <div class="pub-year-chart-frame">
+      <div class="pub-year-chart-y-axis" aria-hidden="true">
+        <span>40</span>
+        <span>20</span>
+        <span>0</span>
+      </div>
+      <div class="pub-year-chart-scroll" role="region" aria-label="年度別発表件数のグラフ。左にスクロールすると過去の年度を表示" tabindex="0">
+        <div class="pub-year-chart-plot">
+          <div class="pub-year-chart-plot-area">
+            <div class="pub-year-chart-grid" aria-hidden="true"></div>
+            <ol class="pub-year-chart-columns">
+              
+                <li class="pub-year-chart-column" data-year="2011" data-total="3">
+                  
+                    <span class="pub-year-chart-column-display" aria-label="FY2011: 3 件; 国際会議・ワークショップ（査読付き）: 2; 国内会議: 1">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 7.5%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">3</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="2" style="flex-grow: 2;" title="国際会議・ワークショップ（査読付き）: 2"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="1" style="flex-grow: 1;" title="国内会議: 1"></span>
+                          
+                        </span>
+                      </span>
+                      <span class="pub-year-chart-year" aria-hidden="true">FY2011</span>
+                    </span>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2012" data-total="2">
+                  
+                    <span class="pub-year-chart-column-display" aria-label="FY2012: 2 件; 国内会議: 2">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 5%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">2</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="2" style="flex-grow: 2;" title="国内会議: 2"></span>
+                          
+                        </span>
+                      </span>
+                      <span class="pub-year-chart-year" aria-hidden="true">FY2012</span>
+                    </span>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2013" data-total="6">
+                  
+                    <span class="pub-year-chart-column-display" aria-label="FY2013: 6 件; 国際会議・ワークショップ（査読付き）: 1; 国内会議: 5">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 15%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">6</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="1" style="flex-grow: 1;" title="国際会議・ワークショップ（査読付き）: 1"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="5" style="flex-grow: 5;" title="国内会議: 5"></span>
+                          
+                        </span>
+                      </span>
+                      <span class="pub-year-chart-year" aria-hidden="true">FY2013</span>
+                    </span>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2014" data-total="13">
+                  
+                    <span class="pub-year-chart-column-display" aria-label="FY2014: 13 件; 査読付き論文誌: 2; 国際会議・ワークショップ（査読付き）: 5; 国際会議での発表・デモ: 1; 国内会議: 5">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 32.5%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">13</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="2" style="flex-grow: 2;" title="査読付き論文誌: 2"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="5" style="flex-grow: 5;" title="国際会議・ワークショップ（査読付き）: 5"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international_presentations" data-category="international_presentations" data-count="1" style="flex-grow: 1;" title="国際会議での発表・デモ: 1"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="5" style="flex-grow: 5;" title="国内会議: 5"></span>
+                          
+                        </span>
+                      </span>
+                      <span class="pub-year-chart-year" aria-hidden="true">FY2014</span>
+                    </span>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2015" data-total="8">
+                  
+                    <span class="pub-year-chart-column-display" aria-label="FY2015: 8 件; 査読付き論文誌: 1; 国際会議・ワークショップ（査読付き）: 2; 国内会議: 4; 解説記事: 1">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 20%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">8</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="1" style="flex-grow: 1;" title="査読付き論文誌: 1"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="2" style="flex-grow: 2;" title="国際会議・ワークショップ（査読付き）: 2"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="4" style="flex-grow: 4;" title="国内会議: 4"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-reviews" data-category="reviews" data-count="1" style="flex-grow: 1;" title="解説記事: 1"></span>
+                          
+                        </span>
+                      </span>
+                      <span class="pub-year-chart-year" aria-hidden="true">FY2015</span>
+                    </span>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2016" data-total="1">
+                  
+                    <span class="pub-year-chart-column-display" aria-label="FY2016: 1 件; 国内会議: 1">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 2.5%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">1</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="1" style="flex-grow: 1;" title="国内会議: 1"></span>
+                          
+                        </span>
+                      </span>
+                      <span class="pub-year-chart-year" aria-hidden="true">FY2016</span>
+                    </span>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2017" data-total="0">
+                  
+                    <span class="pub-year-chart-column-empty" aria-label="FY2017: 0 件">
+                      <span class="pub-year-chart-bar-cell"><span class="pub-year-chart-zero-count" aria-hidden="true">0</span></span>
+                      <span class="pub-year-chart-year" aria-hidden="true">FY2017</span>
+                    </span>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2018" data-total="1">
+                  
+                    <span class="pub-year-chart-column-display" aria-label="FY2018: 1 件; 特許: 1">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 2.5%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">1</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-patents" data-category="patents" data-count="1" style="flex-grow: 1;" title="特許: 1"></span>
+                          
+                        </span>
+                      </span>
+                      <span class="pub-year-chart-year" aria-hidden="true">FY2018</span>
+                    </span>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2019" data-total="5">
+                  
+                    <span class="pub-year-chart-column-display" aria-label="FY2019: 5 件; 国内会議: 4; 特許: 1">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 12.5%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">5</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="4" style="flex-grow: 4;" title="国内会議: 4"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-patents" data-category="patents" data-count="1" style="flex-grow: 1;" title="特許: 1"></span>
+                          
+                        </span>
+                      </span>
+                      <span class="pub-year-chart-year" aria-hidden="true">FY2019</span>
+                    </span>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2020" data-total="11">
+                  
+                    <span class="pub-year-chart-column-display" aria-label="FY2020: 11 件; 査読付き論文誌: 1; 国際会議・ワークショップ（査読付き）: 2; 国内会議: 5; 特許: 3">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 27.5%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">11</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="1" style="flex-grow: 1;" title="査読付き論文誌: 1"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="2" style="flex-grow: 2;" title="国際会議・ワークショップ（査読付き）: 2"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="5" style="flex-grow: 5;" title="国内会議: 5"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-patents" data-category="patents" data-count="3" style="flex-grow: 3;" title="特許: 3"></span>
+                          
+                        </span>
+                      </span>
+                      <span class="pub-year-chart-year" aria-hidden="true">FY2020</span>
+                    </span>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2021" data-total="23">
+                  
+                    <span class="pub-year-chart-column-display" aria-label="FY2021: 23 件; 査読付き論文誌: 1; 国際会議・ワークショップ（査読付き）: 6; 国内会議: 16">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 57.5%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">23</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="1" style="flex-grow: 1;" title="査読付き論文誌: 1"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="6" style="flex-grow: 6;" title="国際会議・ワークショップ（査読付き）: 6"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="16" style="flex-grow: 16;" title="国内会議: 16"></span>
+                          
+                        </span>
+                      </span>
+                      <span class="pub-year-chart-year" aria-hidden="true">FY2021</span>
+                    </span>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2022" data-total="19">
+                  
+                    <span class="pub-year-chart-column-display" aria-label="FY2022: 19 件; 査読付き論文誌: 1; 国際会議・ワークショップ（査読付き）: 6; 国内会議: 10; 招待講演: 2">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 47.5%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">19</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="1" style="flex-grow: 1;" title="査読付き論文誌: 1"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="6" style="flex-grow: 6;" title="国際会議・ワークショップ（査読付き）: 6"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="10" style="flex-grow: 10;" title="国内会議: 10"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-invited_talks" data-category="invited_talks" data-count="2" style="flex-grow: 2;" title="招待講演: 2"></span>
+                          
+                        </span>
+                      </span>
+                      <span class="pub-year-chart-year" aria-hidden="true">FY2022</span>
+                    </span>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2023" data-total="21">
+                  
+                    <span class="pub-year-chart-column-display" aria-label="FY2023: 21 件; 査読付き論文誌: 2; 国際会議・ワークショップ（査読付き）: 3; 国内会議: 10; 特許: 5; 招待講演: 1">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 52.5%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">21</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="2" style="flex-grow: 2;" title="査読付き論文誌: 2"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="3" style="flex-grow: 3;" title="国際会議・ワークショップ（査読付き）: 3"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="10" style="flex-grow: 10;" title="国内会議: 10"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-patents" data-category="patents" data-count="5" style="flex-grow: 5;" title="特許: 5"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-invited_talks" data-category="invited_talks" data-count="1" style="flex-grow: 1;" title="招待講演: 1"></span>
+                          
+                        </span>
+                      </span>
+                      <span class="pub-year-chart-year" aria-hidden="true">FY2023</span>
+                    </span>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2024" data-total="22">
+                  
+                    <span class="pub-year-chart-column-display" aria-label="FY2024: 22 件; 査読付き論文誌: 1; 国際会議・ワークショップ（査読付き）: 6; 国際会議での発表・デモ: 2; 国内会議: 11; 解説記事: 1; 招待講演: 1">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 55%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">22</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="1" style="flex-grow: 1;" title="査読付き論文誌: 1"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="6" style="flex-grow: 6;" title="国際会議・ワークショップ（査読付き）: 6"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international_presentations" data-category="international_presentations" data-count="2" style="flex-grow: 2;" title="国際会議での発表・デモ: 2"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="11" style="flex-grow: 11;" title="国内会議: 11"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-reviews" data-category="reviews" data-count="1" style="flex-grow: 1;" title="解説記事: 1"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-invited_talks" data-category="invited_talks" data-count="1" style="flex-grow: 1;" title="招待講演: 1"></span>
+                          
+                        </span>
+                      </span>
+                      <span class="pub-year-chart-year" aria-hidden="true">FY2024</span>
+                    </span>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2025" data-total="40">
+                  
+                    <span class="pub-year-chart-column-display" aria-label="FY2025: 40 件; 査読付き論文誌: 4; 国際会議・ワークショップ（査読付き）: 7; 国際会議での発表・デモ: 6; 国内会議: 22; 特許: 1">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 100%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">40</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="4" style="flex-grow: 4;" title="査読付き論文誌: 4"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="7" style="flex-grow: 7;" title="国際会議・ワークショップ（査読付き）: 7"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international_presentations" data-category="international_presentations" data-count="6" style="flex-grow: 6;" title="国際会議での発表・デモ: 6"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="22" style="flex-grow: 22;" title="国内会議: 22"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-patents" data-category="patents" data-count="1" style="flex-grow: 1;" title="特許: 1"></span>
+                          
+                        </span>
+                      </span>
+                      <span class="pub-year-chart-year" aria-hidden="true">FY2025</span>
+                    </span>
+                  
+                </li>
+              
+                <li class="pub-year-chart-column" data-year="2026" data-total="29">
+                  
+                    <span class="pub-year-chart-column-display" aria-label="FY2026: 29 件; 査読付き論文誌: 2; 国際会議・ワークショップ（査読付き）: 11; 国際会議での発表・デモ: 3; 国内会議: 11; 解説記事: 1; 著書: 1">
+                      <span class="pub-year-chart-bar-cell" style="--pub-year-height: 72.5%;">
+                        <span class="pub-year-chart-total" aria-hidden="true">29</span>
+                        <span class="pub-year-chart-bar" aria-hidden="true">
+                          
+                            <span class="pub-year-chart-segment pub-chart-journals" data-category="journals" data-count="2" style="flex-grow: 2;" title="査読付き論文誌: 2"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international" data-category="international" data-count="11" style="flex-grow: 11;" title="国際会議・ワークショップ（査読付き）: 11"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-international_presentations" data-category="international_presentations" data-count="3" style="flex-grow: 3;" title="国際会議での発表・デモ: 3"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-domestic" data-category="domestic" data-count="11" style="flex-grow: 11;" title="国内会議: 11"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-reviews" data-category="reviews" data-count="1" style="flex-grow: 1;" title="解説記事: 1"></span>
+                          
+                            <span class="pub-year-chart-segment pub-chart-books" data-category="books" data-count="1" style="flex-grow: 1;" title="著書: 1"></span>
+                          
+                        </span>
+                      </span>
+                      <span class="pub-year-chart-year" aria-hidden="true">FY2026</span>
+                    </span>
+                  
+                </li>
+              
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pub-year-chart-x-label">年</div>
+    
+      <p class="pub-year-chart-scroll-hint">← 左へスクロールすると過去の年度を表示できます</p>
+    
+    <p class="pub-chart-note">年度は4月〜翌3月。棒は暦年別一覧へのリンクではありません。</p>
+  </div>
 </figure>
+<script>
+(function () {
+  const script = document.currentScript;
+  const figure = script && script.previousElementSibling;
+  if (!figure || !figure.classList.contains("pub-year-chart")) return;
+  const buttons = figure.querySelectorAll("[data-chart-period]");
+  const panels = figure.querySelectorAll("[data-chart-panel]");
+  for (const button of buttons) {
+    button.addEventListener("click", function () {
+      const selected = button.dataset.chartPeriod;
+      for (const item of buttons) item.setAttribute("aria-pressed", String(item === button));
+      for (const panel of panels) panel.hidden = panel.dataset.chartPanel !== selected;
+    });
+  }
+})();
+</script>
 
 <nav class="pub-jump-nav pub-year-nav" aria-label="発表年へ移動">
 
@@ -655,7 +1023,7 @@ Code</a>
         
 
 <li id="KToyoshima2026WUWNet" data-publication-lang="en" data-publication-key="KToyoshima2026WUWNet">
-  <div>Keisuke Toyoshima, Ayaka Yomoda, Yukihiro Kida, Mitsuyasu Deguchi, Yoshitaka Watanabe, <u>Tomohiko Nakamura</u>, Kazuki Maruta, and Daisuke Hisano, “<strong>At-sea evaluation of discretely-modulated deep joint source-channel coding for underwater acoustic communications</strong>,” in <em>Proceedings of International Conference on Underwater Networks and Systems</em>, 2026.</div>
+  <div>Keisuke Toyoshima, Ayaka Yomoda, Yukihiro Kida, Mitsuyasu Deguchi, Yoshitaka Watanabe, <u>Tomohiko Nakamura</u>, Kazuki Maruta, and Daisuke Hisano, “<strong>At-sea evaluation of discretely-modulated deep joint source-channel coding for underwater acoustic communications</strong>,” in <em>Proceedings of International Conference on Underwater Networks and Systems</em>, Dec. 2026.</div>
   
     
   
@@ -667,6 +1035,7 @@ Code</a>
     author = &quot;Toyoshima, Keisuke and Yomoda, Ayaka and Kida, Yukihiro and Deguchi, Mitsuyasu and Watanabe, Yoshitaka and Nakamura, Tomohiko and Maruta, Kazuki and Hisano, Daisuke&quot;,
     title = &quot;At-Sea Evaluation of Discretely-Modulated Deep Joint Source-Channel Coding for Underwater Acoustic Communications&quot;,
     booktitle = &quot;Proceedings of International Conference on Underwater Networks and Systems&quot;,
+    month = &quot;December&quot;,
     year = &quot;2026&quot;
 }</code></pre>
     </details>
