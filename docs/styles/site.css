@@ -53,6 +53,11 @@ html[data-theme="dark"] .theme-icon-sun { display:block; }
 .prose img { max-width:100%; height:auto; }
 .profile-photo { width:120px; border-radius:3px; }
 .meta-links { display:flex; flex-wrap:wrap; gap:.45rem .85rem; }
+/* Compact research participation and recruitment notice on the home page. */
+.opportunities-box { margin:1.6rem 0 1.85rem; padding:.95rem 1.1rem; border:1px solid var(--line); border-radius:10px; background:var(--surface); }
+.prose .opportunities-box h2 { margin:0 0 .5rem; padding:0; border:0; font-size:1.12rem; font-weight:650; line-height:1.45; }
+.opportunities-box p { margin:.35rem 0; font-size:.94rem; line-height:1.6; }
+.opportunities-box .opportunities-links { display:flex; flex-wrap:wrap; gap:.25rem 1.05rem; margin:.75rem 0 0; font-size:.88rem; font-weight:600; }
 .meta-links a { display:inline-flex; align-items:center; gap:.22em; }
 .meta-icon { width:.92em; height:.92em; display:inline-block; vertical-align:-.08em; flex:0 0 auto; }
 .pub-icon { width:.8em; height:.8em; display:block; flex:0 0 auto; fill:currentColor; opacity:.84; }
@@ -292,6 +297,10 @@ html[data-theme="dark"] .dataset-card__logo--dark { display: block; }
 .news-item--pinned { margin:.45rem 0; padding:.75rem .85rem; background:var(--surface); border:1px solid var(--line); border-radius:9px; }
 .news-date { color:var(--muted); font-size:.84rem; font-variant-numeric:tabular-nums; white-space:nowrap; }
 .news-body { min-width:0; overflow-wrap:anywhere; }
+.news-content { display:grid; grid-template-columns:1.05rem minmax(0,1fr); gap:.55rem; align-items:start; }
+.news-category-icon { display:inline-flex; width:1.05rem; height:1.05rem; margin-top:.2rem; align-items:center; justify-content:center; color:var(--muted); }
+.news-category-icon svg { display:block; width:100%; height:100%; fill:currentColor; }
+.news-copy { min-width:0; }
 .news-headline { display:block; font-size:.95rem; line-height:1.55; }
 .news-pin { display:inline-block; margin:0 0 .2rem; padding:.06rem .4rem; border:1px solid var(--line); border-radius:4px; color:var(--muted); font-size:.7rem; font-weight:600; line-height:1.45; }
 .news-details { margin:.2rem 0 0; font-size:.83rem; }
